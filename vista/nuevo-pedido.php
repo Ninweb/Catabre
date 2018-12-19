@@ -74,7 +74,7 @@
 					          		<i class="fas fa-box-open input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 					         		<?php 
 											include ("../modelo/conexion.php");
-											$consulta_contenedor=mysql_query("SELECT * FROM contenedor WHERE contenedor.status='dispo'");
+											$consulta_contenedor=mysql_query("SELECT * FROM contenedor WHERE status='dispo'");
 					    								echo "<select name=\"id_contenedor\" class='col-md-10 form-control' id='contenedor'  required>";
 													echo "<option></option>";
 													while ($row=mysql_fetch_array($consulta_contenedor)) 
