@@ -30,7 +30,7 @@
 					<div class="container-fluid">
 						<div class="card col-md-5offset-md-3">
 							<div class="card-header" style="background-color: #17a2b8; color: #fff;">
-						   <h3 align="center">NUEVO PEDIDO 123</h3>
+						   <h3 align="center">NUEVO PEDIDO</h3>
 						 </div>
 
 						 <!-- INFORMACION DE REGISTRO -->
@@ -44,40 +44,65 @@
 									<label for="users">Usuarios</label>
 									<div class="input-group-prepend">
 									<i class="far fa-user input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-									<select id="users" name="cliente" class="col-md-10 form-control" required>
-										<option>Seleccione un usuario</option>
-									</select>
+
+									<?php 
+											include ("../modelo/conexion.php");
+											$consulta_persona=mysql_query("SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND usuario.tipo='user'");
+					    								echo "<select name=\"id_persona\" class='col-md-10 form-control' id='users'  required>";
+													echo "<option></option>";
+													while ($row=mysql_fetch_array($consulta_persona)) 
+														{
+															
+															echo "<option value=\"".$row['id_persona']."\">".$row['nombre_1'].' '.$row['apellido_1'];
+
+														}
+
+													echo "</select>"; 
+										?>
+									
 					        	</div>
 								</div>
 								<br>
 								<!-- USUARIOS -->								
 
-								<!-- NUMERO DE REFERENCIA -->
-								<div class="col-md-6 offset-md-3">
-									<label for="num_referencia">Número de referencia</label>
-					       	<div class="input-group-prepend">
-					        	<i class="fas fa-hashtag input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-					        	<input id="num_referencia" required="" autocomplete="off"  type="text" name="num_referencia" class="col-md-10 form-control" required>
-					        </div>				
-						    </div>
-								<br>
-								<!-- NUMERO DE REFERENCIA -->
+
 
 								<!--CONTENEDOR-->
 								<div class="col-md-6 offset-md-3">
 									<label for="contenedor">Contenedor</label>
 									<div class="input-group-prepend">
-					          <i class="fas fa-box-open input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-					          <select id="contenedor" name="contenedor" class="col-md-10 form-control" required>
-											<option></option>
-											<option value="">Seleccione contenedor</option>
-											<option value="1">Contenedor1</option>
-										</select>
-					        </div>
-								</div>
-								<br>
-								<!--CONTENEDOR-->
+					          		<i class="fas fa-box-open input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+					         		<?php 
+											include ("../modelo/conexion.php");
+											$consulta_contenedor=mysql_query("SELECT * FROM contenedor WHERE contenedor.status='dispo'");
+					    								echo "<select name=\"id_contenedor\" class='col-md-10 form-control' id='contenedor'  required>";
+													echo "<option></option>";
+													while ($row=mysql_fetch_array($consulta_contenedor)) 
+														{
+															
+															echo "<option value=\"".$row['id_contenedor']."\">".$row['nombre'];
 
+														}
+
+													echo "</select>"; 
+										?>
+					          
+					       			 </div>
+								</div>	
+								<br>
+
+								<!-- NUMERO DE REFERENCIA -->
+								<div class="col-md-6 offset-md-3">
+									<label for="num_referencia">N° de Referencia</label>
+							       	<div class="input-group-prepend">
+							        	<i class="fas fa-hashtag input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+							        	<input id="num_referencia" required="" autocomplete="off"  type="text" name="num_referencia" class="col-md-10 form-control" required>
+							        </div>				
+								 </div>
+								<br>
+								<!-- NUMERO DE REFERENCIA -->
+
+							
 								<!--NAVIERA -->
 								<div class="col-md-6 offset-md-3">
 									<label for="naviera">NAVIERA</label>
@@ -106,7 +131,7 @@
 								<div class="col-md-6 offset-md-3">
 									<div class="row">
 										<div class="input-group-prepend col-md-6">
-						          <label for="salida">Fecha de salida</label>
+						          <label for="salida">Fecha de sálida</label>
 						        </div>	
 						        <div class="input-group-prepend col-md-6">
 											<label for="llegada">Fecha de llegada</label>
