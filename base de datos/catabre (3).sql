@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-12-2018 a las 19:18:17
--- Versión del servidor: 10.1.33-MariaDB
--- Versión de PHP: 7.2.6
+-- Tiempo de generación: 19-12-2018 a las 19:36:34
+-- Versión del servidor: 10.1.36-MariaDB
+-- Versión de PHP: 5.6.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -65,22 +65,22 @@ CREATE TABLE `pedido` (
 
 CREATE TABLE `persona` (
   `id_persona` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
   `nombre_1` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `nombre_2` text NOT NULL,
   `apellido_1` text NOT NULL,
   `apellido_2` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `dni` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `empresa` varchar(20) NOT NULL,
-  `id_usu` int(11) NOT NULL
+  `empresa` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `persona`
 --
 
-INSERT INTO `persona` (`id_persona`, `nombre_1`, `nombre_2`, `apellido_1`, `apellido_2`, `dni`, `empresa`, `id_usu`) VALUES
-(1, 'Johan', 'A', 'Román', 'Pacheco', '', 'NINWEB', 1),
-(2, 'Wilmer', '', 'Sanchez', '', '', 'NINWEB', 2);
+INSERT INTO `persona` (`id_persona`, `id_usuario`, `nombre_1`, `nombre_2`, `apellido_1`, `apellido_2`, `dni`, `empresa`) VALUES
+(1, 1, 'Johan', 'A', 'Román', 'Pacheco', '', 'NINWEB'),
+(2, 2, 'Wilmer', '', 'Sanchez', '', '', 'NINWEB');
 
 -- --------------------------------------------------------
 
@@ -89,15 +89,16 @@ INSERT INTO `persona` (`id_persona`, `nombre_1`, `nombre_2`, `apellido_1`, `apel
 --
 
 CREATE TABLE `producto` (
+  `id_pedido` int(11) NOT NULL,
   `id_producto` int(11) NOT NULL,
-  `nombre_p` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `presentacion` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `producto` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `especie` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `color` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `peso` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `tamano` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `master` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `presentacion` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `id_pedido` int(11) NOT NULL
+  `total` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
