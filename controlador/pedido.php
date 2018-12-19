@@ -1,10 +1,16 @@
+<<<<<<< HEAD
+
+=======
 /*
+>>>>>>> d0c0547ece32077fba6486274db4a7601eb83c22
 <?php
 echo ('hola');
 /*
 
-    function imprimirJSON($json){
+    function crearPedido($json){
         $prueba = var_dump($json);
+        include('../modelo/pedido.php');
+        $seInserto = crear($json);
         echo $prueba;
     }
     //$numeroPedidos = $_POST['hidden-number-pedido'];
@@ -41,7 +47,7 @@ echo ('hola');
             "master"=>'master'.$i,
             "total"=>'total'.$i
         ));
-        imprimirJSON($json);
+        crearPedido($json);
     }
     */
 ?>
