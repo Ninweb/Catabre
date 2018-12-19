@@ -47,10 +47,10 @@
 
 									<?php 
 											include ("../modelo/conexion.php");
-											$consulta_persona=mysql_query("SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND usuario.tipo='user'");
+											$consulta_persona=mysqli_query($conn,"SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND usuario.tipo='user'");
 					    								echo "<select name=\"id_persona\" class='col-md-10 form-control' id='users'  required>";
 													echo "<option></option>";
-													while ($row=mysql_fetch_array($consulta_persona)) 
+													while ($row=mysqli_fetch_array($consulta_persona)) 
 														{
 															
 															echo "<option value=\"".$row['id_persona']."\">".$row['nombre_1'].' '.$row['apellido_1'];
@@ -74,10 +74,10 @@
 					          		<i class="fas fa-box-open input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 					         		<?php 
 											include ("../modelo/conexion.php");
-											$consulta_contenedor=mysql_query("SELECT * FROM contenedor WHERE status='dispo'");
+											$consulta_contenedor=mysqli_query($conn,"SELECT * FROM contenedor WHERE status='dispo'");
 					    								echo "<select name=\"id_contenedor\" class='col-md-10 form-control' id='contenedor'  required>";
 													echo "<option></option>";
-													while ($row=mysql_fetch_array($consulta_contenedor)) 
+													while ($row=mysqli_fetch_array($consulta_contenedor)) 
 														{
 															
 															echo "<option value=\"".$row['id_contenedor']."\">".$row['nombre'];
