@@ -6,4 +6,4 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/all.css" rel="stylesheet" type="text/css">
     <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="css/css.css" rel="stylesheet">
+    <link href="css/general.css" rel="stylesheet">
