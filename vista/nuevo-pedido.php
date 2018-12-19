@@ -35,7 +35,7 @@
 
 						 <!-- INFORMACION DE REGISTRO -->
 						 <div class="card-body">
-						 	<form method="post" action="controlador/pedido.php">
+						 	<form method="post" action="../controlador/pedido.php">
 						 		<br>
 						 		<center><h4>Información del Pedido</h4></center><br>
 
