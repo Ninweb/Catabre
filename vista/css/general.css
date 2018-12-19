@@ -157,3 +157,12 @@ input[type='email']{
 input[type='text']{
 	text-transform: uppercase;
 }
+
+#id_pedido {
+	display: flex;
+	font-size: 20px;
+	font-weight: bold;
+}
+#id_pedido #numero_pedido {
+	margin-left: 10px;
+}
