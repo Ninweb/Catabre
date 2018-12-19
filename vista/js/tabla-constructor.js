@@ -13,6 +13,15 @@ $('#size').attr("id", "size"+cantidad_pedido)
 $('#master').attr("id", "master"+cantidad_pedido)
 $('#total').attr("id", "total"+cantidad_pedido)
 
+$('#presentacion'+aux).attr("name", "presentacion"+cantidad_pedido)
+$('#producto'+aux).attr("name", "producto"+cantidad_pedido)
+$('#especie'+aux).attr("name", "especie"+cantidad_pedido)
+$('#color'+aux).attr("name", "color"+cantidad_pedido)
+$('#peso'+aux).attr("name", "peso"+cantidad_pedido)
+$('#size'+aux).attr("name", "size"+cantidad_pedido)
+$('#master'+aux).attr("name", "master"+cantidad_pedido)
+$('#total'+aux).attr("name", "total"+cantidad_pedido)
+
 document.getElementById('numero_pedido').innerHTML = cantidad_pedido;
 
 
@@ -38,12 +47,21 @@ function nuevo_pedido(){
     $('#master'+aux).attr("id", "master"+cantidad_pedido)
     $('#total'+aux).attr("id", "total"+cantidad_pedido)
 
+    $('#presentacion'+aux).attr("name", "presentacion"+cantidad_pedido)
+    $('#producto'+aux).attr("name", "producto"+cantidad_pedido)
+    $('#especie'+aux).attr("name", "especie"+cantidad_pedido)
+    $('#color'+aux).attr("name", "color"+cantidad_pedido)
+    $('#peso'+aux).attr("name", "peso"+cantidad_pedido)
+    $('#size'+aux).attr("name", "size"+cantidad_pedido)
+    $('#master'+aux).attr("name", "master"+cantidad_pedido)
+    $('#total'+aux).attr("name", "total"+cantidad_pedido)
+
     number_pedido++
   }else{
     alert('Ha llegado al límite de pedidos en este contenedor.')
   }
 
-  hideNumber = document.getElementById('hidden-number-pedido').innerHTML = cantidad_pedido;
+  hideNumber = document.getElementById('hidden-number-pedido').value = cantidad_pedido;
   alert(hideNumber)
   
 }
