@@ -1,8 +1,11 @@
+
 <?php
 
 
-    function imprimirJSON($json){
+    function crearPedido($json){
         $prueba = var_dump($json);
+        include('../modelo/pedido.php');
+        $seInserto = crear($json);
         echo $prueba;
     }
     //$numeroPedidos = $_POST['hidden-number-pedido'];
@@ -39,7 +42,7 @@
             "master"=>'master'.$i,
             "total"=>'total'.$i
         ));
-        imprimirJSON($json);
+        crearPedido($json);
     }
     
 ?>
