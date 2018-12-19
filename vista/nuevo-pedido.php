@@ -47,11 +47,7 @@
 
 									<?php 
 											include ("../modelo/conexion.php");
-<<<<<<< HEAD
 											$consulta_persona = mysqli_query($db, "SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND usuario.tipo='user'");
-=======
-											$consulta_persona=mysqli_query($conn,"SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND usuario.tipo='user'");
->>>>>>> b72c2886b2f3eea6372c37facc34cbf69f77798a
 					    								echo "<select name=\"id_persona\" class='col-md-10 form-control' id='users'  required>";
 													echo "<option></option>";
 													while ($row=mysqli_fetch_array($consulta_persona)) 
@@ -78,11 +74,7 @@
 					          		<i class="fas fa-box-open input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 					         		<?php 
 											include ("../modelo/conexion.php");
-<<<<<<< HEAD
 											$consulta_contenedor=mysqli_query($db, "SELECT * FROM contenedor WHERE contenedor.status='dispo'");
-=======
-											$consulta_contenedor=mysqli_query($conn,"SELECT * FROM contenedor WHERE status='dispo'");
->>>>>>> b72c2886b2f3eea6372c37facc34cbf69f77798a
 					    								echo "<select name=\"id_contenedor\" class='col-md-10 form-control' id='contenedor'  required>";
 													echo "<option></option>";
 													while ($row=mysqli_fetch_array($consulta_contenedor)) 
@@ -249,9 +241,9 @@
 									</div>
 									<br>
 
-									<div style="display:none">
-										<input type="text" name="hidden-number-pedido" id="hidden-number-pedido"/>
-									</div>
+									
+										<input type="hidden" value="" name="hidden-number-pedido" id="hidden-number-pedido"/>
+									
 
 									<div class="form-group" align="center">        
 										<div class="col-sm-offset-4 col-sm-10">

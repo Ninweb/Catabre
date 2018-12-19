@@ -8,12 +8,12 @@
         $seInserto = crear($json);*/
         echo $prueba;
     }
+
     $numeroPedidos = $_POST['hidden-number-pedido'];
     //$numeroPedidos = 7;
     for($i = 1; $i <= $numeroPedidos ; $i++ ){
         $json =json_encode(array(
-
-            "idContenedor"=>$_POSTs['id_contenedor'],
+            "idContenedor"=>$_POST['id_contenedor'],
             "idCliente"=>$_POST['id_persona'],
             "numeroReferecia"=>$_POST['num_referencia'.$i],
             "naviera"=>'naviera',
