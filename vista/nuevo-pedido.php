@@ -30,7 +30,7 @@
 					<div class="container-fluid">
 						<div class="card col-md-5offset-md-3">
 							<div class="card-header" style="background-color: #17a2b8; color: #fff;">
-						   <h3 align="center">NUEVO PEDIDO</h3>
+						   <h3 align="center">NUEVO PEDIDO 123</h3>
 						 </div>
 
 						 <!-- INFORMACION DE REGISTRO -->
