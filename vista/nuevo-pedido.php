@@ -30,7 +30,7 @@
 					<div class="container-fluid">
 						<div class="card col-md-5offset-md-3">
 							<div class="card-header" style="background-color: #17a2b8; color: #fff;">
-						   <h3 align="center">NUEVO PEDIDO 123</h3>
+						   <h3 align="center">NUEVO PEDIDO</h3>
 						 </div>
 
 						 <!-- INFORMACION DE REGISTRO -->
@@ -149,7 +149,7 @@
 													<label for="producto">Tipo de producto</label>
 													<div class="input-group-prepend">
 				          					<i class="fas fa-shopping-cart input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-				          					<input id="producto" required autocomplete="off" type="text" name="tipo_producto" class="col-md-10 form-control">
+				          					<input id="producto" required autocomplete="off" type="text" name="producto" class="col-md-10 form-control">
 					        				</div>	
 												</div>
 
@@ -181,7 +181,7 @@
 													<label for="size">Tamaño</label>
 													<div class="input-group-prepend">
 				          					<i class="fas fa-arrows-alt-h input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-				          					<input id="size" required autocomplete="off" type="text" name="tamanio" class="col-md-10 form-control">
+				          					<input id="size" required autocomplete="off" type="text" name="size" class="col-md-10 form-control">
 					        				</div>
 												</div>
 
