@@ -43,5 +43,7 @@ function nuevo_pedido(){
     alert('Ha llegado al límite de pedidos en este contenedor.')
   }
 
-  document.getElementById('hidden-number-pedido').innerHTML = cantidad_pedido;
+  hideNumber = document.getElementById('hidden-number-pedido').innerHTML = cantidad_pedido;
+  alert(hideNumber)
+  
 }
