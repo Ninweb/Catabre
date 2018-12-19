@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-12-2018 a las 20:40:20
--- Versión del servidor: 10.1.36-MariaDB
--- Versión de PHP: 5.6.38
+-- Tiempo de generación: 19-12-2018 a las 19:18:17
+-- Versión del servidor: 10.1.33-MariaDB
+-- Versión de PHP: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,6 +34,13 @@ CREATE TABLE `contenedor` (
   `nombre` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `status` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `contenedor`
+--
+
+INSERT INTO `contenedor` (`id_contenedor`, `ref`, `nombre`, `status`) VALUES
+(1, '#12222221121', 'contenedor1', 'dispo');
 
 -- --------------------------------------------------------
 
@@ -103,7 +110,7 @@ CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
   `email` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `clave` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `tipo` int(11) NOT NULL
+  `tipo` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -111,8 +118,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `email`, `clave`, `tipo`) VALUES
-(1, 'johan@johanmail.com', 'c4ca4238a0b923820dcc509a6f75849b', 1),
-(2, 'wilmer@johanmail.com', '0196f6c4f97df3f48d570c23e46501ae', 2);
+(1, 'johan@johanmail.com', 'c4ca4238a0b923820dcc509a6f75849b', 'admin'),
+(2, 'wilmer@johanmail.com', '0196f6c4f97df3f48d570c23e46501ae', 'user');
 
 --
 -- Índices para tablas volcadas
@@ -158,7 +165,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `contenedor`
 --
 ALTER TABLE `contenedor`
-  MODIFY `id_contenedor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_contenedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
