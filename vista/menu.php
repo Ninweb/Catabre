@@ -1,20 +1,43 @@
    
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
+
+      <!--nuevo-pedido-->
+      
+
         <li class="nav-item">
-          <a class="nav-link" href="">
-            <i class="fas fa-cart-arrow-down"></i>
-            <span>Pedido</span>
-          </a>
+            <a class="nav-link" <?php if ($page=="Pedido"){
+                    ?>
+                    style="color: #383838;"
+                    <?php
+                  }
+                ?>  
+
+                href="nuevo-pedido.php">
+             <i class="fas fa-cart-arrow-down"></i>
+                  <span>Pedido</span>
+            </a>
         </li>
+       
+      
         <li class="nav-item">
-            <a class="nav-link" href="">            
+             <a class="nav-link" <?php if ($page=="Contenedor"){
+                    ?>
+                    style="color: #383838;"
+                    <?php
+                  }
+                ?>   href="nuevo-contenedor.php">            
               <i class="fas fa-ship"></i>
                 <span>Contenedor</span>
             </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+         <a class="nav-link" <?php if ($page=="Usuarios"){
+                    ?>
+                    style="color: #383838;"
+                    <?php
+                  }
+                ?> href="nuevo-usuario.php">
             <i class="fas fa-users"></i>
             <span>Usuarios</span></a>
         </li>
