@@ -32,7 +32,12 @@
             </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="nuevo-usuario.php">
+         <a class="nav-link" <?php if ($page=="Usuarios"){
+                    ?>
+                    style="color: #383838;"
+                    <?php
+                  }
+                ?> href="nuevo-usuario.php">
             <i class="fas fa-users"></i>
             <span>Usuarios</span></a>
         </li>

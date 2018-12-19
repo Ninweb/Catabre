@@ -17,7 +17,7 @@
 
 			<!--menu--->
 			<?php
-
+				$page='Pedido';
 				include ('menu.php');
 			?>
 
