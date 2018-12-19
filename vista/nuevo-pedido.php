@@ -241,15 +241,9 @@
 									</div>
 									<br>
 
-<<<<<<< HEAD
 									
-										<input type="hidden" value="" name="hidden-number-pedido" id="hidden-number-pedido"/>
+									<input type="hidden" value="" name="hidden-number-pedido" id="hidden-number-pedido"/>
 									
-=======
-									<div style="display:block">
-										<input type="number" name="hidden-number-pedido" id="hidden-number-pedido"/>
-									</div>
->>>>>>> bb50db0615f370e7f93dbef87354da6eb69145d0
 
 									<div class="form-group" align="center">        
 										<div class="col-sm-offset-4 col-sm-10">

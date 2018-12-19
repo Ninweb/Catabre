@@ -11,6 +11,7 @@
 
     $numeroPedidos = $_POST['hidden-number-pedido'];
     //$numeroPedidos = 7;
+    echo $numeroPedidos;
     for($i = 1; $i <= $numeroPedidos ; $i++ ){
         $json =json_encode(array(
             "idContenedor"=>$_POST['id_contenedor'],
