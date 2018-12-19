@@ -8,14 +8,14 @@
 	$fecha_llegada=$_POST['fecha_llegada'];
 
 	/*PEDIDO1*/
-	$presentacion1=$_POST['presentacion1'];
-	$tipo_producto1=$_POST['tipo_producto1'];
-	$especie1=$_POST['especie1'];
-	$color1=$_POST['color1'];
-	$peso1=$_POST['peso1'];
-	$tamanio1=$_POST['tamanio1'];
-	$master1=$_POST['master1'];
-	$total1=$_POST['total1'];
+	$presentacion=$_POST['presentacion'];
+	$tipo_producto=$_POST['tipo_producto'];
+	$especie=$_POST['especie1'];
+	$color=$_POST['color'];
+	$peso=$_POST['peso'];
+	$tamanio=$_POST['tamanio'];
+	$master=$_POST['master'];
+	$total=$_POST['total'];
 
 
 

@@ -27,7 +27,15 @@
 			<!--contenido-->
 				<div id="content-wrapper">
 					<div class="container-fluid">
-							<div class="card col-md-5offset-md-3"">
+						<ol class="breadcrumb">
+				          <li class="breadcrumb-item">
+				            <a href="nuevo-usuario.php" style="color: #17a2b8;"> Registrar Usuario</a>
+				          </li>
+				           <li class="breadcrumb-item">
+				            <a href="consultar-usuario.php" style="color:#383838;"> Consultar Usuario</a>
+				          </li>
+				        </ol>
+							<div class="card col-md-5offset-md-3">
 								<div class="card-header" style="background-color: #f96332; color: #fff;">
 									<h4 align="center" style="color: #fff;">Registrar Usuario</h4>
 								</div>
