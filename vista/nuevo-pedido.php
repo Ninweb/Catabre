@@ -35,7 +35,7 @@
 
 						 <!-- INFORMACION DE REGISTRO -->
 						 <div class="card-body">
-						 	<form method="post" action="prueba.php">
+						 	<form method="post" action="controlador/pedido.php">
 						 		<br>
 						 		<center><h4>Información del Pedido</h4></center><br>
 
@@ -43,11 +43,11 @@
 								<div class="col-md-6 offset-md-3">
 									<label for="users">Usuarios</label>
 									<div class="input-group-prepend">
-					        	<i class="far fa-user input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-					        	<select id="users" name="cliente" class="col-md-10 form-control" required>
-											<option>Seleccione un usuario</option>
-										</select>
-					        </div>
+									<i class="far fa-user input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+									<select id="users" name="cliente" class="col-md-10 form-control" required>
+										<option>Seleccione un usuario</option>
+									</select>
+					        	</div>
 								</div>
 								<br>
 								<!-- USUARIOS -->								
@@ -206,7 +206,7 @@
 												<div align="center">
 													<button type="button" class="btn btn-danger" onclick="eliminar_pedido()"><i class="fas fa-minus-square"></i><span class="desaparecer_muy_grande">&nbsp;Eliminar</span></button>
 												&nbsp;
-													<button type="button" class="btn btn-success" onclick="nuevo_pedido()"><i class="fas fa-cart-plus"></i><span class="desaparecer_muy_grande">&nbsp;Agregar</span></button>
+													<button id="" type="button" class="btn btn-success" onclick="nuevo_pedido()"><i class="fas fa-cart-plus"></i><span class="desaparecer_muy_grande">&nbsp;Agregar</span></button>
 												</div>
 												<!--BOTONES-->
 
@@ -215,6 +215,8 @@
 										</div>
 									</div>
 									<br>
+
+									<div style="display:none" id="hidden-number-pedido"></div>
 
 									<div class="form-group" align="center">        
 										<div class="col-sm-offset-4 col-sm-10">
