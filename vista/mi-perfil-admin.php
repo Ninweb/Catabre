@@ -77,7 +77,7 @@
 					                        <center>
 					                            <div class="alert alert-info">
 					                              <strong><i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i> 
-					                                No existen usuarios registrados
+					                                No existen administradores registrado
 					                              </strong> 
 					                            </div>
 					                          </center>
