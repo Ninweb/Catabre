@@ -1,20 +1,33 @@
 <?php
-
-    function crear($json){
+    
+    function crearPedido($json,$db){
+        echo "<script>alert('soy una alerta');</script>";
+        
         $pedido = json_decode($json);
-        //print_r($array);
+        
 
-        //echo $array[id_contenedor];
-        echo $pedido->idContenedor;
+        //PEDIDO
+        /*
+        $pedido->idCliente;
+        $pedido->idContenedor;
+        $pedido->numeroReferecia;
+        $pedido->fechaSalida;
+        $pedido->fechaLlegada;*/
 
-        /*foreach ($array as $elemento) {
-            echo $elemento, "\n";
-        }*/
+        $sql = "INSERT INTO pedido VALUES (NULL,$pedido->idCliente, $pedido->idContenedor,$pedido->numeroReferecia,$pedido->fechaSalida,$pedido->fechaLlegada)";
+        mysqli_query($db,$sql);
+    
+        if (mysqli_query($db, $sql)) {
+            echo "Se guardo exitoxamente el pedidos";
+            mysqli_close($db);
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($db);
+            mysqli_close($db);
+        }
 
         
-            
     }
         
 
-
+    
 ?>
