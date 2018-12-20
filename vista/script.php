@@ -3,3 +3,4 @@
     <script src="js/sb-admin.js"></script>
     <script src="js/validar.js"></script>
     <script src="js/tabla-constructor.js"></script>
+    <script src="js/ajaxPedido.js"></script>
