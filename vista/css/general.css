@@ -154,9 +154,6 @@ input[type='email']{
 	text-transform: lowercase;
 }
 
-input[type='text']{
-	text-transform: lowercase;
-}
 
 #id_pedido {
 	display: flex;
