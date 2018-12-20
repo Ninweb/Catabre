@@ -14,38 +14,41 @@ document.getElementById('num-contador').innerHTML = pedidos_disponibles;
 function nuevo_pedido(){ 
   $('#tabla-pedido').show()
 
-  $('#presentacion').attr({
-    "id":"presentacion"+cantidad_pedido,
-    "name":"presentacion"+cantidad_pedido
-  })
-  $('#producto').attr({
-    "id":"producto"+cantidad_pedido,
-    "name":"producto"+cantidad_pedido
-  })
-  $('#especie').attr({
-    "id":"especie"+cantidad_pedido,
-    "name":"especie"+cantidad_pedido
-  })
-  $('#color').attr({
-    "id":"color"+cantidad_pedido,
-    "name":"color"+cantidad_pedido
-  })
-  $('#peso').attr({
-    "id":"peso"+cantidad_pedido,
-    "name":"peso"+cantidad_pedido
-  })
-  $('#size').attr({
-    "id":"size"+cantidad_pedido,
-    "name":"size"+cantidad_pedido
-  })
-  $('#master').attr({
-    "id":"master"+cantidad_pedido,
-    "name":"master"+cantidad_pedido
-  })
-  $('#total').attr({
-    "id":"total"+cantidad_pedido,
-    "name":"total"+cantidad_pedido
-  })
+  // if(cantidad_pedido == 1){
+  //   $('#presentacion').attr({
+  //     "id":"presentacion"+cantidad_pedido,
+  //     "name":"presentacion"+cantidad_pedido
+  //   })
+  //   $('#producto').attr({
+  //     "id":"producto"+cantidad_pedido,
+  //     "name":"producto"+cantidad_pedido
+  //   })
+  //   $('#especie').attr({
+  //     "id":"especie"+cantidad_pedido,
+  //     "name":"especie"+cantidad_pedido
+  //   })
+  //   $('#color').attr({
+  //     "id":"color"+cantidad_pedido,
+  //     "name":"color"+cantidad_pedido
+  //   })
+  //   $('#peso').attr({
+  //     "id":"peso"+cantidad_pedido,
+  //     "name":"peso"+cantidad_pedido
+  //   })
+  //   $('#size').attr({
+  //     "id":"size"+cantidad_pedido,
+  //     "name":"size"+cantidad_pedido
+  //   })
+  //   $('#master').attr({
+  //     "id":"master"+cantidad_pedido,
+  //     "name":"master"+cantidad_pedido
+  //   })
+  //   $('#total').attr({
+  //     "id":"total"+cantidad_pedido,
+  //     "name":"total"+cantidad_pedido
+  //   })
+  // }
+  
 
 
 	if(number_pedido <= top_pedido){
