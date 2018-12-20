@@ -244,7 +244,7 @@
 
 									<div class="form-group" align="center">        
 										<div class="col-sm-offset-4 col-sm-10">
-											<button type="submit" name="generar" onclick="enviarDatosAjax();" class="btn btn-primary">Generar Pedido</button>
+											<button type="submit" name="generar" class="btn btn-primary">Generar Pedido</button>
 										</div>
 									</div>
 								</div>
