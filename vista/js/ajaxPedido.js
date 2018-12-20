@@ -11,21 +11,21 @@ function enviarDatosAjax(){
     
     var url = "../../controlador/pedido.php";
 
-    $.ajax({
-        type: "POST",
-        url: url,
-        data:{
-            idContenedor: idContenedor,
-            idCliente: idCliente,
-            numeroReferencia: numeroReferencia,
-            naviera: naviera,
-            destino: destino,
-            fechaSalida: fechaSalida,
-            fechaLlegada: fechaLlegada,
-            numeroPedidos:numeroPedidos
-        },
+    // $.ajax({
+    //     type: "POST",
+    //     url: url,
+    //     data:{
+    //         idContenedor: idContenedor,
+    //         idCliente: idCliente,
+    //         numeroReferencia: numeroReferencia,
+    //         naviera: naviera,
+    //         destino: destino,
+    //         fechaSalida: fechaSalida,
+    //         fechaLlegada: fechaLlegada,
+    //         numeroPedidos:numeroPedidos
+    //     },
 
-        success:function
-    });
+    //     success:function
+    // });
 
 }

@@ -137,8 +137,8 @@
 									
 									<div class="input-group-prepend">
 					          <i class="fas fa-calendar-alt input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-					          <input required autocomplete="off" value="<?php echo ''; ?>"  type="date" name="fecha_salida" id="salida" class="col-md-5 form-control" placeholder="" min="<?php echo date("Y-m-d"); ?>">
-					          <input required autocomplete="off" value="<?php echo ''; ?>"  type="date" name="fecha_llegada" id="llegada" class="col-md-5 form-control" placeholder="">
+					          <input required autocomplete="off" placeholder="<?php echo ''; ?>"  type="date" name="fecha_salida" id="salida" class="col-md-5 form-control" placeholder="" min="<?php echo date("Y-m-d"); ?>">
+					          <input required autocomplete="off" placeholder="<?php echo ''; ?>"  type="date" name="fecha_llegada" id="llegada" class="col-md-5 form-control" placeholder="">
 					        </div>	
 								</div>
 								<!--- FECHA DE SALIDA Y LLEGADA -->
@@ -151,6 +151,20 @@
 										<div class="card-header fondo">
 											<h4 align="center" style="color: #fff;">Tipo de Pedido</h4>
 										</div>
+
+										<!--BOTONES Y CONTADOR-->
+										<div id="subpanel">
+											<div align="left" id="contador">
+												<p>Pedidos disponibles: </p>
+												<p id="num-contador"></p>
+											</div>
+											<div align="right" id="boton">
+												<button type="button" class="btn btn-success" onclick="nuevo_pedido()"><i class="fas fa-cart-plus"></i><span class="desaparecer_muy_grande">&nbsp;Nuevo pedido</span></button>
+											</div>
+										</div>
+										<!--BOTONES Y CONTADOR-->
+
+										<div align="center" id="vacio-mensaje">No hay ningun pedido generado. Haga click en <b>Nuevo Pedido</b> para generar uno nuevo.</div>
 
 										<div class="card-body tabla-pedido" id="tabla-pedido">
 											<div class="info">
@@ -226,15 +240,15 @@
 												
 												<!--BOTONES-->
 												<div align="center">
-													<button type="button" class="btn btn-danger" onclick="eliminar_pedido()"><i class="fas fa-minus-square"></i><span class="desaparecer_muy_grande">&nbsp;Eliminar</span></button>
-												&nbsp;
-													<button id="" type="button" class="btn btn-success" ><i class="fas fa-cart-plus"></i><span class="desaparecer_muy_grande">&nbsp;Agregar</span></button>
+													<button type="button" class="btn btn-danger" onclick="eliminar_pedido()"><i class="fas fa-minus-square"></i><span class="desaparecer_muy_grande">&nbsp;Eliminar pedido</span></button>
 												</div>
 												<!--BOTONES-->
 
 											</div>
 											&nbsp;
 										</div>
+
+										<div id="nuevos-pedidos"></div>
 									</div>
 									<br>
 
@@ -247,10 +261,6 @@
 											<button type="submit" name="generar" class="btn btn-primary">Generar Pedido</button>
 										</div>
 									</div>
-								</div>
-
-								<div id="mostrarDatos">
-								
 								</div>
 								<!-- PEDIDO -->
 
