@@ -35,7 +35,7 @@
 
 						 <!-- INFORMACION DE REGISTRO -->
 						 <div class="card-body">
-						 	<form method="post" action="../controlador/pedido.php">
+						 	<form method="post" id="form">
 						 		<br>
 						 		<center><h4>Información del Pedido</h4></center><br>
 
@@ -53,7 +53,7 @@
 											while ($row=mysqli_fetch_array($consulta_persona)) 
 												{
 													
-													echo "<option value=\"".$row['id_persona']."\">".$row['nombre_1'].' '.$row['apellido_1'];
+													echo "<option value=\"".$row['id_persona']."\">".$row['nombre'].' '.$row['apellido'];
 
 												}
 
@@ -79,7 +79,7 @@
 											while ($row=mysqli_fetch_array($consulta_contenedor)) 
 												{
 													
-													echo "<option value=\"".$row['id_contenedor']."\">".$row['nombre'];
+													echo "<option id='id_contenedor' value=\"".$row['id_contenedor']."\">".$row['nombre'];
 
 												}
 											echo "</select>"; 
@@ -244,18 +244,21 @@
 
 									<div class="form-group" align="center">        
 										<div class="col-sm-offset-4 col-sm-10">
-											<button type="submit" name="generar" class="btn btn-primary">Generar Pedido</button>
+											<button type="submit" name="generar" onclick="enviarDatosAjax();" class="btn btn-primary">Generar Pedido</button>
 										</div>
 									</div>
+
+									
 								</div>
 
-								<div id="mostrarDatos">
 								
-								</div>
 								<!-- PEDIDO -->
 
 
 							</form>
+							<div id="mostrarDatos">
+										
+							</div>
 						</div>
 					</div><br>
 				</div>
