@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-12-2018 a las 19:36:34
--- Versión del servidor: 10.1.36-MariaDB
--- Versión de PHP: 5.6.38
+-- Tiempo de generación: 20-12-2018 a las 18:32:11
+-- Versión del servidor: 10.1.33-MariaDB
+-- Versión de PHP: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,7 +40,9 @@ CREATE TABLE `contenedor` (
 --
 
 INSERT INTO `contenedor` (`id_contenedor`, `ref`, `nombre`, `status`) VALUES
-(1, '#12222221121', 'contenedor1', 'dispo');
+(1, '#12222221121', 'contenedor1', 'dispo'),
+(2, '1234', 'contenedor2', ''),
+(3, '54668', 'contenedor4', '');
 
 -- --------------------------------------------------------
 
@@ -53,9 +55,17 @@ CREATE TABLE `pedido` (
   `id_persona` int(11) NOT NULL,
   `id_contenedor` int(11) NOT NULL,
   `codigo_pedido` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `fecha_salida` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `fecha_llegada` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `naviera` text NOT NULL,
+  `fecha_salida` date NOT NULL,
+  `fecha_llegada` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `pedido`
+--
+
+INSERT INTO `pedido` (`id_pedido`, `id_persona`, `id_contenedor`, `codigo_pedido`, `naviera`, `fecha_salida`, `fecha_llegada`) VALUES
+(6, 2, 1, '1234', 'puerto', '2029-12-12', '2030-02-12');
 
 -- --------------------------------------------------------
 
@@ -66,11 +76,8 @@ CREATE TABLE `pedido` (
 CREATE TABLE `persona` (
   `id_persona` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `nombre_1` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `nombre_2` text NOT NULL,
-  `apellido_1` text NOT NULL,
-  `apellido_2` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `dni` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `nombre` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `apellido` text NOT NULL,
   `empresa` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -78,9 +85,9 @@ CREATE TABLE `persona` (
 -- Volcado de datos para la tabla `persona`
 --
 
-INSERT INTO `persona` (`id_persona`, `id_usuario`, `nombre_1`, `nombre_2`, `apellido_1`, `apellido_2`, `dni`, `empresa`) VALUES
-(1, 1, 'Johan', 'A', 'Román', 'Pacheco', '', 'NINWEB'),
-(2, 2, 'Wilmer', '', 'Sanchez', '', '', 'NINWEB');
+INSERT INTO `persona` (`id_persona`, `id_usuario`, `nombre`, `apellido`, `empresa`) VALUES
+(1, 1, 'Johan', 'Román', 'NINWEB'),
+(2, 2, 'Wilmer', 'Sanchez', 'NINWEB');
 
 -- --------------------------------------------------------
 
@@ -89,8 +96,8 @@ INSERT INTO `persona` (`id_persona`, `id_usuario`, `nombre_1`, `nombre_2`, `apel
 --
 
 CREATE TABLE `producto` (
-  `id_pedido` int(11) NOT NULL,
   `id_producto` int(11) NOT NULL,
+  `id_pedido` int(11) NOT NULL,
   `presentacion` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `producto` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `especie` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -100,6 +107,14 @@ CREATE TABLE `producto` (
   `master` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `total` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id_producto`, `id_pedido`, `presentacion`, `producto`, `especie`, `color`, `peso`, `tamano`, `master`, `total`) VALUES
+(5, 6, 'es', 'es', 'es', 'es', 'es', 'es', 'es', 0),
+(4, 6, 'hghghg', 'hgh', 'gh', 'gh', 'ghg', 'hg', 'hgh', 0);
 
 -- --------------------------------------------------------
 
@@ -166,13 +181,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `contenedor`
 --
 ALTER TABLE `contenedor`
-  MODIFY `id_contenedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_contenedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `persona`
@@ -184,7 +199,7 @@ ALTER TABLE `persona`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`

@@ -5,6 +5,6 @@
 	$dbpass = ""; //variable para la clave del servidor
 	$dbuser = "root"; //variable para el usuario del servidor
 	
-	$db = mysqli_connect($host,$dbuser,$dbpass, $dbname) or die ("no pudo conectarse con el manejador");;
+	$db = mysqli_connect($host,$dbuser,$dbpass, $dbname) or die ("no pudo conectarse con el manejador");
 
 ?>
