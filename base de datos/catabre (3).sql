@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-12-2018 a las 18:32:11
+-- Tiempo de generación: 20-12-2018 a las 21:18:43
 -- Versión del servidor: 10.1.33-MariaDB
 -- Versión de PHP: 7.2.6
 
@@ -40,9 +40,9 @@ CREATE TABLE `contenedor` (
 --
 
 INSERT INTO `contenedor` (`id_contenedor`, `ref`, `nombre`, `status`) VALUES
-(1, '#12222221121', 'contenedor1', 'dispo'),
-(2, '1234', 'contenedor2', ''),
-(3, '54668', 'contenedor4', '');
+(1, '#12222221121', 'contenedor1', 'ocupado'),
+(2, '1234', 'contenedor2', 'disponible'),
+(3, '54668', 'contenedor4', 'disponible');
 
 -- --------------------------------------------------------
 
