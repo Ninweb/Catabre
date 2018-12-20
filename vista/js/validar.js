@@ -14,11 +14,54 @@
 	         });
     	});
 
+
+        /*editar usuario*/
+
+            $(document).ready(function(){
+	            $('#editar-usuario').on('show.bs.modal', function (e) {
+	            var id_usuario= $(e.relatedTarget).data('id');
+	            $.ajax({
+	                type : 'post',
+	                url : '../modelo/editar-usuario.php', //Here you will fetch records 
+	                data :  'id_usuario='+ id_usuario, //Pass $id
+	                success : function(data){
+	                    $('.fetched-data').html(data);//Show fetched data from database
+	                }
+	            });
+	         });
+    	});
+
+
+          /*editar usuario*/
+
+            $(document).ready(function(){
+	            $('#editar-admin').on('show.bs.modal', function (e) {
+	            var id_usuario= $(e.relatedTarget).data('id');
+	            $.ajax({
+	                type : 'post',
+	                url : '../modelo/editar-admin.php', //Here you will fetch records 
+	                data :  'id_usuario='+ id_usuario, //Pass $id
+	                success : function(data){
+	                    $('.fetched-data').html(data);//Show fetched data from database
+	                }
+	            });
+	         });
+    	});
+
     		 /*eliminar contenedor*/
 		$(document).ready(function(){
      		 $('#eliminar-contenedor').on('show.bs.modal', function(e) {
                 var id_contenedor = $(e.relatedTarget).data('book-id');
                 $(e.currentTarget).find('input[name="id_contenedor"]').val(id_contenedor);
+            });
+
+    	});
+
+    	/*eliminar usuario*/
+		$(document).ready(function(){
+     		 $('#eliminar-usuario').on('show.bs.modal', function(e) {
+                var id_usuario = $(e.relatedTarget).data('book-id');
+                $(e.currentTarget).find('input[name="id_usuario"]').val(id_usuario);
             });
 
     	});

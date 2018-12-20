@@ -42,6 +42,16 @@
             <span>Usuarios</span></a>
         </li>
         <li class="nav-item">
+         <a class="nav-link" <?php if ($page=="Mi Perfil"){
+                    ?>
+                    style="color: #383838;"
+                    <?php
+                  }
+                ?> href="mi-perfil-admin.php">
+            <i class="far fa-address-card"></i>
+            <span>Mi Perfil</span></a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="tables.html">
             <i class="fas fa-power-off"></i>
             <span>Cerrar Sesión</span></a>

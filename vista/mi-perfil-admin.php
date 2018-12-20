@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html>
  <head>
@@ -16,7 +14,7 @@
 
 			<!--menu--->
 			<?php
-				$page='Usuarios';
+				$page='Mi Perfil';
 				include ('menu.php');
 			?>
 
@@ -27,21 +25,13 @@
 			<!--contenido-->
 				<div id="content-wrapper">
 					<div class="container-fluid">
-						<ol class="breadcrumb">
-				          <li class="breadcrumb-item">
-				            <a href="nuevo-usuario.php" style="color:#383838;"> Registrar Usuario</a>
-				          </li>
-				           <li class="breadcrumb-item">
-				            <a href="consultar-usuario.php" style="color: #17a2b8;"> Consultar Usuario</a>
-				          </li>
-				        </ol>
-							<div class="card">
+						<div class="card">
 								<div class="card-header" style="background-color: #f96332; color: #fff;">
-									<h4 align="center" style="color: #fff;">Consultar Usuario</h4>
+									<h4 align="center" style="color: #fff;">Mi Perfil</h4>
 								</div>
 							<?php
 									include ("../modelo/conexion.php");
-									$consulta_usuario=mysqli_query($db, "SELECT * FROM usuario,persona WHERE persona.id_usuario=usuario.id_usuario AND usuario.tipo='user'");
+									$consulta_usuario=mysqli_query($db, "SELECT * FROM usuario,persona WHERE persona.id_usuario=usuario.id_usuario AND usuario.tipo='admin'");
 								if (mysqli_num_rows($consulta_usuario)) {
 									?>
 									<table class="table table-bordered" style="text-align: center;">
@@ -52,7 +42,6 @@
 												<th>Empresa</th>
 												<th>Email</th>
 												<th>Modificar</th>
-												<th>Eliminar</th>
 											</tr>
 										</thead>
 									<?php
@@ -68,16 +57,12 @@
 												        <td><?php echo $fila['empresa']; ?></td>
 												        <td><?php echo $fila['email']; ?></td>
 												        <td>
-												                              <a href="#" id="<?php echo $fila['id_usuario'];?>" data-target="#editar-usuario" class="btn btn-success" data-toggle="modal" data-id="<?php echo $fila['id_usuario'];?>">
+												                              <a href="#" id="<?php echo $fila['id_usuario'];?>" data-target="#editar-admin" class="btn btn-success" data-toggle="modal" data-id="<?php echo $fila['id_usuario'];?>">
 												                              <i class="far fa-edit" aria-hidden="true"></i>
 												                              </a>
 
 												                          </td>
-												                          <td>
-											                                  <a href="#" class="btn btn-danger"  data-toggle="modal" data-target="#eliminar-usuario" data-book-id="<?php echo $fila['id_usuario'];?>">
-											                                    <i class="fas fa-trash-alt" aria-hidden="true"></i>
-											                                  </a>
-				                          				</td>
+												                        
 												      </tr>
 												    </tbody>
 											<?php
@@ -102,7 +87,6 @@
 							?>	
 						 	
 							</div>
-							</div>
 					</div>
 				<!--fin de contenido-->
 
@@ -110,7 +94,6 @@
 			<!--footer-->
 					<?php
 							include ('footer.php');
-							
 						?>
 			<!--fin footer-->
 
@@ -130,8 +113,7 @@
 		    <!--script-->
 			 <?php
      			 include("script.php");
-     			 include("modal-editar-usuario.php");
-     			 include("modal-eliminar-usuario.php");
+     			 include("modal-editar-admin.php");
    			 ?>
 	</body>
 </html>
