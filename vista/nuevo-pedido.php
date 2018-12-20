@@ -43,24 +43,23 @@
 								<div class="col-md-6 offset-md-3">
 									<label for="users">Usuarios</label>
 									<div class="input-group-prepend">
-									<i class="far fa-user input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+										<i class="far fa-user input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 
-									<?php 
+										<?php 
 											include ("../modelo/conexion.php");
 											$consulta_persona = mysqli_query($db, "SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND usuario.tipo='user'");
-					    								echo "<select name=\"id_persona\" class='col-md-10 form-control' id='users'  required>";
-													echo "<option></option>";
-													while ($row=mysqli_fetch_array($consulta_persona)) 
-														{
-															
-															echo "<option value=\"".$row['id_persona']."\">".$row['nombre_1'].' '.$row['apellido_1'];
+											echo "<select name=\"id_persona\" class='col-md-10 form-control' id='users'  required>";
+											echo "<option></option>";
+											while ($row=mysqli_fetch_array($consulta_persona)) 
+												{
+													
+													echo "<option value=\"".$row['id_persona']."\">".$row['nombre_1'].' '.$row['apellido_1'];
 
-														}
+												}
 
-													echo "</select>"; 
+											echo "</select>"; 
 										?>
-									
-					        	</div>
+					        </div>
 								</div>
 								<br>
 								<!-- USUARIOS -->								
@@ -71,33 +70,31 @@
 								<div class="col-md-6 offset-md-3">
 									<label for="contenedor">Contenedor</label>
 									<div class="input-group-prepend">
-					          		<i class="fas fa-box-open input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-					         		<?php 
+										<i class="fas fa-box-open input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+										<?php 
 											include ("../modelo/conexion.php");
 											$consulta_contenedor=mysqli_query($db, "SELECT * FROM contenedor WHERE contenedor.status='dispo'");
-					    								echo "<select name=\"id_contenedor\" class='col-md-10 form-control' id='contenedor'  required>";
-													echo "<option></option>";
-													while ($row=mysqli_fetch_array($consulta_contenedor)) 
-														{
-															
-															echo "<option value=\"".$row['id_contenedor']."\">".$row['nombre'];
+											echo "<select name=\"id_contenedor\" class='col-md-10 form-control' id='contenedor'  required>";
+											echo "<option></option>";
+											while ($row=mysqli_fetch_array($consulta_contenedor)) 
+												{
+													
+													echo "<option value=\"".$row['id_contenedor']."\">".$row['nombre'];
 
-														}
-
-													echo "</select>"; 
+												}
+											echo "</select>"; 
 										?>
-					          
-					       			 </div>
+									</div>
 								</div>	
 								<br>
 
 								<!-- NUMERO DE REFERENCIA -->
 								<div class="col-md-6 offset-md-3">
 									<label for="num_referencia">N° de Referencia</label>
-							       	<div class="input-group-prepend">
-							        	<i class="fas fa-hashtag input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-							        	<input id="num_referencia" required="" autocomplete="off"  type="text" name="num_referencia" class="col-md-10 form-control" required>
-							        </div>				
+									<div class="input-group-prepend">
+										<i class="fas fa-hashtag input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+										<input id="num_referencia" required="" autocomplete="off"  type="text" name="num_referencia" class="col-md-10 form-control" required>
+									</div>				
 								 </div>
 								<br>
 								<!-- NUMERO DE REFERENCIA -->
@@ -241,9 +238,9 @@
 									</div>
 									<br>
 
-									
-									<input type="hidden" value="" name="hidden-number-pedido" id="hidden-number-pedido"/>
-									
+									<div style="display:none">
+										<input type="number" name="hidden-number-pedido" id="hidden-number-pedido"/>
+									</div>
 
 									<div class="form-group" align="center">        
 										<div class="col-sm-offset-4 col-sm-10">
