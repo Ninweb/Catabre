@@ -71,7 +71,7 @@ function nuevo_pedido(){
 
     //NUMERO DE PEDIDO Y RESET DE CAMPOS
     document.getElementById('numero_pedido').innerHTML = cantidad_pedido;
-    $('#numero_pedido').css("color","red")
+    // $('#numero_pedido').css("color","red")
     // document.getElementById('presentacion'+cantidad_pedido).innerHTML = ""
 
 

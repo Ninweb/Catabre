@@ -155,7 +155,7 @@ input[type='email']{
 }
 
 input[type='text']{
-	text-transform: uppercase;
+	text-transform: lowercase;
 }
 
 #id_pedido {
