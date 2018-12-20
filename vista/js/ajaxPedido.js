@@ -23,7 +23,9 @@ function enviarDatosAjax(){
             fechaSalida: fechaSalida,
             fechaLlegada: fechaLlegada,
             numeroPedidos:numeroPedidos
-        }
+        },
+
+        success:function
     });
 
 }

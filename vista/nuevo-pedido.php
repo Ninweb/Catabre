@@ -228,7 +228,7 @@
 												<div align="center">
 													<button type="button" class="btn btn-danger" onclick="eliminar_pedido()"><i class="fas fa-minus-square"></i><span class="desaparecer_muy_grande">&nbsp;Eliminar</span></button>
 												&nbsp;
-													<button id="" type="button" class="btn btn-success" onclick="nuevo_pedido()"><i class="fas fa-cart-plus"></i><span class="desaparecer_muy_grande">&nbsp;Agregar</span></button>
+													<button id="" type="button" class="btn btn-success" ><i class="fas fa-cart-plus"></i><span class="desaparecer_muy_grande">&nbsp;Agregar</span></button>
 												</div>
 												<!--BOTONES-->
 
