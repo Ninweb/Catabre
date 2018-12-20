@@ -95,7 +95,7 @@
 									&nbsp;
 										<div class="form-group" align="center">        
 											<div class="col-sm-offset-4 col-sm-10">
-												<button type="submit" name="registar" class="btn btn-primary">Registar</button>
+												<button type="submit" name="registar" class="btn btn-primary">Registrar</button>
 											</div>
 									</div>
 								</div>

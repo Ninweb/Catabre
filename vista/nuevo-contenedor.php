@@ -41,7 +41,7 @@
 									<h4 align="center" style="color: #fff;">Registrar Contenedor</h4>
 								</div>
 								<div class="card-body">
-									<form action="registro-contenedor.php" method="post">
+									<form action="../controlador/registro-contenedor.php" method="post">
 									<br>
 									<div class="col-md-12 offset-md-3">
 											<label for="num_referencia">N° Referencia</label>
@@ -69,9 +69,10 @@
 									</div>&nbsp;
 										<div class="form-group" align="center">        
 											<div class="col-sm-offset-4 col-sm-10">
-												<button type="submit" name="registar" class="btn btn-primary">Registar</button>
+												<button type="submit" name="registrar" class="btn btn-primary">Registrar</button>
 											</div>
 									</div>
+								</form>
 								</div>
 							</div>
 					</div>
@@ -100,6 +101,7 @@
 		    <!--script-->
 			 <?php
      			 include("script.php");
+
    			 ?>
 	</body>
 </html>
