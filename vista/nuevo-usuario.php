@@ -40,7 +40,7 @@
 									<h4 align="center" style="color: #fff;">Registrar Usuario</h4>
 								</div>
 								<div class="card-body">
-									<form action="registro-contenedor.php" method="post">
+									<form action="../modelo/registro-usuario.php" method="post">
 									<br>
 									<div class="col-md-12 offset-md-3">
 											<label for="nombre">Nombre</label>
@@ -49,7 +49,7 @@
 										 <div class="input-group-prepend">
 								          <i class="fas fa-user input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 								        </div>
-										<input required  autocomplete="off" type="text" name="nombre_ususario" class="col-md-5 form-control">
+										<input required  autocomplete="off" type="text" name="nombre" class="col-md-5 form-control">
 
 									</div><br>
 									<div class="col-md-12 offset-md-3">
@@ -79,7 +79,7 @@
 										 <div class="input-group-prepend">
 								          <i class="far fa-envelope input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 								        </div>
-										<input required  autocomplete="off" type="text" name="email" class="col-md-5 form-control">
+										<input required  autocomplete="off" type="email" name="email" class="col-md-5 form-control">
 
 									</div><br>
 									<div class="col-md-12 offset-md-3">
@@ -89,16 +89,18 @@
 										 <div class="input-group-prepend">
 								         <i class="fas fa-key input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 								        </div>
-										<input required  autocomplete="off" type="text" name="password" class="col-md-5 form-control">
+										<input required  autocomplete="off" type="password" name="password" class="col-md-5 form-control">
 
 									</div>
 									&nbsp;
 										<div class="form-group" align="center">        
 											<div class="col-sm-offset-4 col-sm-10">
-												<button type="submit" name="registar" class="btn btn-primary">Registrar</button>
+												<button type="submit" name="registrar" class="btn btn-primary">Registrar</button>
 											</div>
 									</div>
+									</form>
 								</div>
+
 							</div>
 					</div>
 				<!--fin de contenido-->

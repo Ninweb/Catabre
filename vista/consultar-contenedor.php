@@ -38,43 +38,63 @@
 									<h4 align="center" style="color: #fff;">Consultar Contenedor</h4>
 								</div>
 								<div class="card-body">
-									<table class="table table-bordered">
-										<thead>
-											<tr>
-												<th>#REFERENCIA</th>
-												<th>NOMBRE</th>
-												<th>MODIFICAR</th>
-												<th>ELIMINAR</th>
-											</tr>
-										</thead>
+
 									<?php
-										
 										include ("../modelo/conexion.php");
 										$consulta_contenedor=mysqli_query($db, "SELECT * FROM contenedor");
-										while ($fila=mysqli_fetch_array($consulta_contenedor)) {
+										if (mysqli_num_rows($consulta_contenedor)) {
 											?>
-												
-												    <tbody>
-												      <tr>
-												        <td><?php echo $fila['ref']; ?></td>
-												        <td><?php echo $fila['nombre']; ?></td>
-												         <td>
-								                              <a href="#" id="<?php echo $fila['id_contenedor'];?>" data-target="#editar-contenedor" class="btn btn-success" data-toggle="modal" data-id="<?php echo $fila['id_contenedor'];?>">
-								                              <i class="far fa-edit" aria-hidden="true"></i>
-								                              </a>
+												<table class="table table-bordered" style="text-align: center;">
+														<thead>
+															<tr>
+																<th>#REFERENCIA</th>
+																<th>NOMBRE</th>
+																<th>MODIFICAR</th>
+																<th>ELIMINAR</th>
+															</tr>
+														</thead>
+													<?php
+														
+														
+														while ($fila=mysqli_fetch_array($consulta_contenedor)) {
+															?>
+																
+																    <tbody>
+																      <tr>
+																        <td><?php echo $fila['ref']; ?></td>
+																        <td><?php echo $fila['nombre']; ?></td>
+																         <td>
+												                              <a href="#" id="<?php echo $fila['id_contenedor'];?>" data-target="#editar-contenedor" class="btn btn-success" data-toggle="modal" data-id="<?php echo $fila['id_contenedor'];?>">
+												                              <i class="far fa-edit" aria-hidden="true"></i>
+												                              </a>
 
-								                          </td>
-								                          <td>
-							                                  <a href="#" class="btn btn-danger"  data-toggle="modal" data-target="#eliminar-contenedor" data-book-id="<?php echo $fila['id_contenedor'];?>">
-							                                    <i class="fas fa-trash-alt" aria-hidden="true"></i>
-							                                  </a>
-                          								</td>
-												      </tr>
-												    </tbody>
+												                          </td>
+												                          <td>
+											                                  <a href="#" class="btn btn-danger"  data-toggle="modal" data-target="#eliminar-contenedor" data-book-id="<?php echo $fila['id_contenedor'];?>">
+											                                    <i class="fas fa-trash-alt" aria-hidden="true"></i>
+											                                  </a>
+				                          								</td>
+																      </tr>
+																    </tbody>
+															<?php
+														}
+													?>
+													</table>
 											<?php
+										}else{
+
+											?>
+					                        	<center>
+						                            <div class="alert alert-info">
+						                              <strong><i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i> 
+						                                No existen contenedores registrados
+						                              </strong> 
+						                            </div>
+					                          	</center>
+					                  		<?php
 										}
 									?>
-									</table>
+									
 								</div>
 							</div>
 					</div>
