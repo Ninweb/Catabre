@@ -3,10 +3,10 @@
 
     include('../modelo/pedido.php');
     include("../modelo/conexion.php");
-    /*
-    function modeloPedido($json){        
-        crearPedido($json);
-    }*/
+    
+    function modeloPedido($json,$db){        
+        crearPedido($json,$db);
+    }
 
     $numeroPedidos = $_POST['hidden-number-pedido'];
     
@@ -19,8 +19,8 @@
         "fechaSalida"=>$_POST['fecha_salida'],
         "fechaLlegada"=>$_POST['fecha_llegada'],
     ));
-    echo "<script>alert('soy una alerta 1');</script>";
-    crearPedido($jsonPedido,$db);
+    
+    modeloPedido($jsonPedido,$db);
     /*
     for($i = 1; $i <= $numeroPedidos ; $i++ ){
         if($i == 1){
