@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html>
  <head>
@@ -28,9 +25,17 @@
 			<!--contenido-->
 				<div id="content-wrapper">
 					<div class="container-fluid">
+						<ol class="breadcrumb">
+				          <li class="breadcrumb-item">
+				            <a href="nuevo-pedido.php" style="color: #17a2b8;"> Generar Pedido</a>
+				          </li>
+				           <li class="breadcrumb-item">
+				            <a href="consultar-pedido.php" style="color:#383838;"> Consultar Pedido</a>
+				          </li>
+				        </ol>
 						<div class="card col-md-5offset-md-3">
 							<div class="card-header" style="background-color: #17a2b8; color: #fff;">
-						   <h3 align="center">NUEVO PEDIDO</h3>
+						   <h3 align="center">Generar Pedido</h3>
 						 </div>
 
 						 <!-- INFORMACION DE REGISTRO -->
@@ -53,7 +58,7 @@
 											while ($row=mysqli_fetch_array($consulta_persona)) 
 												{
 													
-													echo "<option value=\"".$row['id_persona']."\">".$row['nombre_1'].' '.$row['apellido_1'];
+													echo "<option value=\"".$row['id_persona']."\">".$row['nombre'].' '.$row['apellido'];
 
 												}
 
@@ -73,7 +78,7 @@
 										<i class="fas fa-box-open input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 										<?php 
 											include ("../modelo/conexion.php");
-											$consulta_contenedor=mysqli_query($db, "SELECT * FROM contenedor WHERE contenedor.status='dispo'");
+											$consulta_contenedor=mysqli_query($db, "SELECT * FROM contenedor WHERE contenedor.status='disponible'");
 											echo "<select name=\"id_contenedor\" class='col-md-10 form-control' id='contenedor'  required>";
 											echo "<option></option>";
 											while ($row=mysqli_fetch_array($consulta_contenedor)) 
