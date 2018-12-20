@@ -10,22 +10,25 @@
         $pedido->idCliente;
         $pedido->idContenedor;
         $pedido->numeroReferecia;
+        $pedido->naviera;
         $pedido->fechaSalida;
         $pedido->fechaLlegada;*/
-        echo $pedido->fechaSalida."</br>";
-        echo $pedido->fechaLlegada."</br>";
+
         //puede  ser que en versiones mas recientes se coloquen las variables sin comillas
-        $sql = "INSERT INTO pedido VALUES (NULL,'$pedido->idCliente', '$pedido->idContenedor','$pedido->numeroReferecia','$pedido->fechaSalida','$pedido->fechaLlegada')";
+        $sql = "INSERT INTO pedido VALUES (NULL,'$pedido->idCliente', '$pedido->idContenedor','$pedido->numeroReferecia','$pedido->naviera','$pedido->fechaSalida','$pedido->fechaLlegada')";
   
     
         if (mysqli_query($db, $sql)) {
-            echo "Se guardo exitoxamente el pedidos";
+            echo "Se guardo exitoxamente el pedidos\n";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($db);
            
         }
 
-        mysqli_close($db);
+        $id=mysqli_insert_id($db);
+        
+        
+        return $id;
     }
         
 

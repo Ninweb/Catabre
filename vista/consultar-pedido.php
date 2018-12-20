@@ -42,34 +42,37 @@
 						 	<table class="table table-bordered">
 										<thead>
 											<tr>
-												<th>#REFERENCIA</th>
-												<th>NOMBRE</th>
-												<th>MODIFICAR</th>
-												<th>ELIMINAR</th>
+												<th>N° Referencia</th>
+												<th>Contenedor</th>
+												<th>Presentación</th>
+												<th>Producto</th>
+												<th>Especie</th>
+												<th>Color</th>
+												<th>Peso</th>
+												<th>Tamaño</th>
+												<th>Master</th>
+												<th>Total</th>
 											</tr>
 										</thead>
 									<?php
 										
 										include ("../modelo/conexion.php");
-										$consulta_contenedor=mysqli_query($db, "SELECT * FROM contenedor");
-										while ($fila=mysqli_fetch_array($consulta_contenedor)) {
+										$consulta_pedido=mysqli_query($db, "SELECT * FROM contenedor,pedido,producto,persona WHERE producto.id_pedido=pedido.id_pedido AND contenedor.id_contenedor=pedido.id_pedido AND persona.id_persona=pedido.id_persona");
+										while ($fila=mysqli_fetch_array($consulta_pedido)) {
 											?>
 												
 												    <tbody>
 												      <tr>
-												        <td><?php echo $fila['ref']; ?></td>
+												      	<td><?php echo $fila['num_referencia']; ?></td>
 												        <td><?php echo $fila['nombre']; ?></td>
-												         <td>
-								                              <a href="#" id="<?php echo $fila['id_contenedor'];?>" data-target="#editar-contenedor" class="btn btn-success" data-toggle="modal" data-id="<?php echo $fila['id_contenedor'];?>">
-								                              <i class="far fa-edit" aria-hidden="true"></i>
-								                              </a>
-
-								                          </td>
-								                          <td>
-							                                  <a href="#" class="btn btn-danger"  data-toggle="modal" data-target="#eliminar-contenedor" data-book-id="<?php echo $fila['id_contenedor'];?>">
-							                                    <i class="fas fa-trash-alt" aria-hidden="true"></i>
-							                                  </a>
-                          								</td>
+												        <td><?php echo $fila['presentacion']; ?></td>
+												        <td><?php echo $fila['producto']; ?></td>
+												        <td><?php echo $fila['especie']; ?></td>
+												        <td><?php echo $fila['color']; ?></td>
+												        <td><?php echo $fila['peso']; ?></td>
+												        <td><?php echo $fila['tamano']; ?></td>
+												        <td><?php echo $fila['master']; ?></td>
+												        <td><?php echo $fila['total']; ?></td>
 												      </tr>
 												    </tbody>
 											<?php
