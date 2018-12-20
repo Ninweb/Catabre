@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html>
  <head>
@@ -28,9 +25,17 @@
 			<!--contenido-->
 				<div id="content-wrapper">
 					<div class="container-fluid">
+						<ol class="breadcrumb">
+				          <li class="breadcrumb-item">
+				            <a href="nuevo-pedido.php" style="color: #17a2b8;"> Generar Pedido</a>
+				          </li>
+				           <li class="breadcrumb-item">
+				            <a href="consultar-pedido.php" style="color:#383838;"> Consultar Pedido</a>
+				          </li>
+				        </ol>
 						<div class="card col-md-5offset-md-3">
 							<div class="card-header" style="background-color: #17a2b8; color: #fff;">
-						   <h3 align="center">NUEVO PEDIDO</h3>
+						   <h3 align="center">Generar Pedido</h3>
 						 </div>
 
 						 <!-- INFORMACION DE REGISTRO -->
@@ -73,7 +78,7 @@
 										<i class="fas fa-box-open input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 										<?php 
 											include ("../modelo/conexion.php");
-											$consulta_contenedor=mysqli_query($db, "SELECT * FROM contenedor WHERE contenedor.status='dispo'");
+											$consulta_contenedor=mysqli_query($db, "SELECT * FROM contenedor WHERE contenedor.status='disponible'");
 											echo "<select name=\"id_contenedor\" class='col-md-10 form-control' id='contenedor'  required>";
 											echo "<option></option>";
 											while ($row=mysqli_fetch_array($consulta_contenedor)) 
@@ -89,14 +94,14 @@
 								<br>
 
 								<!-- NUMERO DE REFERENCIA -->
-								<div class="col-md-6 offset-md-3">
+								<div class="col-md-6 offset-md-3" style="display:none;">
 									<label for="num_referencia">N° de Referencia</label>
 									<div class="input-group-prepend">
 										<i class="fas fa-hashtag input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 										<input id="num_referencia" required="" autocomplete="off"  type="text" name="num_referencia" class="col-md-10 form-control" required>
 									</div>				
 								 </div>
-								<br>
+								<!-- <br> -->
 								<!-- NUMERO DE REFERENCIA -->
 
 							
@@ -131,14 +136,14 @@
 						          <label for="salida">Fecha de sálida</label>
 						        </div>	
 						        <div class="input-group-prepend col-md-6">
-											<label for="llegada">Fecha de llegada</label>
+											<label for="llegada" style="margin-left:-20px;">Fecha aproximada de llegada</label>
 						        </div>
 					        </div>	
 									
 									<div class="input-group-prepend">
 					          <i class="fas fa-calendar-alt input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-					          <input required autocomplete="off"  type="date" name="fecha_salida" id="salida" class="col-md-5 form-control" placeholder="" min="<?php echo date("Y-m-d"); ?>">
-					          <input required autocomplete="off"  type="date" name="fecha_llegada" id="llegada" class="col-md-5 form-control" placeholder="">
+					          <input required autocomplete="off" placeholder="<?php echo ''; ?>"  type="date" name="fecha_salida" id="salida" class="col-md-5 form-control" placeholder="" min="<?php echo date("Y-m-d"); ?>">
+					          <input required autocomplete="off" placeholder="<?php echo ''; ?>"  type="date" name="fecha_llegada" id="llegada" class="col-md-5 form-control" placeholder="">
 					        </div>	
 								</div>
 								<!--- FECHA DE SALIDA Y LLEGADA -->
@@ -151,6 +156,20 @@
 										<div class="card-header fondo">
 											<h4 align="center" style="color: #fff;">Tipo de Pedido</h4>
 										</div>
+
+										<!--BOTONES Y CONTADOR-->
+										<div id="subpanel">
+											<div align="left" id="contador">
+												<p>Pedidos disponibles: </p>
+												<p id="num-contador"></p>
+											</div>
+											<div align="right" id="boton">
+												<button type="button" class="btn btn-success" onclick="nuevo_pedido()"><i class="fas fa-cart-plus"></i><span class="desaparecer_muy_grande">&nbsp;Nuevo pedido</span></button>
+											</div>
+										</div>
+										<!--BOTONES Y CONTADOR-->
+
+										<div align="center" id="vacio-mensaje">No hay ningun pedido generado. Haga click en <b>Nuevo Pedido</b> para generar uno nuevo.</div>
 
 										<div class="card-body tabla-pedido" id="tabla-pedido">
 											<div class="info">
@@ -200,7 +219,7 @@
 												</div>
 
 												<div class="col-md-6 alinear_izquierda espacio_margen">
-													<label for="size">Tamaño</label>
+													<label for="size">Tamaño: ancho x alto</label>
 													<div class="input-group-prepend">
 				          					<i class="fas fa-arrows-alt-h input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 				          					<input id="size" required autocomplete="off" type="text" name="size" class="col-md-10 form-control">
@@ -226,15 +245,15 @@
 												
 												<!--BOTONES-->
 												<div align="center">
-													<button type="button" class="btn btn-danger" onclick="eliminar_pedido()"><i class="fas fa-minus-square"></i><span class="desaparecer_muy_grande">&nbsp;Eliminar</span></button>
-												&nbsp;
-													<button id="" type="button" class="btn btn-success" ><i class="fas fa-cart-plus"></i><span class="desaparecer_muy_grande">&nbsp;Agregar</span></button>
+													<button type="button" class="btn btn-danger" onclick="eliminar_pedido()"><i class="fas fa-minus-square"></i><span class="desaparecer_muy_grande">&nbsp;Eliminar pedido</span></button>
 												</div>
 												<!--BOTONES-->
 
 											</div>
 											&nbsp;
 										</div>
+
+										<div id="nuevos-pedidos"></div>
 									</div>
 									<br>
 
@@ -244,7 +263,7 @@
 
 									<div class="form-group" align="center">        
 										<div class="col-sm-offset-4 col-sm-10">
-											<button type="submit" name="generar" onclick="enviarDatosAjax();" class="btn btn-primary">Generar Pedido</button>
+											<button type="submit" name="generar" class="btn btn-primary">Generar Pedido</button>
 										</div>
 									</div>
 
