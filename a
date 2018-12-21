@@ -1,0 +1,55 @@
+[33mbcdcc86[m[33m ([m[1;36mHEAD -> [m[1;32mdesarrollo[m[33m, [m[1;31morigin/desarrollo[m[33m)[m modidicacion
+[33mc41cf7a[m consultar-pedido,nuevo-pedido
+[33mc5e8b78[m correcion de base de datos
+[33m07954d0[m otro error
+[33m4563aa2[m un error
+[33m484bca3[m exportacion de base de datos , y adelanto AJAX
+[33m9d3c0e6[m Merge branch 'desarrollo' of https://github.com/Ninweb/Catabre into desarrollo
+[33m1a9c754[m edicion css
+[33m812a5bc[m insercion completa de pedidos y productos
+[33mc61510a[m Merge branch 'desarrollo' of https://github.com/Ninweb/Catabre into desarrollo
+[33m7a0dc5b[m modulo contenedor
+[33m9eaef6d[m archivos php y js. tabla de productos db
+[33m2f3f385[m cambios en el formato de fecha de la insercion
+[33maa3aecb[m insercion de pedidos en bd
+[33m70b824c[m modificacion modelo
+[33mc4fa15c[m envio de JSON a modelo
+[33m178ccd0[m suerte
+[33m72f7f67[m cambio en recibimiento de paramentros
+[33m5c78bc7[m cambio en recibimiento de paramentros
+[33mbb50db0[m js act
+[33m8e00474[m Merge branch 'desarrollo' of https://github.com/Ninweb/Catabre into desarrollo
+[33m4e2335a[m cambio controlador
+[33m0409e92[m js actualizado
+[33mf1bdca7[m act js
+[33mb72c288[m elimine el archivo prueba de conexion
+[33m4823742[m Merge branch 'desarrollo' of https://github.com/Ninweb/Catabre into desarrollo
+[33m6a6f3f3[m conexion y nuevo-pedido
+[33ma149a0a[m creacion controlador y modelo , pedido
+[33md04b631[m creacion de controlador y modelo , pedido
+[33md0c0547[m bd
+[33mfd6a033[m tabla productos db
+[33m1a1b6a4[m base de datos
+[33me3d1fc6[m Merge branch 'desarrollo' of https://github.com/Ninweb/Catabre into desarrollo
+[33m304b9e6[m edicion archivo nuevo pedido
+[33m9b84c9c[m nuevo-pedido,variables,modelo
+[33mc9aaf57[m Merge branch 'desarrollo' of https://github.com/Ninweb/Catabre into desarrollo
+[33m0dc0b25[m nuevo-contenedor,nuevo-usuario,consultar-usuario,consultar-contenedor
+[33mc76077d[m Merge branch 'desarrollo' of https://github.com/Ninweb/Catabre into desarrollo
+[33m4e65a04[m cambio en interaccion de tabla pedido
+[33m0e5e47f[m menu,nuevo-contenedor,nuevo-usuario,plantilla
+[33m320e907[m modif menu
+[33md8ded1c[m prueba de commit
+[33m7c90534[m Delete estilos.css
+[33m54aa538[m integracion de jquery y js de interaccion de tabla
+[33m24d1649[m llamada al archivo general.css
+[33mb3c2b2b[m cambio de nombre de css a general y estilos
+[33m815ab63[m js de interaccion para tabla de pedido
+[33ma62a7a1[m cambio de vista de pedido
+[33m131b64a[m eliminacion de html
+[33mcd5a8ff[m este es un commit
+[33mf4b8b05[m hola
+[33md6b54c8[m[33m ([m[1;31morigin/En-desarrollo[m[33m)[m Add files via upload
+[33m80651a1[m subida
+[33m5b57a0b[m Creacion index.php
+[33me0cc497[m Initial commit

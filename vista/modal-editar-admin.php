@@ -9,7 +9,7 @@
                            <span class="sr-only">Cerrar</span>
                     </button>
                     <h5 class="modal-title" id="myModalLabel">
-                       Editar Adminitrador
+                       Editar Adminitrad
                     </h5>
                 </div>
                 
