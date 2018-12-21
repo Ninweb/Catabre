@@ -22,8 +22,8 @@
     $fechaSalida=$_POST['fecha_salida'];
     $fechaLlegada=$_POST['fecha_llegada'];
 
-    $numeroPedidos = $_POST['hidden-number-pedido'] - 1;
-    // $numeroPedidos = $_POST['hidden-number-pedido']+1;
+    // $numeroPedidos = $_POST['hidden-number-pedido'] - 1;
+    $numeroPedidos = $_POST['hidden-number-pedido'];
     
 
 
