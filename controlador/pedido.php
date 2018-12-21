@@ -1,5 +1,25 @@
 
 <?php
+    $idContenedor=$_POST['id_contenedor'];
+    $idCliente=$_POST['id_persona'];
+    $naviera=$_POST['naviera'];
+    $destino=$_POST['destino'];
+    $fechaSalida=$_POST['fecha_salida'];
+    $fechaLlegada=$_POST['fecha_llegada'];
+    
+    echo "<br>";
+    echo $idContenedor;
+    echo "<br>";
+    echo $idCliente;
+    echo "<br>";
+    echo $naviera;
+    echo "<br>";
+    echo $destino;
+    echo "<br>";
+    echo $fechaSalida;
+    echo "<br>";
+    echo $fechaLlegada;
+    /*
     include('../modelo/pedido.php');
     include('../modelo/producto.php');
     include("../modelo/conexion.php");
@@ -15,7 +35,6 @@
 
     $idContenedor=$_POST['id_contenedor'];
     $idCliente=$_POST['id_persona'];
-    $numeroReferecia=$_POST['num_referencia'];
     $naviera=$_POST['naviera'];
     $destino=$_POST['destino'];
     $fechaSalida=$_POST['fecha_salida'];
@@ -26,7 +45,6 @@
     $jsonPedido =json_encode(array(
         "idContenedor"=>$idContenedor,
         "idCliente"=>$idCliente,
-        "numeroReferecia"=>$numeroReferecia,
         "naviera"=>$naviera,
         "destino"=>$destino,
         "fechaSalida"=>$fechaSalida,
@@ -66,7 +84,7 @@
 
         echo "si se pudo";
     }
-    /*
+    
     
     
     
