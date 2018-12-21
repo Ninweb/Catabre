@@ -35,6 +35,15 @@
 										<input required  autocomplete="off" type="text" name="nombre" value="<?php echo $resultados['nombre']?>" class="col-md-5 form-control">
 
 									</div>&nbsp;
+									<div class="input-group col-md-12 offset-md-3">
+
+										<div class="form-check mb-2 mr-sm-2">
+										    <label class="form-check-label">
+										      <input class="form-check-input" type="checkbox" name="status" value="disponible"> Status-Diposible
+										    </label>
+										 </div>
+									</div>
+									&nbsp;
 										<div class="form-group" align="center">        
 											<div class="col-sm-offset-4 col-sm-10">
 												<button type="submit" name="modificar" class="btn btn-primary">Modificar</button>

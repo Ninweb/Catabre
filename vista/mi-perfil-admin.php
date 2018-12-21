@@ -46,7 +46,7 @@
 								if (mysqli_num_rows($consulta_usuario)) {
 									?>
 									<table class="table table-bordered" style="text-align: center;">
-										<thead >
+										<thead class="alert-dark">
 											<tr>
 												<th>Nombre</th>
 												<th>Apellido</th>

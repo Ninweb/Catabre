@@ -8,6 +8,7 @@
    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="vista/logo/logo-dark.ico">
     <title>CATABRE</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +41,7 @@
               <input type="password" name="clave" placeholder="Contraseña" class="col-md-8 offset-md-2 form-control espacio_margen" autocomplete="off">
               <br>
               <button class="col-md-8 offset-md-2 btn btn-info" type="submit" name="iniciar_sesion">Iniciar Sesión</button>
-              <div align="center" style="margin: :5px;">
+              <div align="center" style="padding-top:10px;">
                 <a href="#" style="color: #ffffff;">¿Ha olvidado su contraseña?</a>
               </div>
             </form>

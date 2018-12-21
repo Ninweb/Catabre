@@ -38,7 +38,57 @@
 			<!--contenido-->
 				<div id="content-wrapper">
 					<div class="container-fluid">
+						<div class="card">
+								<div class="card-header" style="background-color: #f96332; color: #fff;">
+									<h4 align="center" style="color: #fff;">Contenedores</h4>
+								</div>
 
+									<?php
+										include ("../modelo/conexion.php");
+										$consulta_contenedor=mysqli_query($db, "SELECT * FROM contenedor");
+										if (mysqli_num_rows($consulta_contenedor)) {
+											?>
+												<table class="table table-bordered" style="text-align: center;">
+														<thead class="alert-dark">
+															<tr>
+																<th>#REFERENCIA</th>
+																<th>NOMBRE</th>
+																<th>STATUS</th>
+															</tr>
+														</thead>
+													<?php
+														
+														
+														while ($fila=mysqli_fetch_array($consulta_contenedor)) {
+															?>
+																
+																    <tbody>
+																      <tr>
+																        <td><?php echo $fila['ref']; ?></td>
+																        <td><?php echo $fila['nombre']; ?></td>
+																		<td><?php echo $fila['status']; ?></td>
+																      </tr>
+																    </tbody>
+															<?php
+														}
+													?>
+													</table>
+											<?php
+										}else{
+
+											?>
+					                        	<center>
+						                            <div class="alert alert-info">
+						                              <strong><i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i> 
+						                                No existen contenedores registrados
+						                              </strong> 
+						                            </div>
+					                          	</center>
+					                  		<?php
+										}
+									?>
+									
+							</div>
 					</div>
 				<!--fin de contenido-->
 

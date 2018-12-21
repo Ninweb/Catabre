@@ -25,8 +25,8 @@
 
 			<!--menu--->
 			<?php
-				$page='Pedido';
-				include ('menu.php');
+				$page='Historial de Pedidos';
+				include ('menu-user.php');
 			?>
 
 			<!--menu fin-->
@@ -36,25 +36,16 @@
 			<!--contenido-->
 				<div id="content-wrapper">
 					<div class="container-fluid">
-						<ol class="breadcrumb">
-				          <li class="breadcrumb-item">
-				            <a href="nuevo-pedido.php" style="color:#383838;"> Generar Pedido</a>
-				          </li>
-				           <li class="breadcrumb-item">
-				           	 <a href="consultar-pedido.php" style="color: #17a2b8;" > Consultar Pedido</a>
-				          	</li>
-				          	
-				        </ol>
 						
 						 <!-- INFORMACION -->
 						 <div class="card-body">
 						 	<div class="card-header" style="background-color: #f96332; color: #fff;">
-									<h4 align="center" style="color: #fff;">Consultar Pedido</h4>
+									<h4 align="center" style="color: #fff;">Historial de Pedidos</h4>
 							</div>
 
 							<?php
 								include ("../modelo/conexion.php");
-								$consulta_pedido=mysqli_query($db, "SELECT * FROM contenedor,pedido,producto WHERE producto.id_pedido=pedido.id_pedido AND contenedor.id_contenedor=pedido.id_contenedor");	
+								$consulta_pedido=mysqli_query($db, "SELECT * FROM contenedor,pedido,producto,persona WHERE producto.id_pedido=pedido.id_pedido AND contenedor.id_contenedor=pedido.id_contenedor AND persona.id_persona=pedido.id_persona AND persona.id_persona='".$fila['id_persona']."'");	
 								if (mysqli_num_rows($consulta_pedido)>0) {
 
 										?>

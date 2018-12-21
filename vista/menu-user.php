@@ -19,6 +19,19 @@
             </a>
         </li>
        
+       <li class="nav-item">
+            <a class="nav-link" <?php if ($page=="Historial de Pedidos"){
+                    ?>
+                    style="color: #383838;"
+                    <?php
+                  }
+                ?>  
+
+                href="historia-pedidos.php">
+              <i class="fas fa-list-ul"></i>
+                  <span>Historial de Pedidos</span>
+            </a>
+        </li>
       
         <li class="nav-item">
              <a class="nav-link" <?php if ($page=="Contenedores"){

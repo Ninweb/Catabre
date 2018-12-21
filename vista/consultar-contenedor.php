@@ -48,7 +48,6 @@
 								<div class="card-header" style="background-color: #f96332; color: #fff;">
 									<h4 align="center" style="color: #fff;">Consultar Contenedor</h4>
 								</div>
-								<div class="card-body">
 
 									<?php
 										include ("../modelo/conexion.php");
@@ -56,10 +55,11 @@
 										if (mysqli_num_rows($consulta_contenedor)) {
 											?>
 												<table class="table table-bordered" style="text-align: center;">
-														<thead>
+														<thead class="alert-dark">
 															<tr>
 																<th>#REFERENCIA</th>
 																<th>NOMBRE</th>
+																<th>STATUS</th>
 																<th>MODIFICAR</th>
 																<th>ELIMINAR</th>
 															</tr>
@@ -74,6 +74,7 @@
 																      <tr>
 																        <td><?php echo $fila['ref']; ?></td>
 																        <td><?php echo $fila['nombre']; ?></td>
+																        <td><?php echo $fila['status']; ?></td>
 																         <td>
 												                              <a href="#" id="<?php echo $fila['id_contenedor'];?>" data-target="#editar-contenedor" class="btn btn-success" data-toggle="modal" data-id="<?php echo $fila['id_contenedor'];?>">
 												                              <i class="far fa-edit" aria-hidden="true"></i>
@@ -106,7 +107,6 @@
 										}
 									?>
 									
-								</div>
 							</div>
 					</div>
 				<!--fin de contenido-->
