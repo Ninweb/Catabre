@@ -152,9 +152,15 @@
 
 										<!--BOTONES Y CONTADOR-->
 										<div id="subpanel">
-											<div align="left" id="contador">
-												<p>Pedidos disponibles: </p>
-												<p id="num-contador"></p>
+											<div id="counters">
+												<div align="left" id="contador">
+													<p>Pedidos disponibles: </p>
+													<p id="num-contador"></p>
+												</div>
+												<div align="left" id="contador">
+													<p>Pedidos realizados: </p>
+													<p id="numero_pedido"></p>
+												</div>
 											</div>
 											<div align="right" id="boton">
 												<button type="button" class="btn btn-success" onclick="nuevo_pedido()"><i class="fas fa-cart-plus"></i><span class="desaparecer_muy_grande">&nbsp;Nuevo pedido</span></button>
@@ -166,7 +172,7 @@
 
 										<div class="card-body tabla-pedido" id="tabla-pedido">
 											<div class="info">
-												<div id="id_pedido">
+												<div id="id_pedido" style="display:none;">
 													<p>Pedido número: </p>
 													<p id="numero_pedido"></p>
 												</div>

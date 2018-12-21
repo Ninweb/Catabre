@@ -169,13 +169,15 @@ input[type='email']{
 	width: 100%;
 	padding:0 20px;
 }
-#subpanel #contador {
-	display:flex;
+#subpanel #counters {
 	width: 100%;
-	margin-top:5px;
 	font-weight: 600;
 }
-#contador #num-contador {
+#counters #contador {
+	display: flex;
+	margin: 0px;
+}
+#contador #num-contador, #contador #numero_pedido {
 	margin-left: 10px;
 }
 #subpanel #boton {
