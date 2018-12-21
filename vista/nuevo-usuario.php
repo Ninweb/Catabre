@@ -40,7 +40,7 @@
 									<h4 align="center" style="color: #fff;">Registrar Usuario</h4>
 								</div>
 								<div class="card-body">
-									<form action="../modelo/registro-usuario.php" method="post">
+									<form id="formularioUsuario">
 									<br>
 									<div class="col-md-12 offset-md-3">
 											<label for="nombre">Nombre</label>
@@ -99,6 +99,9 @@
 											</div>
 									</div>
 									</form>
+
+									<div id="mostrarDatos">
+									</div>
 								</div>
 
 							</div>

@@ -1,28 +1,28 @@
 <?php
-	include ("../modelo/conexion.php");
-
-	if (isset($_POST['registrar'])) {
-
-		$nombre=$_POST['nombre'];
-		$apellido=$_POST['apellido'];
-		$empresa=$_POST['empresa'];
-		$email=$_POST['email'];
-		$password=$_POST['password'];
+	include ("conexion.php");
 
 
-		$registrar=mysqli_query($db,"INSERT INTO usuario(email,clave,tipo) VALUES('".$email."','".$password."','user')");
-		
-		$id=mysqli_insert_id($db);
+	$nombre=$_POST['nombre'];
+	$apellido=$_POST['apellido'];
+	$empresa=$_POST['empresa'];
+	$email=$_POST['email'];
+	$password=$_POST['password'];
 
 
-		$registrar=mysqli_query($db,"INSERT INTO persona(id_usuario,nombre,apellido,empresa) VALUES('".$id."','".$nombre."','".$apellido."','".$empresa."')");
-		
-		
+	$registrar=mysqli_query($db,"INSERT INTO usuario(email,clave,tipo) VALUES('".$email."','".$password."','user')");
+	
+	$id=mysqli_insert_id($db);
+
+
+	$registrar=mysqli_query($db,"INSERT INTO persona(id_usuario,nombre,apellido,empresa) VALUES('".$id."','".$nombre."','".$apellido."','".$empresa."')");
+	
+	
 
 
 
-		echo "true";
-	}
+	echo "<script>swal('Guardado!', 'Nuevo Usuario', 'success');</script>";
+    echo "<script>document.getElementById('formularioUsuario').reset();</script>";
+
 	
 
 
