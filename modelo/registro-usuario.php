@@ -7,6 +7,7 @@
 	$empresa=$_POST['empresa'];
 	$email=$_POST['email'];
 	$password=$_POST['password'];
+	$password=md5($password);
 
 
 	$registrar=mysqli_query($db,"INSERT INTO usuario(email,clave,tipo) VALUES('".$email."','".$password."','user')");

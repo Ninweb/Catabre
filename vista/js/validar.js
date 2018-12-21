@@ -32,7 +32,7 @@
     	});
 
 
-          /*editar usuario*/
+          /*editar admin*/
 
             $(document).ready(function(){
 	            $('#editar-admin').on('show.bs.modal', function (e) {
@@ -65,3 +65,15 @@
             });
 
     	});
+
+    	/*mostrar contraseña*/
+
+    	$(document).ready(function () {
+		  $('#mostrar_contrasena').click(function () {
+		    if ($('#mostrar_contrasena').is(':checked')) {
+		      $('#contrasena').attr('type', 'text');
+		    } else {
+		      $('#contrasena').attr('type', 'password');
+		    }
+		  });
+		});

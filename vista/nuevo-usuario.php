@@ -98,9 +98,13 @@
 										 <div class="input-group-prepend">
 								         <i class="fas fa-key input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 								        </div>
-										<input required  autocomplete="off" type="password" name="password" class="col-md-5 form-control">
-
+										<input required  autocomplete="off" type="password" name="password"  id="contrasena" class="col-md-5 form-control">
+										 <div style="margin-top:15px;">
+									          <input style="margin-left:20px;" type="checkbox" id="mostrar_contrasena" title="clic para mostrar contraseña"/>
+									          &nbsp;&nbsp;Mostrar Contraseña</div>
+									      </div>
 									</div>
+									
 									&nbsp;
 										<div class="form-group" align="center">        
 											<div class="col-sm-offset-4 col-sm-10">

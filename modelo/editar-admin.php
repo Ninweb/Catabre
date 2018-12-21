@@ -5,7 +5,7 @@
     $consulta=mysqli_query($db, "SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND usuario.id_usuario='".$id_usuario."'");
   	$resultados=mysqli_fetch_array($consulta);
 
-
+  
   	?>
 
   								<form action="../modelo/procesar-editar-admin.php" method="post">
@@ -58,7 +58,7 @@
 										 <div class="input-group-prepend">
 								         <i class="fas fa-key input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 								        </div>
-										<input required  autocomplete="off" type="text" name="password" value="<?php echo $resultados['clave'] ?>" class="col-md-7 form-control">
+										<input required  autocomplete="off" type="text" name="password" value="<?php echo $decoded ?>" class="col-md-7 form-control">
 
 									</div>
 									&nbsp;
