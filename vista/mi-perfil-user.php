@@ -26,7 +26,9 @@
 			<!--menu--->
 			<?php
 
-				include ('menu.php');
+				$page='Mi Perfil';
+
+				include ('menu-user.php');
 			?>
 
 			<!--menu fin-->

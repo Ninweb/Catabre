@@ -1,3 +1,14 @@
+<?php
+    session_start();
+			include ("../modelo/conexion.php");
+    if(!isset($_SESSION['id_usuario'])) 
+    {
+          echo "<script>window.location.href='../index.php'</script>";
+
+      exit();
+      session_destroy(); 
+}
+?>
 <!DOCTYPE html>
 <html>
  <head>
