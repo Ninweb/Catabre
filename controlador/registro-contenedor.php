@@ -1,14 +1,14 @@
 <?php
 	include ("../modelo/conexion.php");
-	if (isset($_POST['registrar'])) {
+	$num_referencia=$_POST['num_referencia'];
+	$nombre=$_POST['nombre'];
 
-		$num_referencia=$_POST['num_referencia'];
-		$nombre=$_POST['nombre'];
-
-		$registrar=mysqli_query($db,"INSERT INTO contenedor(ref,nombre) VALUES('".$num_referencia."','".$nombre."')");
-			
-		echo "mostrar modal exito";
-	}
+	$registrar=mysqli_query($db,"INSERT INTO contenedor(ref,nombre,status) VALUES('".$num_referencia."','".$nombre."','disponible')");
+		
+	
+	echo "<script>swal('Guardado!', 'Nuevo Contenedor', 'success');</script>";
+    echo "<script>document.getElementById('formularioContenedor').reset();</script>";
+	
 
 	
 
