@@ -7,6 +7,7 @@ const top_pedido = 3;
 var number_pedido = 0;
 
 $('#tabla-pedido').hide()
+$('.num-ped').hide()
 
 document.getElementById('numero_pedido').innerHTML = cantidad_pedido;
 document.getElementById('num-contador').innerHTML = pedidos_disponibles;
@@ -14,9 +15,10 @@ document.getElementById('num-contador').innerHTML = pedidos_disponibles;
 //NUEVO PEDIDO
 function nuevo_pedido(){ 
   $('#tabla-pedido').show() 
-
+  
 
 	if(cantidad_pedido <= top_pedido){
+    $('.num-ped').show()
     aux = cantidad_pedido;
 
     //IDs Y NAMEs INDEPENDIENTES
@@ -80,7 +82,8 @@ function nuevo_pedido(){
   if(pedidos_disponibles==0){
     alert('Ha llegado al límite de pedidos en este contenedor')    
   }
-
+  
+  $('.num-ped').show()
   document.getElementById('hidden-number-pedido').value = cantidad_pedido;
   
 }

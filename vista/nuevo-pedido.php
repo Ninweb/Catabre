@@ -157,7 +157,7 @@
 													<p>Pedidos disponibles: </p>
 													<p id="num-contador"></p>
 												</div>
-												<div align="left" id="contador">
+												<div align="left" id="contador" class="num-ped">
 													<p>Pedidos realizados: </p>
 													<p id="numero_pedido"></p>
 												</div>
