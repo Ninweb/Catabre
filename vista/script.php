@@ -4,4 +4,5 @@
     <script src="js/ajaxPedido.js"></script>
     <script src="js/validar.js"></script>
     <script src="js/tabla-constructor.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
