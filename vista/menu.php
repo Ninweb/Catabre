@@ -52,7 +52,7 @@
             <span>Mi Perfil</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal" href="#">
             <i class="fas fa-power-off"></i>
             <span>Cerrar Sesión</span></a>
         </li>
