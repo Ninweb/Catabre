@@ -94,13 +94,13 @@
 								<br>
 
 								<!-- NUMERO DE REFERENCIA -->
-								<div class="col-md-6 offset-md-3" style="display:none;">
+								<!-- <div class="col-md-6 offset-md-3" style="display:none;">
 									<label for="num_referencia">N° de Referencia</label>
 									<div class="input-group-prepend">
 										<i class="fas fa-hashtag input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 										<input id="num_referencia" required="" autocomplete="off"  type="text" name="num_referencia" class="col-md-10 form-control" required>
 									</div>				
-								 </div>
+								 </div> -->
 								<!-- <br> -->
 								<!-- NUMERO DE REFERENCIA -->
 
@@ -182,7 +182,7 @@
 													<label for="pedido">Presentación</label>
 													<div class="input-group-prepend">
 				          					<i class="fas fa-gift input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-				          					<input id="presentacion" required  autocomplete="off" type="text" name="presentacion" class="col-md-10 form-control">
+				          					<input id="presentacion"   autocomplete="off" type="text" name="presentacion" class="col-md-10 form-control">
 					        				</div>
 												</div>
 
@@ -190,7 +190,7 @@
 													<label for="producto">Tipo de producto</label>
 													<div class="input-group-prepend">
 				          					<i class="fas fa-shopping-cart input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-				          					<input id="producto" required autocomplete="off" type="text" name="producto" class="col-md-10 form-control">
+				          					<input id="producto"  autocomplete="off" type="text" name="producto" class="col-md-10 form-control">
 					        				</div>	
 												</div>
 
@@ -198,7 +198,7 @@
 													<label for="especie">Especie</label>
 													<div class="input-group-prepend">
 				          					<i class="fas fa-water input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-				          					<input id="especie" required  autocomplete="off" type="text" name="especie" class="col-md-10 form-control">
+				          					<input id="especie"   autocomplete="off" type="text" name="especie" class="col-md-10 form-control">
 					        				</div>
 												</div>
 
@@ -206,7 +206,7 @@
 													<label for="color">Color</label>
 													<div class="input-group-prepend">
 				          					<i class="fas fa-palette input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-				          					<input id="color" required  autocomplete="off" type="text" name="color" class="col-md-10 form-control">
+				          					<input id="color"   autocomplete="off" type="text" name="color" class="col-md-10 form-control">
 					        				</div>
 												</div>
 
@@ -214,7 +214,7 @@
 													<label for="peso">Peso</label>
 													<div class="input-group-prepend">
 				          					<i class="fas fa-weight input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-				          					<input id="peso" required  autocomplete="off" type="text" name="peso" class="col-md-10 form-control">
+				          					<input id="peso"   autocomplete="off" type="text" name="peso" class="col-md-10 form-control">
 					        				</div>
 												</div>
 
@@ -222,7 +222,7 @@
 													<label for="size">Tamaño: ancho x alto</label>
 													<div class="input-group-prepend">
 				          					<i class="fas fa-arrows-alt-h input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-				          					<input id="size" required autocomplete="off" type="text" name="size" class="col-md-10 form-control">
+				          					<input id="size"  autocomplete="off" type="text" name="size" class="col-md-10 form-control">
 					        				</div>
 												</div>
 
@@ -230,7 +230,7 @@
 													<label for="master">Master</label>
 													<div class="input-group-prepend">
 				          					<i class="fas fa-calendar-alt input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-				          					<input id="master" required autocomplete="off" type="text" name="master" class="col-md-10 form-control">
+				          					<input id="master"  autocomplete="off" type="text" name="master" class="col-md-10 form-control">
 					        				</div>
 												</div>
 
@@ -238,14 +238,15 @@
 													<label for="total">Total</label>
 													<div class="input-group-prepend">
 				          					<i class="fas fa-calendar-alt input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-				          					<input id="total" required autocomplete="off" type="text" name="total" class="col-md-10 form-control">
+				          					<input id="total"  autocomplete="off" type="text" name="total" class="col-md-10 form-control">
 					        				</div>
 												</div>
 												&nbsp;
 												
 												<!--BOTONES-->
 												<div align="center">
-													<button type="button" class="btn btn-danger" onclick="eliminar_pedido()"><i class="fas fa-minus-square"></i><span class="desaparecer_muy_grande">&nbsp;Eliminar pedido</span></button>
+													<input type="button" class="btn btn-danger borrar" value="Eliminar pedido">
+													<!-- <i class="fas fa-minus-square"></i><span class="desaparecer_muy_grande"></span> -->
 												</div>
 												<!--BOTONES-->
 
