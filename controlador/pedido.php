@@ -1,11 +1,18 @@
 
 <?php
+
+    include('../modelo/pedido.php');
+    include('../modelo/producto.php');
+    include("../modelo/conexion.php");
+
     $idContenedor=$_POST['id_contenedor'];
     $idCliente=$_POST['id_persona'];
     $naviera=$_POST['naviera'];
     $destino=$_POST['destino'];
     $fechaSalida=$_POST['fecha_salida'];
     $fechaLlegada=$_POST['fecha_llegada'];
+
+    $numeroPedidos = $_POST['hidden-number-pedido'];
     
     echo "<br>";
     echo $idContenedor;
@@ -19,10 +26,10 @@
     echo $fechaSalida;
     echo "<br>";
     echo $fechaLlegada;
+    echo "<br>";
+    echo $numeroPedidos;
     /*
-    include('../modelo/pedido.php');
-    include('../modelo/producto.php');
-    include("../modelo/conexion.php");
+    
 
     function modeloPedido($json,$db){        
         $idPedido = crearPedido($json,$db);

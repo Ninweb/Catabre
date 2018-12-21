@@ -238,7 +238,8 @@
 												
 												<!--BOTONES-->
 												<div align="center">
-													<button type="button" class="btn btn-danger" onclick="eliminar_pedido()"><i class="fas fa-minus-square"></i><span class="desaparecer_muy_grande">&nbsp;Eliminar pedido</span></button>
+													<input type="button" class="btn btn-danger borrar" value="Eliminar pedido">
+													<!-- <i class="fas fa-minus-square"></i><span class="desaparecer_muy_grande"></span> -->
 												</div>
 												<!--BOTONES-->
 
