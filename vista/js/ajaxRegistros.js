@@ -7,7 +7,7 @@
         console.log(formulario);
         $.ajax({
             'method':'POST',
-            'url': '../controlador/pedido.php',
+            'url': '../controlador/pedidoProducto.php',
             'data': formulario
         }).done(function(info){
             $("#mostrarDatos").html(info);
@@ -23,7 +23,7 @@
         console.log(formulario);
         $.ajax({
             'method':'POST',
-            'url': '../controlador/registro-contenedor.php',
+            'url': '../controlador/contenedor.php',
             'data': formulario
         }).done(function(info){
             $("#mostrarDatos").html(info);
@@ -36,7 +36,7 @@
         console.log(formulario);
         $.ajax({
             'method':'POST',
-            'url': '../modelo/registro-usuario.php',
+            'url': '../controlador/usuarioPersona.php',
             'data': formulario
         }).done(function(info){
             $("#mostrarDatos").html(info);
