@@ -5,6 +5,16 @@
     include('../modelo/producto.php');
     include("../modelo/conexion.php");
 
+
+    function modeloPedido($json,$db){        
+        $idPedido = crearPedido($json,$db);
+        return $idPedido;
+    }
+
+    function modeloProducto($json,$db){        
+        crearProducto($json,$db);
+    }
+
     $idContenedor=$_POST['id_contenedor'];
     $idCliente=$_POST['id_persona'];
     $naviera=$_POST['naviera'];
@@ -12,8 +22,42 @@
     $fechaSalida=$_POST['fecha_salida'];
     $fechaLlegada=$_POST['fecha_llegada'];
 
-    $numeroPedidos = $_POST['hidden-number-pedido'];
+    $numeroPedidos = $_POST['hidden-number-pedido'] - 1;
     
+
+
+    $jsonPedido =json_encode(array(
+        "idContenedor"=>$idContenedor,
+        "idCliente"=>$idCliente,
+        "naviera"=>$naviera,
+        "destino"=>$destino,
+        "fechaSalida"=>$fechaSalida,
+        "fechaLlegada"=>$fechaLlegada,
+    ));
+    
+    $idPedido = modeloPedido($jsonPedido,$db);
+
+    echo "esto es un pedido".$idPedido;
+
+
+
+    for($i = 1; $i <= $numeroPedidos ; $i++ ){
+        $jsonProducto =json_encode(array(
+            "idPedido"=>$idPedido,
+            "presentacion"=>$_POST['presentacion'.$i],
+            "producto"=>$_POST['producto'.$i],
+            "especie"=>$_POST['especie'.$i],
+            "color"=>$_POST['color'.$i],
+            "peso"=>$_POST['peso'.$i],
+            "size"=>$_POST['size'.$i],
+            "master"=>$_POST['master'.$i],
+            "total"=>$_POST['total'.$i]
+        ));
+        modeloProducto($jsonProducto,$db);
+    }  
+
+    echo "creo que guardo bien";
+    /*
     echo "<br>";
     echo $idContenedor;
     echo "<br>";
@@ -27,7 +71,9 @@
     echo "<br>";
     echo $fechaLlegada;
     echo "<br>";
-    echo $numeroPedidos;
+    echo $numeroPedidos;*/
+
+
     /*
     
 
