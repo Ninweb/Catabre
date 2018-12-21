@@ -1,3 +1,14 @@
+<?php
+    session_start();
+			include ("../modelo/conexion.php");
+    if(!isset($_SESSION['id_usuario'])) 
+    {
+          echo "<script>window.location.href='../index.php'</script>";
+
+      exit();
+      session_destroy(); 
+    }
+?>
 <!DOCTYPE html>
 <html>
  <head>
@@ -54,12 +65,10 @@
 											include ("../modelo/conexion.php");
 											$consulta_persona = mysqli_query($db, "SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND usuario.tipo='user'");
 											echo "<select name=\"id_persona\" class='col-md-10 form-control' id='users'  required>";
-											echo "<option></option>";
+											echo "<option>Seleccione usuario</option>";
 											while ($row=mysqli_fetch_array($consulta_persona)) 
 												{
-													
 													echo "<option value=\"".$row['id_persona']."\">".$row['nombre'].' '.$row['apellido'];
-
 												}
 
 											echo "</select>"; 
@@ -80,12 +89,10 @@
 											include ("../modelo/conexion.php");
 											$consulta_contenedor=mysqli_query($db, "SELECT * FROM contenedor WHERE contenedor.status='disponible'");
 											echo "<select name=\"id_contenedor\" class='col-md-10 form-control' id='contenedor'  required>";
-											echo "<option></option>";
+											echo "<option>Seleccione contenedor</option>";
 											while ($row=mysqli_fetch_array($consulta_contenedor)) 
 												{
-													
 													echo "<option id='id_contenedor' value=\"".$row['id_contenedor']."\">".$row['nombre'];
-
 												}
 											echo "</select>"; 
 										?>

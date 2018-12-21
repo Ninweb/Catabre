@@ -26,7 +26,9 @@
 			<!--menu--->
 			<?php
 
-				include ('menu.php');
+				$page='Contenedores';
+
+				include ('menu-user.php');
 			?>
 
 			<!--menu fin-->

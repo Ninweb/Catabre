@@ -25,7 +25,16 @@ function nuevo_pedido(){
     // document.getElementById('num-contador').innerHTML = pedidos_disponibles;
 
     $('.num-ped').show()
-    aux = cantidad_pedido;
+    aux = cantidad_pedido;    
+
+
+    //CONSTRUCTOR DE LA TABLA    
+    $('#vacio-mensaje').hide();
+    var table = document.getElementById('tabla-pedido')
+    var clon = table.cloneNode(true)
+    document.getElementById('nuevos-pedidos').append(clon)   
+    $('#tabla-pedido').hide()
+    
 
     //IDs Y NAMEs INDEPENDIENTES
     if(cantidad_pedido==1){
@@ -37,48 +46,35 @@ function nuevo_pedido(){
       $('#size').attr({"id":"size"+cantidad_pedido,"name":"size"+cantidad_pedido})
       $('#master').attr({"id":"master"+cantidad_pedido,"name":"master"+cantidad_pedido})
       $('#total').attr({"id":"total"+cantidad_pedido,"name":"total"+cantidad_pedido})
-    }
-
-
-    //CONSTRUCTOR DE LA TABLA    
-    $('#vacio-mensaje').hide();
-    var table = document.getElementById('tabla-pedido')
-    var clon = table.cloneNode(true)
-    document.getElementById('nuevos-pedidos').append(clon)    
-    
-
-    $('#tabla-pedido').hide()
-    
+    }else{
+      $('#presentacion'+aux).attr({"id":"presentacion"+cantidad_pedido,"name":"presentacion"+cantidad_pedido})
+      $('#producto'+aux).attr({"id":"producto"+cantidad_pedido,"name":"producto"+cantidad_pedido})
+      $('#especie'+aux).attr({"id":"especie"+cantidad_pedido,"name":"especie"+cantidad_pedido})
+      $('#color'+aux).attr({"id":"color"+cantidad_pedido,"name":"color"+cantidad_pedido})
+      $('#peso'+aux).attr({"id":"peso"+cantidad_pedido,"name":"peso"+cantidad_pedido})
+      $('#size'+aux).attr({"id":"size"+cantidad_pedido,"name":"size"+cantidad_pedido})
+      $('#master'+aux).attr({"id":"master"+cantidad_pedido,"name":"master"+cantidad_pedido})
+      $('#total'+aux).attr({"id":"total"+cantidad_pedido,"name":"total"+cantidad_pedido})
+    }    
     
 
     //NUMERO DE PEDIDO Y PEDIDOS DISPONIBLES
     document.getElementById('numero_pedido').innerHTML = cantidad_pedido;
     document.getElementById('num-contador').innerHTML = pedidos_disponibles;
-
-
-    //IDs Y NAMEs INDEPENDIENTES
-    $('#presentacion'+aux).attr({"id":"presentacion"+cantidad_pedido,"name":"presentacion"+cantidad_pedido})
-    $('#producto'+aux).attr({"id":"producto"+cantidad_pedido,"name":"producto"+cantidad_pedido})
-    $('#especie'+aux).attr({"id":"especie"+cantidad_pedido,"name":"especie"+cantidad_pedido})
-    $('#color'+aux).attr({"id":"color"+cantidad_pedido,"name":"color"+cantidad_pedido})
-    $('#peso'+aux).attr({"id":"peso"+cantidad_pedido,"name":"peso"+cantidad_pedido})
-    $('#size'+aux).attr({"id":"size"+cantidad_pedido,"name":"size"+cantidad_pedido})
-    $('#master'+aux).attr({"id":"master"+cantidad_pedido,"name":"master"+cantidad_pedido})
-    $('#total'+aux).attr({"id":"total"+cantidad_pedido,"name":"total"+cantidad_pedido})
     
-
-    // number_pedido++
     if(cantidad_pedido == top_pedido){
       alert('Este es su ultimo pedido')
     }
+    
+    document.getElementById('hidden-number-pedido').value = cantidad_pedido;
   }
   
   if(pedidos_disponibles==0){
     alert('Ha llegado al límite de pedidos en este contenedor')    
   }
   
-  $('.num-ped').show()
-  document.getElementById('hidden-number-pedido').value = cantidad_pedido;
+  // $('.num-ped').show()
+  // document.getElementById('hidden-number-pedido').value = cantidad_pedido;
   
 }
 

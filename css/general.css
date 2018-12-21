@@ -1,0 +1,189 @@
+#fondo,.fondo,#naranja{
+	background-color: #f96332;
+}
+
+h3{
+	color: #ffffff;
+	font-weight: bold;
+}
+
+h4{
+
+	color: #383838;
+	font-weight: bold;
+
+}
+
+.fondo_blanco{
+	background-color: #ffffff;
+}
+
+a,a:focus{
+	text-decoration: none !important;
+}
+
+#cuerpo,.cuerpo{
+	position: relative;
+	top: 80px;
+	z-index: 2;
+}
+
+.menu_lateral{
+	position: fixed;
+	background-color: #f96332;
+	height: 200%;
+	width: 200px;
+	padding-top: 10px;
+	z-index: 99;
+}
+
+#menu_superior{
+	background-color: #f96332;
+	color: #ffffff;
+	position: fixed;
+	height: 60px;
+	padding-top: 9px;
+	font-size: 25px;
+	z-index: 99;
+}
+
+#logo{
+	position: fixed;
+	width: 100%;
+	z-index: 98;
+}
+
+#menu_oculto{
+	float: none;
+	margin-top: 13px;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	background-color: #fba185;
+	display: none;
+}
+
+#menu_superior div{
+	float: left;
+}
+
+@media screen and (min-width: 780px) {
+	#menu_superior{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.desaparecer_muy_grande{
+		display: none;
+	}
+}
+
+#barra_superior{
+	padding-top: 10px;
+	position: fixed;
+	background-color: #f96332 !important;
+	text-align: right;
+	height: 50px;
+	color: #ffffff;
+	z-index: 99;
+}
+
+.cuerpo_menu_vertical{
+	position: absolute;
+	margin-top: 50%;
+	width: 100%;
+}
+
+.cuerpo_menu_vertical a, #barra_superior a, #menu_oculto a{
+	color: #ffffff;
+}
+
+.enlace_principal_menu{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#sub_menu{
+	font-size: 15px !important;
+	display: none;
+}
+
+#submenu_superior{
+	display: none;
+	font-size: 19px !important;
+}
+
+.agrupar_superiores{
+	float: left;
+}
+
+.subir_linea_arriba{
+	margin-top: -43px;
+}
+
+.tamano_icono{
+	height: 38px;
+	color: #ffffff;
+}
+
+.icono{
+	color: #ffffff;
+}
+
+@media screen and (max-width: 768px){
+	.icono{
+		display: none;
+	}
+}
+
+.alinear_izquierda{
+	float: left;
+}
+
+.espacio_margen{
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+.centrar{
+	align-items: center;
+	position: relative;
+}
+
+input[type='email']{
+	text-transform: lowercase;
+}
+
+
+#id_pedido {
+	display: flex;
+	font-size: 20px;
+	font-weight: bold;
+}
+#id_pedido #numero_pedido {
+	margin-left: 10px;
+}
+#subpanel {
+	margin:20px auto;
+	display:flex;
+	width: 100%;
+	padding:0 20px;
+}
+#subpanel #counters {
+	width: 100%;
+	font-weight: 600;
+}
+#counters #contador {
+	display: flex;
+	margin: 0px;
+}
+#contador #num-contador, #contador #numero_pedido {
+	margin-left: 10px;
+}
+#subpanel #boton {
+	width: 100%;
+}
+#vacio-mensaje {
+	margin-bottom:20px;
+	font-size: 18px;
+}

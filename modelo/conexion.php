@@ -6,5 +6,6 @@
 	$dbuser = "root"; //variable para el usuario del servidor
 	
 	$db = mysqli_connect($host,$dbuser,$dbpass, $dbname) or die ("no pudo conectarse con el manejador");
+	mysqli_query($db,"SET NAMES 'utf8'");   
 
 ?>
