@@ -1,15 +1,15 @@
 var cantidad_pedido = 0;
 var aux = 0;
-var aux2 = 0;
+// var aux2 = 0;
 var pedidos_disponibles = 3;
 
 const top_pedido = 3;
-var number_pedido = 0;
+// var number_pedido = 0;
 
 $('#tabla-pedido').hide()
 $('.num-ped').hide()
 
-document.getElementById('numero_pedido').innerHTML = cantidad_pedido;
+// document.getElementById('numero_pedido').innerHTML = cantidad_pedido;
 document.getElementById('num-contador').innerHTML = pedidos_disponibles;
 
 //NUEVO PEDIDO
@@ -18,6 +18,12 @@ function nuevo_pedido(){
   
 
 	if(cantidad_pedido <= top_pedido){
+    pedidos_disponibles--
+    cantidad_pedido++
+
+    document.getElementById('numero_pedido').innerHTML = cantidad_pedido;
+    // document.getElementById('num-contador').innerHTML = pedidos_disponibles;
+
     $('.num-ped').show()
     aux = cantidad_pedido;
 
@@ -40,21 +46,9 @@ function nuevo_pedido(){
     var clon = table.cloneNode(true)
     document.getElementById('nuevos-pedidos').append(clon)    
     
-    /*if(aux==1){
-      var buscar_tabla = $('#nuevos-pedidos').find('#tabla-pedido');
-      $(buscar_tabla).attr("id","tabla-pedido"+aux)
-    }else{
-      console.log('hola')
-      aux2++
-      var buscar_tabla = $('#nuevos-pedidos').find('#tabla-pedido'+aux2);
-      if(buscar_tabla){
-        $('#tabla-pedido'+aux2).attr("id","tabla-pedido"+cantidad_pedido)  
-      }    
-    }*/
 
     $('#tabla-pedido').hide()
-    pedidos_disponibles--
-    cantidad_pedido++
+    
     
 
     //NUMERO DE PEDIDO Y PEDIDOS DISPONIBLES

@@ -49,43 +49,45 @@
 									<h4 align="center" style="color: #fff;">Registrar Contenedor</h4>
 								</div>
 								<div class="card-body">
-									<form action="../controlador/registro-contenedor.php" method="post">
-									<br>
-									<div class="col-md-12 offset-md-3">
-											<label for="num_referencia">N° Referencia</label>
-									</div>
-									<div class="input-group col-md-12 offset-md-3">
+									<form id="formularioContenedor">
+										<br>
+										<div class="col-md-12 offset-md-3">
+												<label for="num_referencia">N° Referencia</label>
+										</div>
+										<div class="input-group col-md-12 offset-md-3">
+											
+											<div class="input-group-prepend">
+														<i class="fas fa-hashtag input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+													</div>
+											<input required  autocomplete="off" type="text" name="num_referencia" class="col-md-5 form-control">
+
+										</div><br>
+
 										
-										 <div class="input-group-prepend">
-								          <i class="fas fa-hashtag input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-								        </div>
-										<input required  autocomplete="off" type="text" name="num_referencia" class="col-md-5 form-control">
+										<div class="col-md-12 offset-md-3">
+												<label for="num_referencia">Nombre</label>
+										</div>
+										<div class="input-group col-md-12 offset-md-3">
 
-									</div><br>
+											<div class="input-group-prepend">
+													<i class="fas fa-file-signature input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+													</div>
+											<input required  autocomplete="off" type="text" name="nombre" class="col-md-5 form-control">
 
-									
-									<div class="col-md-12 offset-md-3">
-											<label for="num_referencia">Nombre</label>
-									</div>
-									<div class="input-group col-md-12 offset-md-3">
-
-										 <div class="input-group-prepend">
-								         <i class="fas fa-file-signature input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-								        </div>
-										<input required  autocomplete="off" type="text" name="nombre" class="col-md-5 form-control">
-
-									</div>&nbsp;
-										<div class="form-group" align="center">        
-											<div class="col-sm-offset-4 col-sm-10">
-												<button type="submit" name="registrar" class="btn btn-primary">Registrar</button>
-											</div>
-									</div>
+										</div>&nbsp;
+											<div class="form-group" align="center">        
+												<div class="col-sm-offset-4 col-sm-10">
+													<button type="submit" name="registrar" class="btn btn-primary">Registrar</button>
+												</div>
+										</div>
 								</form>
 								</div>
 							</div>
 					</div>
 				<!--fin de contenido-->
+					<div id="mostrarDatos">
 
+					</div>
 
 			<!--footer-->
 					<?php
