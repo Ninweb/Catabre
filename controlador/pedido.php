@@ -36,10 +36,7 @@
     ));
     
     $idPedido = modeloPedido($jsonPedido,$db);
-
-    //echo "esto es un pedido".$idPedido;
-
-
+ 
 
     for($i = 1; $i <= $numeroPedidos ; $i++ ){
         $jsonProducto =json_encode(array(
@@ -56,9 +53,12 @@
         modeloProducto($jsonProducto,$db);
     }  
 
+    $actualizacion= "UPDATE contenedor SET status='ocupado' Where id_contenedor='$idContenedor'";
+    mysqli_query($db,$actualizacion);
 
     echo "<script>swal('Guardado!', 'Pedido en camino', 'success');</script>";
-    
+    echo "<script>document.getElementById('formulario').reset();</script>";
+
     mysqli_close($db);
     
 ?>
