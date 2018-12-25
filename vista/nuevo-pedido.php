@@ -59,7 +59,7 @@
 								<div class="col-md-6 offset-md-3">
 									<label for="users">Usuarios</label>
 									<div class="input-group-prepend">
-										<i class="far fa-user input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+										<i class="far fa-user input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px; margin-right:10px;"></i>
 
 										<?php 
 											include ("../modelo/conexion.php");
@@ -89,13 +89,20 @@
 											include ("../modelo/conexion.php");
 											$consulta_contenedor=mysqli_query($db, "SELECT * FROM contenedor WHERE contenedor.status='disponible'");
 											echo "<select name=\"id_contenedor\" class='col-md-10 form-control' id='contenedor'  required>";
-											echo "<option>Seleccione contenedor</option>";
-											while ($row=mysqli_fetch_array($consulta_contenedor)) 
+                      
+                      if(mysqli_num_rows($consulta_contenedor)){
+                        echo "<option>Seleccione contenedor</option>";
+                        while ($row = mysqli_fetch_array($consulta_contenedor)) 
 												{
 													echo "<option id='id_contenedor' value=\"".$row['id_contenedor']."\">".$row['nombre'];
 												}
+                      }else{
+                        echo "<option>No hay contenedor disponible</option>";
+                      }
+											
 											echo "</select>"; 
 										?>
+										<!-- <span class="badge badge-warning" style="margin-left:10px; padding:0px;"><i class="fas fa-exclamation-triangle bg-warning text-dark input-group-text" style="border:none; font-size:20px; padding-top: 10px;"></i></span> -->
 									</div>
 								</div>	
 								<br>
@@ -142,7 +149,7 @@
 									
 									<div class="input-group-prepend">
 					          <i class="fas fa-calendar-alt input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-					          <input required autocomplete="off" placeholder="<?php echo ''; ?>"  type="date" name="fecha_salida" id="salida" class="col-md-5 form-control" placeholder="" min="<?php echo date("Y-m-d"); ?>">
+					          <input required autocomplete="off" placeholder="<?php echo ''; ?>"  type="date" name="fecha_salida" id="salida" class="col-md-5 form-control" placeholder="" min="<?php echo date("Y-m-d"); ?>" style="margin-right:10px;">
 					          <input required autocomplete="off" placeholder="<?php echo ''; ?>"  type="date" name="fecha_llegada" id="llegada" class="col-md-5 form-control" placeholder="">
 					        </div>	
 								</div>
@@ -170,7 +177,7 @@
 												</div>
 											</div>
 											<div align="right" id="boton">
-												<button type="button" class="btn btn-success" onclick="nuevo_pedido()"><i class="fas fa-cart-plus"></i><span class="desaparecer_muy_grande">&nbsp;Nuevo pedido</span></button>
+												<button type="button" class="btn btn-success" onclick="nuevo_pedido()" id="pedido"><i class="fas fa-cart-plus"></i><span class="desaparecer_muy_grande">&nbsp;Nuevo pedido</span></button>
 											</div>
 										</div>
 										<!--BOTONES Y CONTADOR-->
@@ -277,7 +284,7 @@
 								<!-- PEDIDO -->
 								<div class="form-group" align="center">        
 									<div class="col-sm-offset-4 col-sm-10">
-										<button type="submit" name="generar" class="btn btn-primary">Generar Pedido</button>
+										<button type="button" name="generar" class="btn btn-primary" id="generar_pedido">Generar Pedido</button>
 									</div>
 								</div>				
 

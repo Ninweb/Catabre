@@ -28,7 +28,7 @@
                   }
                 ?>   href="nuevo-contenedor.php">            
               <i class="fas fa-ship"></i>
-                <span>Contenedor</span>
+                <span>Contenedores</span>
             </a>
         </li>
         <li class="nav-item">

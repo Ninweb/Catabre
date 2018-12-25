@@ -187,3 +187,6 @@ input[type='email']{
 	margin-bottom:20px;
 	font-size: 18px;
 }
+.fas, .far, .fa {
+	margin-right: 10px;
+}
