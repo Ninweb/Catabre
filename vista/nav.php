@@ -11,7 +11,7 @@
 	            	<i class="fas fa-user-circle"></i>
 	                <?php
 	                	include ("../modelo/conexion.php");
-	                	$consulta_persona = mysqli_query($db, "SELECT * FROM persona WHERE id_usuario='".$_SESSION['id_usuario']."'");
+	                	$consulta_persona = mysqli_query($db, "SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND  usuario.id_usuario='".$_SESSION['id_usuario']."'");
 	                	$fila=mysqli_fetch_array($consulta_persona);
 	                	echo $fila['nombre'].' '.$fila['apellido'];
 	                ?>

@@ -42,7 +42,7 @@
               <br>
               <button class="col-md-8 offset-md-2 btn btn-info" type="submit" name="iniciar_sesion">Iniciar Sesión</button>
               <div align="center" style="padding-top:10px;">
-                <a href="#" style="color: #ffffff;">¿Ha olvidado su contraseña?</a>
+                <a href="vista/recuperar-password.php" style="color: #ffffff;">¿Ha olvidado su contraseña?</a>
               </div>
             </form>
           </div>
