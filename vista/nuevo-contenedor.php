@@ -50,6 +50,7 @@
 								</div>
 								<div class="card-body">
 									<form id="formularioContenedor">
+										<input type="hidden" name="funcion" value="crear">
 										<br>
 										<div class="col-md-12 offset-md-3">
 												<label for="num_referencia">N° Referencia</label>

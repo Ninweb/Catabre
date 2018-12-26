@@ -50,6 +50,7 @@
 								</div>
 								<div class="card-body">
 									<form id="formularioUsuario">
+									<input type="hidden" name="funcion" value="crear">
 									<br>
 									<div class="col-md-12 offset-md-3">
 											<label for="nombre">Nombre</label>

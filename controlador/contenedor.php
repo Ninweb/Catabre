@@ -2,25 +2,68 @@
     include('../modelo/contenedor.php');
     include("../modelo/conexion.php");
 
-    function modeloContenedor($json,$db){        
-        crearContenedor($json,$db);
+    function modeloContenedor($json,$db,$funcionCRUD){ 
+           
+        if($funcionCRUD == 'crear'){
+            crearContenedor($json,$db);
+        }else if ($funcionCRUD == "editar"){
+            editarContenedor($json,$db);
+        }else if($funcionCRUD == 'eliminar'){
+            eliminarContenedor($json,$db);
+        }
+        
     }
 
-
-    $num_referencia=$_POST['num_referencia'];
-    $nombre=$_POST['nombre'];
     
-    $jsonContenedor =json_encode(array(
-        "numeroReferencia"=>$num_referencia,
-        "nombre"=>$nombre
-    ));
+    $funcionCRUD = $_POST['funcion'];
 
-    modeloContenedor($jsonContenedor,$db);
+    if($funcionCRUD == 'crear'){
+        $num_referencia=$_POST['num_referencia'];
+        $nombre=$_POST['nombre'];
+        $jsonContenedor =json_encode(array(
+            "numeroReferencia"=>$num_referencia,
+            "nombre"=>$nombre
+        ));
+    }else if ($funcionCRUD == 'editar'){
+        $num_referencia=$_POST['num_referencia'];
+        $nombre=$_POST['nombre'];
+        $id_contenedor = $_POST['id_contenedor'];
+        $jsonContenedor =json_encode(array(
+            "numeroReferencia"=>$num_referencia,
+            "nombre"=>$nombre,
+            "id_contenedor"=>$id_contenedor
+        ));
+    }else if($funcionCRUD == 'eliminar'){
+        $id_contenedor = $_POST['id_contenedor'];
+        $jsonContenedor =json_encode(array(
+            "id_contenedor"=>$id_contenedor
+        ));
+    }
+    
 
-    echo "<script>swal('Guardado!', 'Nuevo Contenedor', 'success');</script>";
-    echo "<script>document.getElementById('formularioContenedor').reset();</script>";
-
-
-
+    
+    
+    modeloContenedor($jsonContenedor,$db,$funcionCRUD);
+    
+    if($funcionCRUD=='crear'){
+        echo "<script>swal('Guardado!', 'Nuevo Contenedor', 'success').then(
+            function(){ 
+                location.reload();
+            }
+        );</script>";
+    }else if ($funcionCRUD == 'editar'){
+        echo "<script>swal('Guardado!', 'Fue editado su Contenedor', 'success').then(
+            function(){ 
+                location.reload();
+            }
+        );</script>";
+    }else if ($funcionCRUD == 'eliminar'){
+        echo "<script>swal('Eliminado!', 'Fue eliminado su Contenedor', 'success').then(
+            function(){ 
+                location.reload();
+            }
+        );</script>";
+    }
+    
 
 ?>
