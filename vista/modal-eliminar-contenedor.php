@@ -1,5 +1,6 @@
 <!--Modal Eliminar-->
 
+
 <div class="modal fade" id="eliminar-contenedor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -16,30 +17,35 @@
                 </div>
                 
             <!-- Modal Body -->
-                <div class="modal-body">
+                 <div class="modal-body">
                      <center>
                         <div class="alert alert-danger">
-                                        <strong><i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i></strong> ¿Está Seguro de eliminar este Contenedor?
-                            </div>  
+                            <strong><i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i></strong> ¿Está Seguro de eliminar este Contenedor?
+                        </div>  
                     </center>                   
                 </div>
                 
             <!-- Modal Footer -->
                 <div class="modal-footer">
-                     <form class="form-horizontal" action="../controlador/eliminar-contenedor.php" method="post">
+                     <form id="formularioEliminarContenedor">
+                        <input type="hidden" name="id_contenedor" value="">
+                        <input type="hidden" name="funcion" value="eliminar">
                          <div class="form-group">        
                             <div class="col-sm-offset-2 col-sm-12">
                                 <button type="button" class="btn btn-default"
                                 data-dismiss="modal">
                                     Cancelar
-                                 </button>
-                                    <input type="hidden" name="id_contenedor" value="">
-                                    <button class="btn btn-primary" type="submit">Confirmar</button>
+                                 </button>    
+                                <button type="submit" name="eliminar" class="btn btn-primary">Eliminar</button>
                              </div>
                           </div>
                     </form>
+
+                    <div id="mostrarDatos"></div>
 
                 </div>
             </div>
          </div>
     </div>
+
+   <script src="js/ajaxRegistros.js"></script>

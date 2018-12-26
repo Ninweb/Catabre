@@ -109,6 +109,8 @@
 									
 							</div>
 					</div>
+					<div id="mostrarDatos">
+				</div>
 				<!--fin de contenido-->
 
 

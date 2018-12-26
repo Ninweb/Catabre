@@ -1,5 +1,5 @@
 <?php
-		include ("../modelo/conexion.php");
+	include ("../modelo/conexion.php");
 
 
 	if (isset($_POST['modificar'])) {
