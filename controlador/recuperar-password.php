@@ -1,83 +1,29 @@
+<?php 
 
-<?php
+include ("../modelo/conexion.php");
+require("../mail/class.phpmailer.php"); 
+require("../mail/class.smtp.php");
 
-    include('../modelo/pedido.php');
-    include('../modelo/producto.php');
-    include("../modelo/conexion.php");
+if (isset($_POST['recuperar'])) {
 
-
-    function modeloPedido($json,$db){        
-        $idPedido = crearPedido($json,$db);
-        return $idPedido;
-    }
-
-    function modeloProducto($json,$db){        
-        crearProducto($json,$db);
-    }
-
-    $idContenedor=$_POST['id_contenedor'];
-    $idCliente=$_POST['id_persona'];
-    $codigo_pedido=$_POST['codigo_pedido'];
-    $naviera=$_POST['naviera'];
-    $destino=$_POST['destino'];
-    $fechaSalida=$_POST['fecha_salida'];
-    $fechaLlegada=$_POST['fecha_llegada'];
-
-    $numeroPedidos = $_POST['hidden-number-pedido'];
-    // $numeroPedidos = $_POST['hidden-number-pedido'];
+    $email=$_POST['email'];
     
+    $query=mysqli_query($db,"SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND  usuario.email='".$email."'");
 
+    if (mysqli_num_rows($query)>0) {
+                                 # code...
+      $Length = 5;
+      $password_enviar=substr(str_shuffle(md5(time())), 0, $Length);
+      $password_md5=md5($password_enviar);
+      $row=mysqli_fetch_array($query);  
+      $update=mysqli_query($db,"UPDATE usuario SET clave='$password_md5' WHERE id_usuario='".$row['id_usuario']."'");
 
-    $jsonPedido =json_encode(array(
-        "idContenedor"=>$idContenedor,
-        "idCliente"=>$idCliente,
-        "codigo_pedido"=>$codigo_pedido,
-        "naviera"=>$naviera,
-        "destino"=>$destino,
-        "fechaSalida"=>$fechaSalida,
-        "fechaLlegada"=>$fechaLlegada,
-    ));
-    
-    $idPedido = modeloPedido($jsonPedido,$db);
- 
-
-    for($i = 0; $i < $numeroPedidos ; $i++ ){
-        if ($i==0){
-            $jsonProducto =json_encode(array(
-                "idPedido"=>$idPedido,
-                "presentacion"=>$_POST['presentacion'],
-                "producto"=>$_POST['producto'],
-                "especie"=>$_POST['especie'],
-                "color"=>$_POST['color'],
-                "peso"=>$_POST['peso'],
-                "size"=>$_POST['size'],
-                "master"=>$_POST['master'],
-                "total"=>$_POST['total']
-            ));
-        }else{
-            $jsonProducto =json_encode(array(
-                "idPedido"=>$idPedido,
-                "presentacion"=>$_POST['presentacion'.$i],
-                "producto"=>$_POST['producto'.$i],
-                "especie"=>$_POST['especie'.$i],
-                "color"=>$_POST['color'.$i],
-                "peso"=>$_POST['peso'.$i],
-                "size"=>$_POST['size'.$i],
-                "master"=>$_POST['master'.$i],
-                "total"=>$_POST['total'.$i]
-            ));
-        }
-        modeloProducto($jsonProducto,$db);
-    }  
-
-    $actualizacion= "UPDATE contenedor SET status='ocupado' Where id_contenedor='$idContenedor'";
-    mysqli_query($db,$actualizacion);
-
-    $query=mysqli_query($db,"SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND  usuario.id_usuario='".$idCliente."'");
-
-    $result=mysqli_fetch_array($query);
-    $email=$result['email'];
-    $tema="N° DE PEDIDO SISTEMA CATABRE";
+      $nombre=$row['nombre'];
+      $apellido=$row['apellido'];
+      $empresa=$row['empresa'];
+      $correo=$row['email'];
+      $password=$password_enviar;
+      $tema="Recuperación de Contraseña";
       $mensaje=utf8_decode('<html>
                               <head>
                                 <meta name="viewport" content="width=device-width" />
@@ -420,8 +366,11 @@
                                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                                   <tr>
                                                     <td>
-                                                      <center><h2>Estimado Usuario le informamos:</h2></center>
-                                                      <center><p><b>#PEDIDO ES: </b> '.$codigo_pedido.'</p></center>
+                                                      <center><h2>Recuperación de Contraseña</h2></center>
+                                                      <p><b>Nombre y Apellido: </b> '.$nombre.' '.$apellido.'</p>
+                                                      <p><b>Empresa: </b> '.$empresa.'</p>
+                                                      <p><b>Email: </b> '.$email.'</p>
+                                                      <p><b>Nueva Password: </b> '.$password.' </p>
                                                     </td>
                                                   </tr>
                                                 </table>
@@ -457,7 +406,7 @@
 
                                 $mail->From="prueba@ninweb.net";
                                 $mail->FromName="CATABRE"; 
-                                $mail->AddAddress($email);
+                                $mail->AddAddress($correo);
 
                                 $mail->WordWrap=50; 
                                 $mail->IsHTML(true);  
@@ -465,26 +414,21 @@
                                 $mail->Subject=$tema;
                                 $mail->Body=$mensaje; 
                                 $mail->AltBody=$mensaje;
-                                $mail->Send();
-                                                                                            {
-                                                          
-          
 
+    												if ($mail->Send())
+    																						{
+    													   echo "true";
 
+    												}else{
+    												        
+    										         echo "falso";
+                            }
+    												
+                      }else{
 
+                                 echo "email no existe";          
 
-    
-    echo "<script>
-    swal({ title: \"¡Guardado!\", text: \"Pedido en camino\", icon: \"success\"})
-    .then(
-            function(){ 
-                console.log('entro');
-                location.reload();
-            }
-        );
-    </script>";
-    echo "<script>document.getElementById('formulario').reset();</script>";
-
-    mysqli_close($db);
-    
-?>
+                      }
+          }
+                             
+ ?>

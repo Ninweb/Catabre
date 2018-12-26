@@ -46,10 +46,10 @@
 							</div>
 
 							<?php
-								include ("../modelo/conexion.php");
 
 								$id_persona=$fila['id_persona'];
-
+								$email=$fila['email'];
+								$empresa=$fila['empresa'];
 
 								$consulta_pedido=mysqli_query($db, "SELECT * FROM contenedor,pedido,producto,persona WHERE pedido.id_contenedor=contenedor.id_contenedor AND pedido.id_pedido=producto.id_pedido AND persona.id_persona=pedido.id_persona AND persona.id_persona='".$id_persona."' order by pedido.id_pedido desc limit 1");
 
@@ -81,27 +81,47 @@
 												<?php
 													
 													
-													while ($fila=mysqli_fetch_array($consulta_producto)) {
+													while ($row1=mysqli_fetch_array($consulta_producto)) {
 														?>
 															
 															    <tbody>
 															      <tr>
-															      	<td><?php echo $fila['ref']; ?></td>
-															        <td><?php echo $fila['nombre']; ?></td>
-															        <td><?php echo $fila['presentacion']; ?></td>
-															        <td><?php echo $fila['producto']; ?></td>
-															        <td><?php echo $fila['especie']; ?></td>
-															        <td><?php echo $fila['color']; ?></td>
-															        <td><?php echo $fila['peso']; ?></td>
-															        <td><?php echo $fila['tamano']; ?></td>
-															        <td><?php echo $fila['master']; ?></td>
-															        <td><?php echo $fila['total']; ?></td>
+															      	<td><?php echo $row1['ref']; ?></td>
+															        <td><?php echo $row1['nombre']; ?></td>
+															        <td><?php echo $row1['presentacion']; ?></td>
+															        <td><?php echo $row1['producto']; ?></td>
+															        <td><?php echo $row1['especie']; ?></td>
+															        <td><?php echo $row1['color']; ?></td>
+															        <td><?php echo $row1['peso']; ?></td>
+															        <td><?php echo $row1['tamano']; ?></td>
+															        <td><?php echo $row1['master']; ?></td>
+															        <td><?php echo $row1['total']; ?></td>
 															      </tr>
 															    </tbody>
 														<?php
 													}
 												?>
 											</table>
+
+											  <table class="table table-borderless alert-info" style="width: 50%;">
+												    <thead>
+
+												    	<tr>
+												    		<th colspan="2">Información de Pedido</th>
+												    	</tr>
+												      <tr>
+												        <th>Fecha de Sálida</th>
+												        <th>Fecha Llegada</th>
+												      </tr>
+												    </thead>
+												    <tbody>
+												      <tr>
+												        <td><?php echo $row['fecha_salida']; ?></td>
+												        <td><?php echo $row['fecha_llegada']; ?></td>
+												      </tr>
+												      
+												    </tbody>
+							  				</table>
 											<?php
 									}else{
 
@@ -116,25 +136,7 @@
 					                  <?php
 									}
 							?>
-							  <table class="table table-borderless alert-info" style="width: 50%;">
-							    <thead>
-
-							    	<tr>
-							    		<th colspan="2">Información de Pedido</th>
-							    	</tr>
-							      <tr>
-							        <th>Fecha de Sálida</th>
-							        <th>Fecha Llegada</th>
-							      </tr>
-							    </thead>
-							    <tbody>
-							      <tr>
-							        <td><?php echo $row['fecha_salida']; ?></td>
-							        <td><?php echo $row['fecha_llegada']; ?></td>
-							      </tr>
-							      
-							    </tbody>
-							  </table>
+							
 							  <hr>
 							  <div class="col-md-6">
                     			<span class="anchor" id="formContact"></span>
@@ -144,27 +146,28 @@
 			                            <h4 class="mb-0">Contacto</h4>
 			                        </div>
 			                        <div class="card-body">
-			                            <form class="form" role="form" autocomplete="off">
+			                      
+			                            <form action="../controlador/contacto.php" method="post" autocomplete="off" >
 			                                <fieldset>
-			                                    <label for="name2" class="mb-0">Nombre</label>
+			                                    <label for="name2" class="mb-0">Empresa</label>
 			                                    <div class="row mb-1">
 			                                        <div class="col-lg-12">
-			                                            <input type="text" name="name2" id="name2" class="form-control" required="">
+			                                            <input type="text" name="empresa" class="form-control" value="<?php echo $empresa ?>" readonly>
 			                                        </div>
 			                                    </div>
-			                                    <label for="email2" class="mb-0">Correo Eléctonico</label>
+			                                    <label for="email2" class="mb-0">Correo Electrónico</label>
 			                                    <div class="row mb-1">
 			                                        <div class="col-lg-12">
-			                                            <input type="text" name="email2" id="email2" class="form-control" required="">
+			                                            <input type="text" name="email" class="form-control" value="<?php echo $email ?>" readonly>
 			                                        </div>
 			                                    </div>
 			                                    <label for="message2" class="mb-0">Mensaje</label>
 			                                    <div class="row mb-1">
 			                                        <div class="col-lg-12">
-			                                            <textarea rows="6" name="message2" id="message2" class="form-control" required=""></textarea>
+			                                            <textarea rows="6" name="mensaje" id="message2" class="form-control" required=""></textarea>
 			                                        </div>
 			                                    </div>
-			                                    <button type="submit" class="btn btn-secondary btn-lg float-right">Enviar</button>
+			                                    <button type="submit" name="enviar" class="btn btn-secondary btn-lg float-right">Enviar</button>
 			                                </fieldset>
 			                            </form>
 			                        </div>
