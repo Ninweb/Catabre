@@ -475,7 +475,7 @@
 
     
     echo "<script>
-    swal({ title: \"Guardado!\", text: \"Pedido en camino\", icon: \"success\"})
+    swal({ title: \"¡Guardado!\", text: \"Pedido en camino\", icon: \"success\"})
     .then(
             function(){ 
                 console.log('entro');

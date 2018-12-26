@@ -37,21 +37,6 @@
 				<div id="content-wrapper">
 					<div class="container-fluid">
 						<ol class="breadcrumb">
-<<<<<<< HEAD
-							<li class="breadcrumb-item">
-								<a href="nuevo-usuario.php" style="color: #17a2b8;"> Registrar Usuario</a>
-							</li>
-								<li class="breadcrumb-item">
-								<a href="consultar-usuario.php" style="color:#383838;"> Consultar Usuario</a>
-							</li>
-						</ol>
-						<div class="card col-md-5offset-md-3">
-							<div class="card-header" style="background-color: #f96332; color: #fff;">
-								<h4 align="center" style="color: #fff;">Registrar Usuario</h4>
-							</div>
-							<div class="card-body">
-								<form id="formularioUsuario">
-=======
 				          <li class="breadcrumb-item">
 				            <a href="nuevo-usuario.php" style="color: #17a2b8;"> Registrar Usuario</a>
 				          </li>
@@ -66,27 +51,25 @@
 								<div class="card-body">
 									<form id="formularioUsuario">
 									<input type="hidden" name="funcion" value="crear">
->>>>>>> master
 									<br>
-									<div class="col-md-12 offset-md-3">
-										<label for="nombre">Nombre</label>
-									</div>
-									<div class="input-group col-md-12 offset-md-3">
+
+									<div class="col-md-6 offset-md-3">
+										<div class="row">
+											<div class="input-group-prepend col-md-6">
+												<label for="salida">Nombre</label>
+											</div>	
+											<div class="input-group-prepend col-md-6">
+												<label for="llegada" style="margin-left:0px;">Apellido</label>
+											</div>
+										</div>	
+										
 										<div class="input-group-prepend">
 											<i class="fas fa-user input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-										</div>
-										<input required  autocomplete="off" type="text" name="nombre" class="col-md-5 form-control">
-									</div><br>
-
-									<div class="col-md-12 offset-md-3">
-										<label for="apellido">Apellido</label>
+											<input style="margin-right:10px;" autocomplete="off" type="text" name="nombre" id="nombre" class="col-md-5 form-control">
+											<input autocomplete="off" type="text" name="apellido" id="apellido" class="col-md-5 form-control">
+										</div>	
 									</div>
-									<div class="input-group col-md-12 offset-md-3">
-										<div class="input-group-prepend">
-											<i class="fas fa-file-signature input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-										</div>
-										<input required  autocomplete="off" type="text" name="apellido" class="col-md-5 form-control">
-									</div><br>
+									<br>
 
 									<div class="col-md-12 offset-md-3">
 										<label for="empresa">Empresa</label>
@@ -95,7 +78,7 @@
 										<div class="input-group-prepend">
 											<i class="fas fa-building input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 										</div>
-										<input required  autocomplete="off" type="text" name="empresa" class="col-md-5 form-control">
+										<input autocomplete="off" type="text" name="empresa" id="empresa" class="col-md-5 form-control">
 									</div><br>
 
 									<div class="col-md-12 offset-md-3">
@@ -105,7 +88,7 @@
 										<div class="input-group-prepend">
 											<i class="far fa-envelope input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 										</div>
-										<input required  autocomplete="off" id="email" type="email" name="email" class="col-md-5 form-control">
+										<input autocomplete="off" id="email" type="email" name="email" id="email" class="col-md-5 form-control">
 									</div><br>
 
 									<div class="col-md-12 offset-md-3">
@@ -115,7 +98,7 @@
 										<div class="input-group-prepend">
 											<i class="fas fa-key input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 										</div>
-										<input required  autocomplete="off" type="password" name="password"  id="contrasena" class="col-md-5 form-control">
+										<input  autocomplete="off" type="password" name="password"  id="contrasena" class="col-md-5 form-control">
 										<div style="margin-top:15px;">
 											<input style="margin-left:20px;" type="checkbox" id="mostrar_contrasena" title="clic para mostrar contraseña"/>
 											&nbsp;&nbsp;Mostrar Contraseña</div>
