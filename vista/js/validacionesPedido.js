@@ -1,18 +1,21 @@
-$(document).ready(function(){
+$(document).ready(function (){
    var pedido = false
+   var cant_pedido = 0;
    var contenedor = document.getElementById('contenedor').value;
    if(contenedor == "No hay contenedor disponible"){
-    swal({ 
-      title: "¡Atención!", 
-      text: "En estos momentos no tenemos contenedores disponibles.", 
-      icon: "warning"
-    })
-  }
+      swal({ 
+         title: "¡Atención!", 
+         text: "En estos momentos no tenemos contenedores disponibles.", 
+         icon: "warning"
+      })
+   }
 
    //verificando si hay pedido generado
-   $('#pedido').click(function(){
+  $('#pedido').click(function(){
       pedido = true
-   })
+      cant_pedido++
+      alert(cant_pedido)
+  })  
 
    
    $('#generar_pedido').click(function(){
@@ -26,37 +29,57 @@ $(document).ready(function(){
 
       //VERIFICAR SI HAY CONTENEDOR DISPONIBLE
       if(contenedor == "No hay contenedor disponible"){
-        swal({ 
-          title: "¡Atención!", 
-          text: "En estos momentos no tenemos contenedores disponibles.", 
-          icon: "warning"
-        })
+         swal({ 
+            title: "¡Atención!", 
+            text: "En estos momentos no tenemos contenedores disponibles.", 
+            icon: "warning"
+         })
       }
-      
-
 
       //QUE NO HAYA NINGUN CAMPO VACIO
-      var numero_pedido = document.getElementById('numero_pedido').value;
-      var num_pedido = parseInt(numero_pedido)
-      if (isNaN(num_pedido)) num_pedido = 0;
+      // var numero_pedido = document.getElementById('numero_pedido').value;
+      // var num_pedido = parseFloat(numero_pedido)
+      // if (isNaN(num_pedido)) num_pedido = 0;
+      // num_pedido += numero_pedido;
+      // alert(num_pedido);
 
-      if(!pedido || num_pedido==0){
-        swal({ 
-          title: "¡Atención!", 
-          text: 'Primero debe realizar un pedido haciendo click en el boton "Nuevo pedido"', 
-          icon: "warning"
-        })
+      if(!pedido || cant_pedido==0){
+         swal({ 
+            title: "¡Atención!", 
+            text: 'Primero debe realizar un pedido haciendo click en el boton "Nuevo pedido"', 
+            icon: "warning"
+         })
       }
 
-      for(var i=1; i<=num_pedido; i++){
-        var presentacion = $('#presentacion'[i]).val().length; 
-        var producto = $('#producto'[i]).val().length; 
-        var especie = $('#especie'[i]).val().length; 
-        var color = $('#color'[i]).val().length; 
-        var peso = $('#peso'[i]).val().length; 
-        var size = $('#size'[i]).val().length; 
-        var master = $('#master'[i]).val().length; 
-        var total = $('#total'[i]).val().length; 
+      for(var i=0; i<cant_pedido; i++){
+			if(i==0){
+				var presentacion = $('#presentacion').val().length; 
+				var producto = $('#producto').val().length; 
+				var especie = $('#especie').val().length; 
+				var color = $('#color').val().length; 
+				var peso = $('#peso').val().length; 
+				var size = $('#size').val().length; 
+				var master = $('#master').val().length; 
+				var total = $('#total').val().length;
+			}else{
+				var presentacion = $('#presentacion'[i]).val().length; 
+				var producto = $('#producto'[i]).val().length; 
+				var especie = $('#especie'[i]).val().length; 
+				var color = $('#color'[i]).val().length; 
+				var peso = $('#peso'[i]).val().length; 
+				var size = $('#size'[i]).val().length; 
+				var master = $('#master'[i]).val().length; 
+				var total = $('#total'[i]).val().length; 
+
+				// $('#eliminar'[i]).click(function(){
+				// 	cant_pedido--
+				// 	console.log(cant_pedido)
+				// 	alert(cant_pedido)
+				// })
+			}
+        
+		  
+		  
 
         //campos constantes
         if(usuario<=0 || usuario=="Seleccione usuario"){
@@ -117,35 +140,18 @@ $(document).ready(function(){
           console.log('El campo Total debe ser completado')
           $('.fa-calendar-alt').css({"background-color":"#FFC107", "color":"black", "border":"none"})
         }
+
+        
       }
       
+	})
+	
+	$(document).on('click', '.borrar', function (event) {
+		event.preventDefault();
+		$(this).closest('#tabla-pedido').remove();
+		// pedidos_disponibles++
+		cant_pedido--
+		console.log(cant_pedido)
+	 });
 
-      
-      //SI EL CORREO NO SE REPITE
-      $('.registrar-usuario').click(function(){
-        var email = document.getElementById('email').value
-        $.ajax({
-          type:'post',
-          url: '../../modelo/comprobarDatos.php',
-          data: email,
-          error: swal({
-            title: "¡Error!", 
-            text: 'Este correo ya se encuentra en la base de datos. Por favor, verifique e ingrese un correo electrónico valido.',
-            icon: "error"
-          })
-        })
-      })
-      
-
-   
-      //SI EL NUMERO DE REFERENCIA NO SE REPITE
-      $('.registrar-contenedor').click(function(){
-         
-      })
-      
-
-   
-      //SI LAS CLAVES SON IGUALES
-      
-   })
 })

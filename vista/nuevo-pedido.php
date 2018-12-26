@@ -186,10 +186,10 @@
 
 										<div class="card-body tabla-pedido" id="tabla-pedido">
 											<div class="info">
-												<div id="id_pedido" style="display:none;">
+												<!-- <div id="id_pedido" style="display:none;">
 													<p>Pedido número: </p>
 													<p id="numero_pedido"></p>
-												</div>
+												</div> -->
 												
 												<div class="col-md-6 alinear_izquierda espacio_margen">
 													<label for="pedido">Presentación</label>
@@ -258,7 +258,7 @@
 												
 												<!--BOTONES-->
 												<div align="center">
-													<input type="button" class="btn btn-danger borrar" value="Eliminar pedido">
+													<input type="button" class="btn btn-danger borrar" id="eliminar" value="Eliminar pedido">
 													<!-- <i class="fas fa-minus-square"></i><span class="desaparecer_muy_grande"></span> -->
 												</div>
 												<!--BOTONES-->
