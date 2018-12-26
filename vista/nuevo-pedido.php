@@ -111,13 +111,23 @@
 								<!-- <br> -->
 								<!-- NUMERO DE REFERENCIA -->
 
-							
+								<?php
+
+									$consulta=mysqli_query($db,"SELECT MAX(id_pedido) AS id_pedido FROM pedido");
+									if ($row1 = mysqli_fetch_row($consulta)) {
+										$id_pedido = trim($row1[0]);
+									}
+
+										$codigo_pedido=str_pad($id_pedido+1,5,"0",STR_PAD_LEFT);
+								?>
+								<input id="codigo_pedido"  type="hidden" name="codigo_pedido" class="col-md-10 form-control" value="<?php echo $codigo_pedido; ?>">
+
 								<!--NAVIERA -->
 								<div class="col-md-6 offset-md-3">
 									<label for="naviera">NAVIERA</label>
 									<div class="input-group-prepend">
 					          <i class="fas fa-ship input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
-					          <input id="naviera" required="" autocomplete="off"  type="text" name="naviera" class="col-md-10 form-control" required>
+					          <input id="naviera" required="" autocomplete="off"  type="text" name="naviera" class="col-md-10 form-control" >
 					        </div>
 								</div>
 								<br>
