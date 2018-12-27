@@ -1,7 +1,25 @@
+//INICIO: INICIAR SESION//
+    $('#formularioSesion').on("submit",function(e){
+        e.preventDefault();
+        var formulario = $(this).serialize();
+        console.log(formulario);
+        $.ajax({
+            'method':'POST',
+            'url': 'controlador/ingresar.php',
+            'data': formulario
+        }).done(function(info){
+            $("#mostrarDatos").html(info);
+        });
+    });
+
+
+
+//FIN: INICIAR SESION//
+
+
 
 //INICIO: CREAR PEDIDOS Y PRODUCTOS//
     $('#formulario').on("submit",function(e){
-        alert('hola mundo');
         e.preventDefault();
         var formulario = $(this).serialize();
         console.log(formulario);

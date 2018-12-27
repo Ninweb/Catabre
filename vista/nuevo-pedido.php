@@ -118,7 +118,7 @@
 										$id_pedido = trim($row1[0]);
 									}
 
-										$codigo_pedido=str_pad($id_pedido+1,5,"0",STR_PAD_LEFT);
+										$codigo_pedido=str_pad($id_pedido,5,"0",STR_PAD_LEFT);
 								?>
 								<input id="codigo_pedido"  type="hidden" name="codigo_pedido" class="col-md-10 form-control" value="<?php echo $codigo_pedido; ?>">
 
