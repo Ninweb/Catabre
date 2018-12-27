@@ -46,7 +46,9 @@
 	                }
 	            });
 	         });
-    	});
+		});
+		
+
 
     		 /*eliminar contenedor*/
 		$(document).ready(function(){
@@ -76,4 +78,13 @@
 		      $('#contrasena').attr('type', 'password');
 		    }
 		  });
+		});
+
+		/* cambiar contraseña*/
+
+		$('#cambiarContraseña').click(function(){
+			$('#nuevaContraseña').val('true');
+			$('#old_pass').css("display","none");
+
+			$('#new_pass').css("display","block");
 		});

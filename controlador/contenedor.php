@@ -37,11 +37,23 @@
         $num_referencia=$_POST['num_referencia'];
         $nombre=$_POST['nombre'];
         $id_contenedor = $_POST['id_contenedor'];
-        $jsonContenedor =json_encode(array(
-            "numeroReferencia"=>$num_referencia,
-            "nombre"=>$nombre,
-            "id_contenedor"=>$id_contenedor
-        ));
+        $status = $_POST['status'];
+        if (isset($_POST['status']) && $_POST['status'] == 'disponible'){
+            $jsonContenedor =json_encode(array(
+                "numeroReferencia"=>$num_referencia,
+                "nombre"=>$nombre,
+                "status"=>'disponible',
+                "id_contenedor"=>$id_contenedor
+            ));
+        }else{
+            $jsonContenedor =json_encode(array(
+                "numeroReferencia"=>$num_referencia,
+                "nombre"=>$nombre,
+                "status"=>'ocupado',
+                "id_contenedor"=>$id_contenedor
+            ));
+        }
+        
     }else if($funcionCRUD == 'eliminar'){
         $id_contenedor = $_POST['id_contenedor'];
         $jsonContenedor =json_encode(array(

@@ -73,17 +73,17 @@
 																    <tbody>
 																      <tr>
 																        <td><?php echo $fila['ref']; ?></td>
-																        <td><?php echo $fila['nombre']; ?></td>
+																        <td><?php echo $fila['nombre_conte']; ?></td>
 																        <td><?php echo $fila['status']; ?></td>
 																         <td>
-												                              <a href="#" id="<?php echo $fila['id_contenedor'];?>" data-target="#editar-contenedor" class="btn btn-success" data-toggle="modal" data-id="<?php echo $fila['id_contenedor'];?>">
-												                              <i class="far fa-edit" aria-hidden="true"></i>
+												                              <a href="#" id="<?php echo $fila['id_contenedor'];?>" data-target="#editar-contenedor" data-toggle="modal" data-id="<?php echo $fila['id_contenedor'];?>">
+												                              <i class="far fa-edit" aria-hidden="true" style="color: #28a745;"></i>
 												                              </a>
 
 												                          </td>
 												                          <td>
-											                                  <a href="#" class="btn btn-danger"  data-toggle="modal" data-target="#eliminar-contenedor" data-book-id="<?php echo $fila['id_contenedor'];?>">
-											                                    <i class="fas fa-trash-alt" aria-hidden="true"></i>
+											                                  <a href="#" data-toggle="modal" data-target="#eliminar-contenedor" data-book-id="<?php echo $fila['id_contenedor'];?>">
+											                                    <i class="fas fa-trash-alt" aria-hidden="true" style="color: #dc3545;"></i>
 											                                  </a>
 				                          								</td>
 																      </tr>

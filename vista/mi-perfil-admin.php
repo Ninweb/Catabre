@@ -52,6 +52,7 @@
 												<th>Apellido</th>
 												<th>Empresa</th>
 												<th>Email</th>
+												<th>contraseña</th>
 												<th>Modificar</th>
 											</tr>
 										</thead>
@@ -60,22 +61,21 @@
 										
 										while ($fila=mysqli_fetch_array($consulta_usuario)) {
 											?>
-												
-												    <tbody>
-												      <tr>
-												      	<td><?php echo $fila['nombre']; ?></td>
-												        <td><?php echo $fila['apellido']; ?></td>
-												        <td><?php echo $fila['empresa']; ?></td>
-												        <td><?php echo $fila['email']; ?></td>
-												        <td>
-												                              <a href="#" id="<?php echo $fila['id_usuario'];?>" data-target="#editar-admin" class="btn btn-success" data-toggle="modal" data-id="<?php echo $fila['id_usuario'];?>">
-												                              <i class="far fa-edit" aria-hidden="true"></i>
-												                              </a>
-
-												                          </td>
-												                        
-												      </tr>
-												    </tbody>
+												<tbody>
+													<tr>
+														<td><?php echo $fila['nombre']; ?></td>
+														<td><?php echo $fila['apellido']; ?></td>
+														<td><?php echo $fila['empresa']; ?></td>
+														<td><?php echo $fila['email']; ?></td>
+														<td><input type="password" value="<?php echo $fila['clave']; ?>" disabled></td>
+														<td>
+															<a href="#" id="<?php echo $fila['id_usuario'];?>" data-target="#editar-admin" data-toggle="modal" data-id="<?php echo $fila['id_usuario'];?>">
+															<i class="far fa-edit" aria-hidden="true" style="color: #28a745;"></i>
+															</a>
+														</td>
+																						
+													</tr>
+												</tbody>
 											<?php
 										}
 									?>

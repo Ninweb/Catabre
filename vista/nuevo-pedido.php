@@ -94,7 +94,7 @@
                         echo "<option>Seleccione contenedor</option>";
                         while ($row = mysqli_fetch_array($consulta_contenedor)) 
 												{
-													echo "<option id='id_contenedor' value=\"".$row['id_contenedor']."\">".$row['nombre'];
+													echo "<option id='id_contenedor' value=\"".$row['id_contenedor']."\">".$row['nombre_conte'];
 												}
                       }else{
                         echo "<option>No hay contenedor disponible</option>";
@@ -118,7 +118,7 @@
 										$id_pedido = trim($row1[0]);
 									}
 
-										$codigo_pedido=str_pad($id_pedido+1,5,"0",STR_PAD_LEFT);
+										$codigo_pedido=str_pad($id_pedido,5,"0",STR_PAD_LEFT);
 								?>
 								<input id="codigo_pedido"  type="hidden" name="codigo_pedido" class="col-md-10 form-control" value="<?php echo $codigo_pedido; ?>">
 
@@ -295,7 +295,7 @@
 								<!-- PEDIDO -->
 								<div class="form-group" align="center">        
 									<div class="col-sm-offset-4 col-sm-10">
-										<button type="button" name="generar" class="btn btn-primary" id="generar_pedido">Generar Pedido</button>
+										<button type="submit" name="generar" class="btn btn-primary" id="generar_pedido">Generar Pedido</button>
 									</div>
 								</div>				
 

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-12-2018 a las 21:18:43
--- Versión del servidor: 10.1.33-MariaDB
--- Versión de PHP: 7.2.6
+-- Tiempo de generación: 27-12-2018 a las 15:42:01
+-- Versión del servidor: 10.1.34-MariaDB
+-- Versión de PHP: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,18 +31,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `contenedor` (
   `id_contenedor` int(11) NOT NULL,
   `ref` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `nombre` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `nombre_conte` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `status` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `contenedor`
---
-
-INSERT INTO `contenedor` (`id_contenedor`, `ref`, `nombre`, `status`) VALUES
-(1, '#12222221121', 'contenedor1', 'ocupado'),
-(2, '1234', 'contenedor2', 'disponible'),
-(3, '54668', 'contenedor4', 'disponible');
 
 -- --------------------------------------------------------
 
@@ -56,16 +47,11 @@ CREATE TABLE `pedido` (
   `id_contenedor` int(11) NOT NULL,
   `codigo_pedido` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `naviera` text NOT NULL,
+  `origen` text NOT NULL,
+  `destino` text NOT NULL,
   `fecha_salida` date NOT NULL,
   `fecha_llegada` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `pedido`
---
-
-INSERT INTO `pedido` (`id_pedido`, `id_persona`, `id_contenedor`, `codigo_pedido`, `naviera`, `fecha_salida`, `fecha_llegada`) VALUES
-(6, 2, 1, '1234', 'puerto', '2029-12-12', '2030-02-12');
 
 -- --------------------------------------------------------
 
@@ -86,8 +72,8 @@ CREATE TABLE `persona` (
 --
 
 INSERT INTO `persona` (`id_persona`, `id_usuario`, `nombre`, `apellido`, `empresa`) VALUES
-(1, 1, 'Johan', 'Román', 'NINWEB'),
-(2, 2, 'Wilmer', 'Sanchez', 'NINWEB');
+(1, 1, 'PEDRO', 'PEREZ', 'SISTEMCOMPUTER'),
+(2, 2, 'MARIA', 'GUTIERREZ', 'NINWEB');
 
 -- --------------------------------------------------------
 
@@ -108,14 +94,6 @@ CREATE TABLE `producto` (
   `total` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `producto`
---
-
-INSERT INTO `producto` (`id_producto`, `id_pedido`, `presentacion`, `producto`, `especie`, `color`, `peso`, `tamano`, `master`, `total`) VALUES
-(5, 6, 'es', 'es', 'es', 'es', 'es', 'es', 'es', 0),
-(4, 6, 'hghghg', 'hgh', 'gh', 'gh', 'ghg', 'hg', 'hgh', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -124,8 +102,8 @@ INSERT INTO `producto` (`id_producto`, `id_pedido`, `presentacion`, `producto`, 
 
 CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
-  `email` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `clave` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `email` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `clave` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `tipo` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -134,8 +112,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `email`, `clave`, `tipo`) VALUES
-(1, 'johan@johanmail.com', 'c4ca4238a0b923820dcc509a6f75849b', 'admin'),
-(2, 'wilmer@johanmail.com', '0196f6c4f97df3f48d570c23e46501ae', 'user');
+(1, 'admin@ninweb.net', '81dc9bdb52d04dc20036dbd8313ed055', 'admin'),
+(2, 'cliente@ninweb.net', '81dc9bdb52d04dc20036dbd8313ed055', 'user');
 
 --
 -- Índices para tablas volcadas
@@ -153,7 +131,9 @@ ALTER TABLE `contenedor`
 ALTER TABLE `pedido`
   ADD PRIMARY KEY (`id_pedido`),
   ADD KEY `id_persona` (`id_persona`),
-  ADD KEY `id_contenedor` (`id_contenedor`);
+  ADD KEY `id_contenedor` (`id_contenedor`),
+  ADD KEY `id_persona_2` (`id_persona`),
+  ADD KEY `id_contenedor_2` (`id_contenedor`);
 
 --
 -- Indices de la tabla `persona`
@@ -165,7 +145,8 @@ ALTER TABLE `persona`
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD PRIMARY KEY (`id_producto`);
+  ADD PRIMARY KEY (`id_producto`),
+  ADD KEY `id_pedido` (`id_pedido`);
 
 --
 -- Indices de la tabla `usuario`
@@ -181,13 +162,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `contenedor`
 --
 ALTER TABLE `contenedor`
-  MODIFY `id_contenedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_contenedor` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `persona`
@@ -199,7 +180,7 @@ ALTER TABLE `persona`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`

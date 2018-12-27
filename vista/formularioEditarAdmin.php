@@ -52,16 +52,50 @@
 			<input required  autocomplete="off" type="email" name="email" value="<?php echo $resultados['email'] ?>" class="col-md-7 form-control">
 
 		</div><br>
-		<div class="col-md-12">
-				<label for="clave">Contraseña</label>
-		</div>
-		<div class="input-group col-md-12">
-				<div class="input-group-prepend">
-				<i class="fas fa-key input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+		<div id="old_pass">
+			<div class="col-md-12">
+					<label for="clave">Contraseña</label>
 			</div>
-			<input required  autocomplete="off" type="text" name="password" value="<?php echo $decoded ?>" class="col-md-7 form-control">
-
+			<div class="input-group col-md-12 prueba">
+				<div class="input-group-prepend">
+					<i class="fas fa-key input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+				</div>
+				<input required  autocomplete="off" type="password" name="password" value="<?php echo $resultados['clave'] ?>" class="col-md-7 form-control" disabled>
+				<button type="button" name="modificar" id="cambiarContraseña" class="btn btn-primary">Cambiar Contraseña</button>
+			</div>
 		</div>
+
+
+		
+		<input type="hidden" name="nuevaContraseña" id="nuevaContraseña" value="false">
+
+
+
+		<div id="new_pass" style="display:none;">
+			<div class="col-md-12">
+					<label for="nuevaClave">Nueva Contraseña</label>
+			</div>
+			<div class="input-group col-md-12 prueba">
+				<div class="input-group-prepend">
+					<i class="fas fa-key input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+				</div>
+				<input   autocomplete="off" type="password" name="newPassword" class="col-md-7 form-control">
+			</div>
+
+			<div class="col-md-12">
+					<label for="clave">Repite Contraseña</label>
+			</div>
+			<div class="input-group col-md-12 prueba">
+				<div class="input-group-prepend">
+					<i class="fas fa-key input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+				</div>
+				<input   autocomplete="off" type="password" name="rePassword"  class="col-md-7 form-control">
+			</div>
+		</div>
+
+
+		
+		
 		&nbsp;
 			<div class="form-group" align="center">        
 				<div class="col-sm-10">

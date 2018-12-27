@@ -58,45 +58,58 @@
 								if (mysqli_num_rows($consulta_pedido)>0) {
 
 										?>
-									 	<table class="table table-bordered" style="text-align: center;">
-													<thead class="alert-dark">
-														<tr>
-															<th>N° Referencia</th>
-															<th>Contenedor</th>
-															<th>Presentación</th>
-															<th>Producto</th>
-															<th>Especie</th>
-															<th>Color</th>
-															<th>Peso</th>
-															<th>Tamaño</th>
-															<th>Master</th>
-															<th>Total</th>
-														</tr>
-													</thead>
-												<?php
-													
-													
-													while ($fila=mysqli_fetch_array($consulta_pedido)) {
-														?>
-															
-															    <tbody>
-															      <tr>
-															      	<td><?php echo $fila['ref']; ?></td>
-															        <td><?php echo $fila['nombre']; ?></td>
-															        <td><?php echo $fila['presentacion']; ?></td>
-															        <td><?php echo $fila['producto']; ?></td>
-															        <td><?php echo $fila['especie']; ?></td>
-															        <td><?php echo $fila['color']; ?></td>
-															        <td><?php echo $fila['peso']; ?></td>
-															        <td><?php echo $fila['tamano']; ?></td>
-															        <td><?php echo $fila['master']; ?></td>
-															        <td><?php echo $fila['total']; ?></td>
-															      </tr>
-															    </tbody>
-														<?php
-													}
-												?>
-											</table>
+										<div class="table-responsive">
+
+										 	<table class="table table-bordered" style="text-align: center;">
+														<thead class="alert-dark">
+															<tr>
+																<th>N° Referencia</th>
+																<th>Contenedor</th>
+																<th>Naviera</th>
+																<th>Origen</th>
+																<th>Destino</th>
+																<th>Presentación</th>
+																<th>Producto</th>
+																<th>Especie</th>
+																<th>Color</th>
+																<th>Peso</th>
+																<th>Tamaño</th>
+																<th>Master</th>
+																<th>Total</th>
+																<th>Fecha Sálida</th>
+																<th>Fecha Llegada</th>
+															</tr>
+														</thead>
+													<?php
+														
+														
+														while ($fila=mysqli_fetch_array($consulta_pedido)) {
+															?>
+																
+																    <tbody>
+																      <tr>
+																      	<td><?php echo $fila['ref']; ?></td>
+																        <td><?php echo $fila['nombre_conte']; ?></td>
+																        <td><?php echo $fila['naviera']; ?></td>
+																        <td><?php echo $fila['origen']; ?></td>
+																        <td><?php echo $fila['destino']; ?></td>
+																        <td><?php echo $fila['presentacion']; ?></td>
+																        <td><?php echo $fila['producto']; ?></td>
+																        <td><?php echo $fila['especie']; ?></td>
+																        <td><?php echo $fila['color']; ?></td>
+																        <td><?php echo $fila['peso']; ?></td>
+																        <td><?php echo $fila['tamano']; ?></td>
+																        <td><?php echo $fila['master']; ?></td>
+																        <td><?php echo $fila['total']; ?></td>
+																        <td><?php echo $fila['fecha_salida']; ?></td>
+																        <td><?php echo $fila['fecha_llegada']; ?></td>
+																      </tr>
+																    </tbody>
+															<?php
+														}
+													?>
+												</table>
+											</div>
 											<?php
 									}else{
 

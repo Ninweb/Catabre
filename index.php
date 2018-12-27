@@ -35,8 +35,8 @@
           </div>
           <div class="card-body form-group">
             <br>
-            <form action="controlador/ingresar.php" method="post">
-              
+            <form id="formularioSesion">
+              <input type="hidden" name="validacion" value="">
               <input type="email" name="email" id="correo" placeholder="Correo Electrónico" class="col-md-8 offset-md-2 form-control espacio_margen" autocomplete="off" autofocus="">
               <input type="password" name="clave" placeholder="Contraseña" class="col-md-8 offset-md-2 form-control espacio_margen" autocomplete="off">
               <br>
@@ -45,6 +45,8 @@
                 <a href="vista/recuperar-password.php" style="color: #ffffff;">¿Ha olvidado su contraseña?</a>
               </div>
             </form>
+            <div id="mostrarDatos">
+            </div>
           </div>
         </div>
         
@@ -54,10 +56,15 @@
 
 
     <!-- Bootstrap core JavaScript-->
-    <?php
-      include("vista/script.php");
-    ?>
-
+    <script src="vista/js/jquery.min.js"></script>
+    <script src="vista/js/bootstrap.min.js"></script>
+    <script src="vista/js/sb-admin.js"></script>
+    <script src="vista/js/ajaxRegistros.js"></script>
+    <script src="vista/js/validar.js"></script>
+    <script src="vista/js/tabla-constructor.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="vista/js/validacionesPedido.js"></script>
+    <script src="vista/js/validacionesUsuario.js"></script>
   </body>
 
 </html>
