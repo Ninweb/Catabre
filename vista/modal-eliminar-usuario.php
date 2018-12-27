@@ -19,8 +19,8 @@
                 <div class="modal-body">
                      <center>
                         <div class="alert alert-danger">
-                                        <strong><i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i></strong> ¿Está Seguro de eliminar a este usuario?
-                            </div>  
+                                <strong><i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i></strong> ¿Está Seguro de eliminar a este usuario?
+                        </div>  
                     </center>                   
                 </div>
                 

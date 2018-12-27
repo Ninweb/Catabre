@@ -7,7 +7,6 @@
 
     function editarPersona($json,$db){
         $persona = json_decode($json);
-       
         $registrar=mysqli_query($db,"UPDATE persona SET nombre='$persona->nombre',apellido='$persona->apellido',empresa='$persona->empresa' WHERE id_usuario= '$persona->id_usuario' ");
     }
 

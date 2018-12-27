@@ -1,6 +1,3 @@
-function refrescar(){
-    location.reload();
-}
 
 //INICIO: CREAR PEDIDOS Y PRODUCTOS//
     $('#formulario').on("submit",function(e){
@@ -72,7 +69,8 @@ function refrescar(){
 //FIN: CRUD DE CONTENEDOR//
 
 
-//INICIO: CREAR USUARIOS//
+//INICIO: CRUD DE USUARIO//
+    //INICIO: CREAR USUARIOS//
     $('#formularioUsuario').on("submit",function(e){
         e.preventDefault();
         var formulario = $(this).serialize();
@@ -85,35 +83,36 @@ function refrescar(){
             $("#mostrarDatos").html(info);
         });
     });
-//FIN: CREAR USUARIOS//
+    //FIN: CREAR USUARIOS//
 
-//INICIO: EDITAR USUARIO//
-$('#formularioEditarUsuario').on("submit",function(e){
-    e.preventDefault();
-    var formulario = $(this).serialize();
-    console.log(formulario);
-    $.ajax({
-        'method':'POST',
-        'url': '../controlador/usuarioPersona.php',
-        'data': formulario
-    }).done(function(info){
-        $("#mostrarDatos").html(info);
+    //INICIO: EDITAR USUARIO//
+    $('#formularioEditarUsuario').on("submit",function(e){
+        e.preventDefault();
+        var formulario = $(this).serialize();
+        console.log(formulario);
+        $.ajax({
+            'method':'POST',
+            'url': '../controlador/usuarioPersona.php',
+            'data': formulario
+        }).done(function(info){
+            $("#mostrarDatos").html(info);
+        });
     });
-});
-//FIN: EDITAR USUARIO//
+    //FIN: EDITAR USUARIO//
 
-//INICIO: ELIMINAR USUARIO//
+    //INICIO: ELIMINAR USUARIO//
 
-$('#formularioEliminarUsuario').on("submit",function(e){
-    e.preventDefault();
-    var formulario = $(this).serialize();
-    console.log(formulario);
-    $.ajax({
-        'method':'POST',
-        'url': '../controlador/usuarioPersona.php',
-        'data': formulario
-    }).done(function(info){
-        $("#mostrarDatos").html(info);
+    $('#formularioEliminarUsuario').on("submit",function(e){
+        e.preventDefault();
+        var formulario = $(this).serialize();
+        console.log(formulario);
+        $.ajax({
+            'method':'POST',
+            'url': '../controlador/usuarioPersona.php',
+            'data': formulario
+        }).done(function(info){
+            $("#mostrarDatos").html(info);
+        });
     });
-});
-//FIN: ELIMINAR USUARIO//
+    //FIN: ELIMINAR USUARIO//
+//FIN: CRUD DE USUARIO//

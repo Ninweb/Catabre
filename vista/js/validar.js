@@ -39,7 +39,7 @@
 	            var id_usuario= $(e.relatedTarget).data('id');
 	            $.ajax({
 	                type : 'post',
-	                url : '../modelo/editar-admin.php', //Here you will fetch records 
+	                url : 'formularioEditarAdmin.php', //Here you will fetch records 
 	                data :  'id_usuario='+ id_usuario, //Pass $id
 	                success : function(data){
 	                    $('.fetched-data').html(data);//Show fetched data from database
