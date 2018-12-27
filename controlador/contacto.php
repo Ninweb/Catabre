@@ -3,10 +3,7 @@
     session_start();
     if(!isset($_SESSION['id_usuario'])) 
     {
-
-
           echo "<script>window.location.href='../index.php'</script>";
-
       exit();
       session_destroy(); 
     }else{
@@ -410,17 +407,32 @@
                                     $mail->Body=$mensaje; 
                                     $mail->AltBody=$mensaje;
 
-        												if ($mail->Send())
-        																						{
-        													   echo "true";
+        												if ($mail->Send()){
+                                  echo "<script>swal('ENVIADO!', 'tu mensaje fue enviado con exito', 'success').then(
+                                    function(){ 
+                                        location.reload();
+                                    }
+                                  );</script>";
 
         												}else{
         												        
-        										         echo "falso";
+                                    echo "<script>swal('Error!', 'Hubo un error al mandar el correo', 'error').then(
+                                      function(){ 
+                                          location.reload();
+                                      }
+                                    );</script>";
                                 }
         												
-                          
+                                echo "<script>swal('Error!', 'Hubo un error al mandar el correo', 'error').then(
+                                  function(){ 
+                                      location.reload();
+                                  }
+                                );</script>";       
               }
         }
-                             
+        echo "<script>swal('Error!', 'Hubo un error al mandar el correo', 'error').then(
+          function(){ 
+              location.reload();
+          }
+        );</script>";                     
  ?>

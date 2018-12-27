@@ -11,12 +11,23 @@
             $("#mostrarDatos").html(info);
         });
     });
-
-
-
 //FIN: INICIAR SESION//
 
+//INICIO : CORREO DE CONTACTO//
+    $('#formularioContacto').on("submit",function(e){
+        e.preventDefault();
+        var formulario = $(this).serialize();
+        console.log(formulario);
+        $.ajax({
+            'method':'POST',
+            'url': '../controlador/contacto.php',
+            'data': formulario
+        }).done(function(info){
+            $("#mostrarDatos").html(info);
+        });
+    });
 
+//FIN : CORREO DE CONTACTO//
 
 //INICIO: CREAR PEDIDOS Y PRODUCTOS//
     $('#formulario').on("submit",function(e){

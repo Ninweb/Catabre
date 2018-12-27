@@ -3,8 +3,6 @@
 			include ("../modelo/conexion.php");
     if(!isset($_SESSION['id_usuario'])) 
     {
-
-
           echo "<script>window.location.href='../index.php'</script>";
 
       exit();
@@ -147,7 +145,7 @@
 			                        </div>
 			                        <div class="card-body">
 			                      
-			                            <form action="../controlador/contacto.php" method="post" autocomplete="off" >
+			                            <form id="formularioContacto" autocomplete="off" >
 			                                <fieldset>
 			                                    <label for="name2" class="mb-0">Empresa</label>
 			                                    <div class="row mb-1">
@@ -170,6 +168,9 @@
 			                                    <button type="submit" name="enviar" class="btn btn-secondary btn-lg float-right">Enviar</button>
 			                                </fieldset>
 			                            </form>
+
+																	<div id="mostrarDatos">
+																	</div>
 			                        </div>
                     			</div>
                     <!-- /form user info -->
