@@ -2,6 +2,7 @@
     include('../modelo/usuario.php');
     include('../modelo/persona.php');
     include("../modelo/conexion.php");
+    include("../modelo/comprobarDatos.php");
 
     function modeloUsuario($json,$db,$funcionCRUD){        
         if($funcionCRUD == 'crear'){
@@ -34,8 +35,15 @@
 
 
     if($funcionCRUD == 'crear'){
+        $email=$_POST['email'];
+        $password=$_POST['password'];
+        $jsonUsuario =json_encode(array(
+            "email"=>$email,
+            "password"=>$password
+        ));
 
         $comp_email = modeloComprobar($email,$db);
+
         if ($comp_email){
             echo "entro al if 1, ";
             echo "<script>
@@ -45,13 +53,6 @@
                 icon: \"error\"
                 })
             </script>";
-        }else{
-            $email=$_POST['email'];
-            $password=$_POST['password'];
-            $jsonUsuario =json_encode(array(
-                "email"=>$email,
-                "password"=>$password
-            ));
         }
     }else if ($funcionCRUD == 'editar'){
         $email=$_POST['email'];
@@ -59,7 +60,7 @@
         $id_usuario = $_POST['id_usuario'];
         $jsonUsuario =json_encode(array(
             "email"=>$email,
-            "password"=>$password
+            "password"=>$password,
             "id_contenedor"=>$id_usuario
         ));
     }else if($funcionCRUD == 'eliminar'){
@@ -93,7 +94,7 @@
         $jsonUsuario =json_encode(array(
             "nombre"=>$nombre,
             "apellido"=>$apellido,
-            "empresa"=>$empresa
+            "empresa"=>$empresa,
             "id_persona"=>$id_persona
         ));
     }else if($funcionCRUD == 'eliminar'){
@@ -109,11 +110,22 @@
 
     
     if($funcionCRUD=='crear'){
-        echo "<script>swal('Guardado!', 'Nuevo Usuario', 'success').then(
-            function(){ 
-                location.reload();
-            }
-        );</script>";
+        if ($comp_email){
+            echo "entro al if 1, ";
+            echo "<script>
+            swal({
+                title: \"¡Error!\", 
+                text: \"Este correo ya se encuentra en la base de datos. Por favor, verifique e ingrese un correo electrónico valido.\",
+                icon: \"error\"
+                })
+            </script>";
+        }else{
+            echo "<script>swal('Guardado!', 'Nuevo Usuario', 'success').then(
+                function(){ 
+                    location.reload();
+                }
+            );</script>";
+        }   
     }else if ($funcionCRUD == 'editar'){
         echo "<script>swal('Guardado!', 'Fue editado el usuario', 'success').then(
             function(){ 

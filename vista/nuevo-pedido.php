@@ -150,7 +150,7 @@
 								<div class="col-md-6 offset-md-3">
 									<div class="row">
 										<div class="input-group-prepend col-md-6">
-						          <label for="salida">Fecha de sálida</label>
+						          <label for="salida">Fecha de salida</label>
 						        </div>	
 						        <div class="input-group-prepend col-md-6">
 											<label for="llegada" style="margin-left:-20px;">Fecha aproximada de llegada</label>

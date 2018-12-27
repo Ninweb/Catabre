@@ -46,17 +46,17 @@ $(document).ready(function(){
     })
 
 
-    $('#formularioUsuario').on("submit",function(e){
-      e.preventDefault();
-      var email = document.getElementById('email').value
-      $.ajax({
-        'method':'POST',
-        'url': '../../controlador/usuarioPersona.php',
-        'data': email
-      }).done(function(info){
-        $("#mostrarDatos").html(info);
-      });
-    })
+    // $('#formularioUsuario').on("submit",function(e){
+    //   e.preventDefault();
+    //   var email = document.getElementById('email').value
+    //   $.ajax({
+    //     'method':'POST',
+    //     'url': '../../controlador/usuarioPersona.php',
+    //     'data': email
+    //   }).done(function(info){
+    //     $("#mostrarDatos").html(info);
+    //   });
+    // })
      
   })
 
