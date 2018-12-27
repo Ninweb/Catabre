@@ -7,12 +7,14 @@
     function modeloUsuario($json,$db,$funcionCRUD){        
         if($funcionCRUD == 'crear'){
             $idUsuario = crearUsuario($json,$db);
+            return $idUsuario;
         }else if ($funcionCRUD == "editar"){
-            $idUsuario = editarUsuario($json,$db);
+            editarUsuario($json,$db);
+            return $_POST['id_usuario'];
         }else if($funcionCRUD == 'eliminar'){
-            $idUsuario = eliminarUsuario($json,$db);
+            eliminarUsuario($json,$db);
+            return $_POST['id_usuario'];
         }
-        return $idUsuario;
     }
     
     function modeloPersona($json,$db,$funcionCRUD){        
@@ -35,14 +37,9 @@
 
 
     if($funcionCRUD == 'crear'){
-        $email=$_POST['email'];
-        $password=$_POST['password'];
-        $jsonUsuario =json_encode(array(
-            "email"=>$email,
-            "password"=>$password
-        ));
-
-        $comp_email = modeloComprobar($email,$db);
+        
+        /*$email=$_POST['email'];
+        
 
         if ($comp_email){
             echo "entro al if 1, ";
@@ -53,20 +50,28 @@
                 icon: \"error\"
                 })
             </script>";
-        }
+        }else{*/
+            $email=$_POST['email'];
+            $password=$_POST['password'];
+            $jsonUsuario =json_encode(array(
+                "email"=>$email,
+                "password"=>$password
+            ));
+
+            $comp_email = modeloComprobar($email,$db);
+        //}
     }else if ($funcionCRUD == 'editar'){
         $email=$_POST['email'];
-        $password=$_POST['password'];
+        //$password=$_POST['password'];
         $id_usuario = $_POST['id_usuario'];
         $jsonUsuario =json_encode(array(
             "email"=>$email,
-            "password"=>$password,
-            "id_contenedor"=>$id_usuario
+            "id_usuario"=>$id_usuario
         ));
     }else if($funcionCRUD == 'eliminar'){
-        $id_usuario = $_POST['id_contenedor'];
-        $jsonContenedor =json_encode(array(
-            "id_contenedor"=>$id_usuario
+        $id_usuario = $_POST['id_usuario'];
+        $jsonUsuario =json_encode(array(
+            "id_usuario"=>$id_usuario
         ));
     }
 
@@ -86,22 +91,19 @@
         ));
             
     }else if ($funcionCRUD == 'editar'){
-        //buscar id de persona asociada a idUsuario
-        //$id_persona = no se 
         $nombre=$_POST['nombre'];
 	    $apellido=$_POST['apellido'];
         $empresa=$_POST['empresa'];
-        $jsonUsuario =json_encode(array(
+        $jsonPersona =json_encode(array(
             "nombre"=>$nombre,
             "apellido"=>$apellido,
             "empresa"=>$empresa,
-            "id_persona"=>$id_persona
+            "id_usuario"=>$idUsuario
         ));
     }else if($funcionCRUD == 'eliminar'){
-        //buscar id de persona asociada a idUsuario
-        //$id_persona = no se 
-        $jsonContenedor =json_encode(array(
-            "id_persona"=>$id_persona
+  
+        $jsonPersona =json_encode(array(
+            "id_usuario"=>$idUsuario
         ));
     }
 

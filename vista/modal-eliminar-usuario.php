@@ -19,14 +19,15 @@
                 <div class="modal-body">
                      <center>
                         <div class="alert alert-danger">
-                                        <strong><i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i></strong> ¿Está Seguro de eliminar a este usuario?
-                            </div>  
+                                <strong><i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i></strong> ¿Está Seguro de eliminar a este usuario?
+                        </div>  
                     </center>                   
                 </div>
                 
             <!-- Modal Footer -->
                 <div class="modal-footer">
-                     <form class="form-horizontal" action="../modelo/eliminar-usuario.php" method="post">
+                     <form class="form-horizontal" id="formularioEliminarUsuario">
+                        <input type="hidden" name="funcion" value="eliminar">
                          <div class="form-group">        
                             <div class="col-sm-offset-2 col-sm-12">
                                 <button type="button" class="btn btn-default"
@@ -39,7 +40,13 @@
                           </div>
                     </form>
 
+                    <div id="mostrarDatos">
+                    </div>
+
                 </div>
             </div>
          </div>
     </div>
+
+
+    <script src="js/ajaxRegistros.js"></script>
