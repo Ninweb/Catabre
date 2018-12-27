@@ -294,7 +294,7 @@
 								<!-- PEDIDO -->
 								<div class="form-group" align="center">        
 									<div class="col-sm-offset-4 col-sm-10">
-										<button type="button" name="generar" class="btn btn-primary" id="generar_pedido">Generar Pedido</button>
+										<button type="submit" name="generar" class="btn btn-primary" id="generar_pedido">Generar Pedido</button>
 									</div>
 								</div>				
 

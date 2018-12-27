@@ -1,6 +1,7 @@
 
 //INICIO: CREAR PEDIDOS Y PRODUCTOS//
     $('#formulario').on("submit",function(e){
+        alert('hola mundo');
         e.preventDefault();
         var formulario = $(this).serialize();
         console.log(formulario);
