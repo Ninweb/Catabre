@@ -24,9 +24,7 @@
     $fechaLlegada=$_POST['fecha_llegada'];
 
     $numeroPedidos = $_POST['hidden-number-pedido'];
-    // $numeroPedidos = $_POST['hidden-number-pedido'];
     
-
 
     $jsonPedido =json_encode(array(
         "idContenedor"=>$idContenedor,
@@ -73,7 +71,7 @@
     $actualizacion= "UPDATE contenedor SET status='ocupado' Where id_contenedor='$idContenedor'";
     mysqli_query($db,$actualizacion);
 
-    $query=mysqli_query($db,"SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND  usuario.id_usuario='".$idCliente."'");
+    $query=mysqli_query($db,"SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND  usuario.id_usuario='.$idCliente.' ");
 
     $result=mysqli_fetch_array($query);
     $email=$result['email'];
@@ -443,37 +441,32 @@
                           
 
                            // Requiere PHPMAILER para poder enviar el formulario desde el SMTP de google
-                                $mail=new PHPMailer();
+        $mail=new PHPMailer();
 
-                                $mail->IsSMTP(); 
-                                $mail->SMTPAuth=true;
-                                $mail->Mailer="POP3"; 
-                                $mail->SMTPSecure='ssl'; 
-                                $mail->Host='mail.ninweb.net'; 
-                                $mail->Port=465; 
-                                              
-                                $mail->Username="prueba@ninweb.net"; 
-                                $mail->Password="7140730l"; 
+        $mail->IsSMTP(); 
+        $mail->SMTPAuth=true;
+        $mail->Mailer="POP3"; 
+        $mail->SMTPSecure='ssl'; 
+        $mail->Host='mail.ninweb.net'; 
+        $mail->Port=465; 
+                      
+        $mail->Username="prueba@ninweb.net"; 
+        $mail->Password="7140730l"; 
 
-                                $mail->From="prueba@ninweb.net";
-                                $mail->FromName="CATABRE"; 
-                                $mail->AddAddress($email);
+        $mail->From="prueba@ninweb.net";
+        $mail->FromName="CATABRE"; 
+        $mail->AddAddress($email);
 
-                                $mail->WordWrap=50; 
-                                $mail->IsHTML(true);  
-                                $mail->CharSet='UTF-8';
-                                $mail->Subject=$tema;
-                                $mail->Body=$mensaje; 
-                                $mail->AltBody=$mensaje;
-                                $mail->Send();
-                                                                                            {
+        $mail->WordWrap=50; 
+        $mail->IsHTML(true);  
+        $mail->CharSet='UTF-8';
+        $mail->Subject=$tema;
+        $mail->Body=$mensaje; 
+        $mail->AltBody=$mensaje;
+        $mail->Send();
+                                                                    
                                                           
           
-
-
-
-
-    
     echo "<script>
     swal({ title: \"¡Guardado!\", text: \"Pedido en camino\", icon: \"success\"})
     .then(
@@ -483,8 +476,7 @@
             }
         );
     </script>";
-    echo "<script>document.getElementById('formulario').reset();</script>";
-
+   
     mysqli_close($db);
     
 ?>
