@@ -35,6 +35,7 @@
 
     $funcionCRUD = $_POST['funcion'];
     $contraseñaErronea = false;
+    $comp_email = false;
 
     if($funcionCRUD == 'crear'){    
         $email=$_POST['email'];

@@ -23,7 +23,8 @@
 
     
     $funcionCRUD = $_POST['funcion'];
-
+    $comp_ref = false;
+    
     if($funcionCRUD == 'crear'){
         $num_referencia=$_POST['num_referencia'];
         $nombre=$_POST['nombre'];

@@ -172,7 +172,7 @@ $(document).ready(function (){
          }
       }
 
-      if(mensaje){
+      if(mensaje && !pedido){
          swal({ 
             title: "¡Atención!", 
             text: "Hay campos incorrectos. Por favor valide los campos con iconos amarillos.", 
