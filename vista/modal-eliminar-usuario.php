@@ -26,7 +26,8 @@
                 
             <!-- Modal Footer -->
                 <div class="modal-footer">
-                     <form class="form-horizontal" action="../modelo/eliminar-usuario.php" method="post">
+                     <form class="form-horizontal" id="formularioEliminarUsuario">
+                        <input type="hidden" name="funcion" value="eliminar">
                          <div class="form-group">        
                             <div class="col-sm-offset-2 col-sm-12">
                                 <button type="button" class="btn btn-default"
@@ -39,7 +40,13 @@
                           </div>
                     </form>
 
+                    <div id="mostrarDatos">
+                    </div>
+
                 </div>
             </div>
          </div>
     </div>
+
+
+    <script src="js/ajaxRegistros.js"></script>
