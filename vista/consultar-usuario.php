@@ -77,14 +77,14 @@
 												        <td><?php echo $fila['empresa']; ?></td>
 												        <td><?php echo $fila['email']; ?></td>
 												        <td>
-												                              <a href="#" id="<?php echo $fila['id_usuario'];?>" data-target="#editar-usuario" class="btn btn-success" data-toggle="modal" data-id="<?php echo $fila['id_usuario'];?>">
-												                              <i class="far fa-edit" aria-hidden="true"></i>
+												                              <a href="#" id="<?php echo $fila['id_usuario'];?>" data-target="#editar-usuario" data-toggle="modal" data-id="<?php echo $fila['id_usuario'];?>">
+												                              <i class="far fa-edit" style="color: #28a745;"></i>
 												                              </a>
 
 												                          </td>
 												                          <td>
-											                                  <a href="#" class="btn btn-danger"  data-toggle="modal" data-target="#eliminar-usuario" data-book-id="<?php echo $fila['id_usuario'];?>">
-											                                    <i class="fas fa-trash-alt" aria-hidden="true"></i>
+											                                  <a href="#"  data-toggle="modal" data-target="#eliminar-usuario" data-book-id="<?php echo $fila['id_usuario'];?>">
+											                                    <i class="fas fa-trash-alt" aria-hidden="true" style="color: #dc3545;"></i>
 											                                  </a>
 				                          				</td>
 												      </tr>

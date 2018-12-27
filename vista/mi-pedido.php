@@ -87,7 +87,7 @@
 															    <tbody>
 															      <tr>
 															      	<td><?php echo $row1['ref']; ?></td>
-															        <td><?php echo $row1['nombre']; ?></td>
+															        <td><?php echo $row1['nombre_conte']; ?></td>
 															        <td><?php echo $row1['presentacion']; ?></td>
 															        <td><?php echo $row1['producto']; ?></td>
 															        <td><?php echo $row1['especie']; ?></td>

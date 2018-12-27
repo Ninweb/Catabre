@@ -94,7 +94,7 @@
                         echo "<option>Seleccione contenedor</option>";
                         while ($row = mysqli_fetch_array($consulta_contenedor)) 
 												{
-													echo "<option id='id_contenedor' value=\"".$row['id_contenedor']."\">".$row['nombre'];
+													echo "<option id='id_contenedor' value=\"".$row['id_contenedor']."\">".$row['nombre_conte'];
 												}
                       }else{
                         echo "<option>No hay contenedor disponible</option>";

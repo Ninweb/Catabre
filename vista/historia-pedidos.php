@@ -73,7 +73,7 @@
 															    <tbody>
 															      <tr>
 															      	<td><?php echo $fila['ref']; ?></td>
-															        <td><?php echo $fila['nombre']; ?></td>
+															        <td><?php echo $fila['nombre_conte']; ?></td>
 															        <td><?php echo $fila['presentacion']; ?></td>
 															        <td><?php echo $fila['producto']; ?></td>
 															        <td><?php echo $fila['especie']; ?></td>
