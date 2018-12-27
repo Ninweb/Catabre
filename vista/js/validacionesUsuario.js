@@ -9,23 +9,23 @@ $(document).ready(function(){
     var contrasena = $('#contrasena').val().length; 
 
     if(nombre<=0){
-      console.log('El campo Usuario debe ser completado')
+      // console.log('El campo Usuario debe ser completado')
       $('.fa-user').css({"background-color":"#FFC107", "color":"black", "border":"none"})
     }
     if(apellido<=0){
-      console.log('El campo Contenedor debe ser completado')
+      // console.log('El campo Contenedor debe ser completado')
       $('.fa-user').css({"background-color":"#FFC107", "color":"black", "border":"none"})
     }
     if(empresa<=0){
-      console.log('El campo NAVIERA debe ser completado')
+      // console.log('El campo NAVIERA debe ser completado')
       $('.fa-building').css({"background-color":"#FFC107", "color":"black", "border":"none"})
     }
     if(correo<=0){
-      console.log('El campo Destino debe ser completado')
+      // console.log('El campo Destino debe ser completado')
       $('.fa-envelope').css({"background-color":"#FFC107", "color":"black", "border":"none"})
     }
     if(contrasena<=0){
-      console.log('El campo Fecha de salida debe ser completado')
+      // console.log('El campo Fecha de salida debe ser completado')
       $('.fa-key').css({"background-color":"#FFC107", "color":"black", "border":"none"})
     }     
 

@@ -187,7 +187,8 @@
 												</div>
 											</div>
 											<div align="right" id="boton">
-												<button type="button" class="btn btn-success" onclick="nuevo_pedido()" id="pedido"><i class="fas fa-cart-plus"></i><span class="desaparecer_muy_grande">&nbsp;Nuevo pedido</span></button>
+												<!-- <button type="button" class="btn btn-success" onclick="nuevo_pedido()" id="pedido"><i class="fas fa-cart-plus"></i><span class="desaparecer_muy_grande">&nbsp;Nuevo pedido</span></button> -->
+												<input type="button" class="btn btn-success" onclick="nuevo_pedido()" id="pedido" value="Nuevo pedido">
 											</div>
 										</div>
 										<!--BOTONES Y CONTADOR-->

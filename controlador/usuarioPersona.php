@@ -28,38 +28,23 @@
     }
 
     function modeloComprobar($json,$db){
-        $comprobacion = comprobarCorreo($json,$db);
+        $comprobacionCorreo = comprobarCorreo($json,$db);
   
-        return $comprobacion;
+        return $comprobacionCorreo;
      }
 
     $funcionCRUD = $_POST['funcion'];
 
 
-    if($funcionCRUD == 'crear'){
-        
-        /*$email=$_POST['email'];
-        
+    if($funcionCRUD == 'crear'){    
+        $email=$_POST['email'];
+        $password=$_POST['password'];
+        $jsonUsuario =json_encode(array(
+            "email"=>$email,
+            "password"=>$password
+        ));        
 
-        if ($comp_email){
-            echo "entro al if 1, ";
-            echo "<script>
-            swal({
-                title: \"¡Error!\", 
-                text: \"Este correo ya se encuentra en la base de datos. Por favor, verifique e ingrese un correo electrónico valido.\",
-                icon: \"error\"
-                })
-            </script>";
-        }else{*/
-            $email=$_POST['email'];
-            $password=$_POST['password'];
-            $jsonUsuario =json_encode(array(
-                "email"=>$email,
-                "password"=>$password
-            ));
-
-            $comp_email = modeloComprobar($email,$db);
-        //}
+        $comp_email = modeloComprobar($email,$db);        
     }else if ($funcionCRUD == 'editar'){
         $email=$_POST['email'];
         //$password=$_POST['password'];
@@ -75,71 +60,82 @@
         ));
     }
 
-    $idUsuario = modeloUsuario($jsonUsuario,$db,$funcionCRUD);
-
-
-    if($funcionCRUD == 'crear'){
-
-        $nombre=$_POST['nombre'];
-        $apellido=$_POST['apellido'];
-        $empresa=$_POST['empresa'];
-        $jsonPersona =json_encode(array(
-            "idUsuario"=>$idUsuario,
-            "nombre"=>$nombre,
-            "apellido"=>$apellido,
-            "empresa"=>$empresa
-        ));
-            
-    }else if ($funcionCRUD == 'editar'){
-        $nombre=$_POST['nombre'];
-	    $apellido=$_POST['apellido'];
-        $empresa=$_POST['empresa'];
-        $jsonPersona =json_encode(array(
-            "nombre"=>$nombre,
-            "apellido"=>$apellido,
-            "empresa"=>$empresa,
-            "id_usuario"=>$idUsuario
-        ));
-    }else if($funcionCRUD == 'eliminar'){
-  
-        $jsonPersona =json_encode(array(
-            "id_usuario"=>$idUsuario
-        ));
-    }
-
-
-    modeloPersona($jsonPersona,$db,$funcionCRUD);
-
-    
-    if($funcionCRUD=='crear'){
-        if ($comp_email){
-            echo "entro al if 1, ";
-            echo "<script>
+    if($comp_email){
+        echo "<script>
             swal({
                 title: \"¡Error!\", 
-                text: \"Este correo ya se encuentra en la base de datos. Por favor, verifique e ingrese un correo electrónico valido.\",
+                text: \"Este correo ya se encuentra registrado. Por favor, verifique e ingrese un correo electrónico valido.\",
                 icon: \"error\"
                 })
             </script>";
-        }else{
-            echo "<script>swal('Guardado!', 'Nuevo Usuario', 'success').then(
+    }else{
+        $idUsuario = modeloUsuario($jsonUsuario,$db,$funcionCRUD);
+
+        if($funcionCRUD == 'crear'){
+
+            $nombre=$_POST['nombre'];
+            $apellido=$_POST['apellido'];
+            $empresa=$_POST['empresa'];
+            $jsonPersona =json_encode(array(
+                "idUsuario"=>$idUsuario,
+                "nombre"=>$nombre,
+                "apellido"=>$apellido,
+                "empresa"=>$empresa
+            ));
+                
+        }else if ($funcionCRUD == 'editar'){
+            $nombre=$_POST['nombre'];
+            $apellido=$_POST['apellido'];
+            $empresa=$_POST['empresa'];
+            $jsonPersona =json_encode(array(
+                "nombre"=>$nombre,
+                "apellido"=>$apellido,
+                "empresa"=>$empresa,
+                "id_usuario"=>$idUsuario
+            ));
+        }else if($funcionCRUD == 'eliminar'){
+    
+            $jsonPersona =json_encode(array(
+                "id_usuario"=>$idUsuario
+            ));
+        }
+
+
+        modeloPersona($jsonPersona,$db,$funcionCRUD);
+
+        
+        if($funcionCRUD=='crear'){
+            if ($comp_email){
+                // echo "entro al if 1, ";
+                echo "<script>
+                swal({
+                    title: \"¡Error!\", 
+                    text: \"Este correo ya se encuentra en la base de datos. Por favor, verifique e ingrese un correo electrónico valido.\",
+                    icon: \"error\"
+                    })
+                </script>";
+            }else{
+                echo "<script>swal('Guardado!', 'Nuevo Usuario', 'success').then(
+                    function(){ 
+                        location.reload();
+                    }
+                );</script>";
+            }   
+        }else if ($funcionCRUD == 'editar'){
+            echo "<script>swal('Guardado!', 'Fue editado el usuario', 'success').then(
                 function(){ 
                     location.reload();
                 }
             );</script>";
-        }   
-    }else if ($funcionCRUD == 'editar'){
-        echo "<script>swal('Guardado!', 'Fue editado el usuario', 'success').then(
-            function(){ 
-                location.reload();
-            }
-        );</script>";
-    }else if ($funcionCRUD == 'eliminar'){
-        echo "<script>swal('Eliminado!', 'Fue eliminado el usuario', 'success').then(
-            function(){ 
-                location.reload();
-            }
-        );</script>";
+        }else if ($funcionCRUD == 'eliminar'){
+            echo "<script>swal('Eliminado!', 'Fue eliminado el usuario', 'success').then(
+                function(){ 
+                    location.reload();
+                }
+            );</script>";
+        }
     }
+
+    
 
 ?>

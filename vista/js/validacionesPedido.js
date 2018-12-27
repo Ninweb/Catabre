@@ -1,6 +1,8 @@
 $(document).ready(function (){
    var pedido = false
+   var entrar = true
    var cant_pedido = 0;
+   const top_pedido = 3;
    var contenedor = document.getElementById('contenedor').value;
    if(contenedor == "No hay contenedor disponible"){
       swal({ 
@@ -11,12 +13,41 @@ $(document).ready(function (){
    }
 
    //verificando si hay pedido generado
-  $('#pedido').click(function(){
-      pedido = true
-      cant_pedido++
-      alert(cant_pedido)
-  })  
+   $('#pedido').click(function(){
+      if(entrar){         
+         if(cant_pedido < top_pedido-2){
+            pedido = true
+            cant_pedido++
+         }else{  
+            swal({ 
+               title: "¡Atención!", 
+               text: "Queda solamente un pedido disponible en este contenedor.", 
+               icon: "warning"
+            })
+            entrar = false
+         }
+      }else{
+         swal({ 
+            title: "¡Atención!", 
+            text: "Ha llegado al límite de pedidos en este contenedor.", 
+            icon: "warning"
+         })
+         $('#pedido').attr("disabled","true")
+      }
+      // alert(cant_pedido)
+   })      
 
+   //eliminar tabla
+   $(document).on('click', '.borrar', function (event) {
+      // alert('hola2')
+      $('#pedido').removeAttr("disabled")
+		event.preventDefault();	
+      cant_pedido--      
+      $(this).closest('#tabla-pedido').remove();
+   });
+
+
+   var mensaje = false
    
    $('#generar_pedido').click(function(){
       //obteniendo valores de los campos
@@ -64,76 +95,89 @@ $(document).ready(function (){
 				var size = $('#size'[i]).val().length; 
 				var master = $('#master'[i]).val().length; 
 				var total = $('#total'[i]).val().length; 
-
-				// $('#eliminar'[i]).click(function(){
-				// 	cant_pedido--
-				// 	console.log(cant_pedido)
-				// 	alert(cant_pedido)
-				// })
 			}
-        
-		  
-		  
 
          //campos constantes
          if(usuario<=0 || usuario=="Seleccione usuario"){
-            console.log('El campo Usuario debe ser completado')
+            // console.log('El campo Usuario debe ser completado')
+            mensaje = true
             $('.fa-user').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
          if(contenedor<=0 || contenedor=="Seleccione contenedor"){
-            console.log('El campo Contenedor debe ser completado')
+            // console.log('El campo Contenedor debe ser completado')
+            mensaje = true
             $('.fa-box-open').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
          if(naviera<=0){
-            console.log('El campo NAVIERA debe ser completado')
+            // console.log('El campo NAVIERA debe ser completado')
+            mensaje = true
             $('.fa-ship').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
          if(destino<=0){
-            console.log('El campo Destino debe ser completado')
+            // console.log('El campo Destino debe ser completado')
+            mensaje = true
             $('.fa-globe-asia').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
          if(fecha_salida<=0){
-            console.log('El campo Fecha de salida debe ser completado')
+            // console.log('El campo Fecha de salida debe ser completado')
+            mensaje = true
             $('.fa-calendar-alt').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
          if(fecha_llegada<=0){
-            console.log('El campo Fecha de llegada debe ser completado')
+            // console.log('El campo Fecha de llegada debe ser completado')
+            mensaje = true
             $('.fa-calendar-alt').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
 
          //campos variables
          if(presentacion<=0){
-            console.log('El campo Presentacion debe ser completado')
+            // console.log('El campo Presentacion debe ser completado')
+            mensaje = true
             $('.fa-gift').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
          if(producto<=0){
-            console.log('El campo Producto debe ser completado')
+            // console.log('El campo Producto debe ser completado')
+            mensaje = true
             $('.fa-shopping-cart').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
          if(especie<=0){
-            console.log('El campo Especie debe ser completado')
+            // console.log('El campo Especie debe ser completado')
+            mensaje = true
             $('.fa-water').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
          if(color<=0){
-            console.log('El campo Color debe ser completado')
+            // console.log('El campo Color debe ser completado')
+            mensaje = true
             $('.fa-palette').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
          if(peso<=0){
-            console.log('El campo Peso debe ser completado')
+            // console.log('El campo Peso debe ser completado')
+            mensaje = true
             $('.fa-weight').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
          if(size<=0){
-            console.log('El campo Tamaño debe ser completado')
+            // console.log('El campo Tamaño debe ser completado')
+            mensaje = true
             $('.fa-arrows-alt-h').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
          if(master<=0){
-            console.log('El campo Master debe ser completado')
+            // console.log('El campo Master debe ser completado')
+            mensaje = true
             $('.fa-calendar-alt').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
          if(total<=0){
-            console.log('El campo Total debe ser completado')
+            // console.log('El campo Total debe ser completado')
+            mensaje = true
             $('.fa-calendar-alt').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
+      }
+
+      if(mensaje){
+         swal({ 
+            title: "¡Atención!", 
+            text: "Hay campos incorrectos. Por favor valide los campos con iconos amarillos.", 
+            icon: "warning"
+         })
       }
 
       $('#users').keydown(function(){
@@ -181,12 +225,5 @@ $(document).ready(function (){
       })
       
 	})
-	
-	$(document).on('click', '.borrar', function (event) {
-		event.preventDefault();
-		$(this).closest('#tabla-pedido').remove();
-		cant_pedido--
-		console.log(cant_pedido)
-	 });
 
 })
