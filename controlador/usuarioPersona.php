@@ -27,15 +27,22 @@
         }
     }
 
-    function modeloComprobar($json,$db){
-        $comprobacionCorreo = comprobarCorreo($json,$db);
+    function modeloComprobar($email,$db){
+        $comprobacionCorreo = comprobarCorreo($email,$db);
   
         return $comprobacionCorreo;
+     }
+
+     function modeloComprobarEdit($jsonUsuario,$db){
+        $comprobacionCorreoEdit = comprobarCorreoEdit($jsonUsuario,$db);
+  
+        return $comprobacionCorreoEdit;
      }
 
     $funcionCRUD = $_POST['funcion'];
     $contraseñaErronea = false;
     $comp_email = false;
+    $comp_email_edit = false;
 
     if($funcionCRUD == 'crear'){    
         $email=$_POST['email'];
@@ -62,6 +69,7 @@
         }else{
             $contraseñaErronea = true;
         }
+        $comp_email_edit = modeloComprobarEdit($jsonUsuario,$db);
     }else if($funcionCRUD == 'eliminar'){
         $id_usuario = $_POST['id_usuario'];
         $jsonUsuario =json_encode(array(
@@ -91,7 +99,17 @@
                 "empresa"=>$empresa
             ));
                 
+        }else if($comp_email_edit){ 
+            echo "<script>alert('entro al if ppal de editar');</script>";
+            echo "<script>
+                swal({
+                    title: \"¡Error!\", 
+                    text: \"Este correo ya se encuentra registrado.\",
+                    icon: \"error\"
+                    })
+                </script>";
         }else if ($funcionCRUD == 'editar'){
+            echo "<script>alert('entro al else ppal de editar');</script>";
             $nombre=$_POST['nombre'];
             $apellido=$_POST['apellido'];
             $empresa=$_POST['empresa'];

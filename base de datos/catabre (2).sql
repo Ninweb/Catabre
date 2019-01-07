@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-12-2018 a las 15:42:01
--- Versión del servidor: 10.1.34-MariaDB
--- Versión de PHP: 7.2.7
+-- Tiempo de generación: 07-01-2019 a las 21:34:12
+-- Versión del servidor: 10.1.33-MariaDB
+-- Versión de PHP: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -35,6 +35,13 @@ CREATE TABLE `contenedor` (
   `status` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `contenedor`
+--
+
+INSERT INTO `contenedor` (`id_contenedor`, `ref`, `nombre_conte`, `status`) VALUES
+(2, '234', 'weras', 'ocupado');
+
 -- --------------------------------------------------------
 
 --
@@ -52,6 +59,17 @@ CREATE TABLE `pedido` (
   `fecha_salida` date NOT NULL,
   `fecha_llegada` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `pedido`
+--
+
+INSERT INTO `pedido` (`id_pedido`, `id_persona`, `id_contenedor`, `codigo_pedido`, `naviera`, `origen`, `destino`, `fecha_salida`, `fecha_llegada`) VALUES
+(1, 2, 1, '00000', 'sdf', 'Venezuelas', 'sdf', '2018-12-29', '2018-12-31'),
+(2, 2, 2, '00001', 'sdf', 'Venezuelas', 'sdf', '2019-02-01', '2019-01-16'),
+(3, 2, 2, '00002', 'ccvb', 'Venezuelas', 'cbv', '2019-01-08', '2019-02-13'),
+(4, 2, 2, '00003', 'qwerty', 'Venezuelas', 'qwerty', '2019-01-16', '2019-02-21'),
+(5, 2, 2, '00004', 'sdf', 'Venezuela', 'sdf', '2019-01-17', '2019-02-12');
 
 -- --------------------------------------------------------
 
@@ -73,7 +91,9 @@ CREATE TABLE `persona` (
 
 INSERT INTO `persona` (`id_persona`, `id_usuario`, `nombre`, `apellido`, `empresa`) VALUES
 (1, 1, 'PEDRO', 'PEREZ', 'SISTEMCOMPUTER'),
-(2, 2, 'MARIA', 'GUTIERREZ', 'NINWEB');
+(2, 2, 'MARIA', 'GUTIERREZ', 'NINWEB'),
+(3, 3, 'oiu', 'oiuetert', 'oiu78'),
+(4, 4, 'bnmnb', 'mnb', 'mnb');
 
 -- --------------------------------------------------------
 
@@ -94,6 +114,16 @@ CREATE TABLE `producto` (
   `total` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id_producto`, `id_pedido`, `presentacion`, `producto`, `especie`, `color`, `peso`, `tamano`, `master`, `total`) VALUES
+(1, 2, 'sdf', 'sdf', '', 'sdf', 'sdf', 'sdf', 'sdf', 0),
+(2, 3, 'dfg', 'dfg', 'dfg', 'fdg', 'dfg', 'dfg', 'dfg', 0),
+(3, 4, 'qwerty', 'qwerty', 'qwerty', 'qwerty', 'qwerty', 'qwerty', 'qwerty', 0),
+(4, 5, 'sdf', 'ssdf', 'sdf', 'sdf', 'sdf', 'sdf', 'sdf', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -112,8 +142,10 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `email`, `clave`, `tipo`) VALUES
-(1, 'admin@ninweb.net', '81dc9bdb52d04dc20036dbd8313ed055', 'admin'),
-(2, 'cliente@ninweb.net', '81dc9bdb52d04dc20036dbd8313ed055', 'user');
+(1, 'o@o.com', 'd41d8cd98f00b204e9800998ecf8427e', 'admin'),
+(2, 'cliente@ninweb.net', '81dc9bdb52d04dc20036dbd8313ed055', 'user'),
+(3, 'o@o.com', '123', 'user'),
+(4, 'm@m.com', '1234', 'user');
 
 --
 -- Índices para tablas volcadas
@@ -162,31 +194,31 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `contenedor`
 --
 ALTER TABLE `contenedor`
-  MODIFY `id_contenedor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_contenedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `id_persona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_persona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
