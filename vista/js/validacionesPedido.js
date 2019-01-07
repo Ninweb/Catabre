@@ -4,6 +4,7 @@ $(document).ready(function (){
    var cant_pedido = 0;
    const top_pedido = 3;
    var contenedor = document.getElementById('contenedor').value;
+
    if(contenedor == "No hay contenedor disponible"){
       swal({ 
          title: "¡Atención!", 
@@ -14,11 +15,15 @@ $(document).ready(function (){
 
    //verificando si hay pedido generado
    $('#pedido').click(function(){
+      $('#generar_pedido').removeAttr("disabled")  
       if(entrar){         
          if(cant_pedido < top_pedido-2){
             pedido = true
             cant_pedido++
+            console.log(`pedido if ${cant_pedido}`)
          }else{  
+            cant_pedido++
+            console.log(`pedido else1 ${cant_pedido}`)
             swal({ 
                title: "¡Atención!", 
                text: "Queda solamente un pedido disponible en este contenedor.", 
@@ -27,24 +32,45 @@ $(document).ready(function (){
             entrar = false
          }
       }else{
+         cant_pedido++
+         console.log(`pedido else2 ${cant_pedido}`)
          swal({ 
             title: "¡Atención!", 
             text: "Ha llegado al límite de pedidos en este contenedor.", 
             icon: "warning"
          })
          $('#pedido').attr("disabled","true")
+         entrar = false
       }
       // alert(cant_pedido)
    })      
 
    //eliminar tabla
    $(document).on('click', '.borrar', function (event) {
+      console.log(`cantidad pedido al entrar: ${cant_pedido}`)
+      $('#pedido').removeAttr("disabled")
+		event.preventDefault();	
+      $(this).closest('#tabla-pedido').remove();
+      cant_pedido--      
+      console.log(`eliminar pedido ${cant_pedido}`)
+      entrar = true
+
+      if(cant_pedido==0){
+         $('#generar_pedido').attr("disabled","true")
+      }
+   });
+   /*$('.borrar').click(function (event) {
       // alert('hola2')
       $('#pedido').removeAttr("disabled")
 		event.preventDefault();	
-      cant_pedido--      
       $(this).closest('#tabla-pedido').remove();
-   });
+      cant_pedido--      
+      console.log(`eliminar pedido ${cant_pedido}`)
+
+      if(cant_pedido==0){
+         $('#generar_pedido').attr("disabled","true")
+      }
+   });*/
 
 
    var mensaje = false
@@ -75,6 +101,7 @@ $(document).ready(function (){
             icon: "warning"
          })
       }
+      
 
       for(var i=0; i<cant_pedido; i++){
 			if(i==0){
@@ -103,7 +130,7 @@ $(document).ready(function (){
             mensaje = true
             $('.fa-user').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
-         if(contenedor<=0 || contenedor=="Seleccione contenedor"){
+         if(contenedor<=0 || contenedor=="No hay contenedor disponible"){
             // console.log('El campo Contenedor debe ser completado')
             mensaje = true
             $('.fa-box-open').css({"background-color":"#FFC107", "color":"black", "border":"none"})
@@ -172,13 +199,13 @@ $(document).ready(function (){
          }
       }
 
-      if(mensaje && !pedido){
+      /*if(mensaje && !pedido){
          swal({ 
             title: "¡Atención!", 
             text: "Hay campos incorrectos. Por favor valide los campos con iconos amarillos.", 
             icon: "warning"
          })
-      }
+      }*/
 
       $('#users').keydown(function(){
          $('.fa-user').css({"background-color":"#f96332", "color":"white", "border":"none"})
@@ -223,7 +250,21 @@ $(document).ready(function (){
       $('#total').keydown(function(){
          $('.fa-calendar-alt').css({"background-color":"#f96332", "color":"white", "border":"none"})
       })
+
+      mensaje==true ? swal({ 
+         title: "¡Atención!", 
+         text: "Debe verificar los campos incorrectos. Por favor valide los campos con iconos amarillos.", 
+         icon: "warning"
+      }).then(()=>{
+         mensaje==false
+      }) : $('#formulario').submit(); 
       
 	})
-
+   
+   if(pedido==false){
+      $('#generar_pedido').attr("disabled","true")
+   }
+   else{
+      $('#generar_pedido').removeAttr("disabled")         
+   }
 })

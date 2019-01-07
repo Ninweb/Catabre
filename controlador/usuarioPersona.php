@@ -45,14 +45,7 @@
             "password"=>$password
         ));        
 
-        $comp_email = modeloComprobar($email,$db);        
-    }else if ($funcionCRUD == 'editar'){
-        $email=$_POST['email'];
-        $password=$_POST['password'];
-        $jsonUsuario =json_encode(array(
-            "email"=>$email,
-            "password"=>$password
-        ));     
+        $comp_email = modeloComprobar($email,$db);               
     }else if ($funcionCRUD == 'editar'){
         $email=$_POST['email'];
         $id_usuario = $_POST['id_usuario'];

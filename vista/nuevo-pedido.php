@@ -160,7 +160,7 @@
 									<div class="input-group-prepend">
 					          <i class="fas fa-calendar-alt input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 					          <input required autocomplete="off" placeholder="<?php echo ''; ?>"  type="date" name="fecha_salida" id="salida" class="col-md-5 form-control" placeholder="" min="<?php echo date("Y-m-d"); ?>" style="margin-right:10px;">
-					          <input required autocomplete="off" placeholder="<?php echo ''; ?>"  type="date" name="fecha_llegada" id="llegada" class="col-md-5 form-control" placeholder="">
+					          <input required autocomplete="off" placeholder="<?php echo ''; ?>"  type="date" name="fecha_llegada" id="llegada" class="col-md-5 form-control" placeholder="" min="<?php $fecha_actual=date("Y-m-d"); echo date("Y-m-d", strtotime($fecha_actual."+ 1 month")) ?>">
 					        </div>	
 								</div>
 								<!--- FECHA DE SALIDA Y LLEGADA -->
@@ -295,7 +295,7 @@
 								<!-- PEDIDO -->
 								<div class="form-group" align="center">        
 									<div class="col-sm-offset-4 col-sm-10">
-										<button type="submit" name="generar" class="btn btn-primary" id="generar_pedido">Generar Pedido</button>
+										<input type="button" name="generar" class="btn btn-primary" id="generar_pedido" value="Generar Pedido">
 									</div>
 								</div>				
 

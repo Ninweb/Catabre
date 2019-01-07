@@ -26,8 +26,9 @@ function nuevo_pedido(){
     document.getElementById('num-contador').innerHTML = pedidos_disponibles;
     document.getElementById('numero_pedido').innerHTML = cantidad_pedido;
 
-    //CONSTRUCTOR DE LA TABLA    
     $('#vacio-mensaje').hide();
+    
+    //CONSTRUCTOR DE LA TABLA    
     var table = document.getElementById('tabla-pedido')
     var clon = table.cloneNode(true)
     document.getElementById('nuevos-pedidos').append(clon)   
