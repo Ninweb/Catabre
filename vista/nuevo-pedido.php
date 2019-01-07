@@ -117,10 +117,20 @@
 									if ($row1 = mysqli_fetch_row($consulta)) {
 										$id_pedido = trim($row1[0]);
 									}
+									if (mysqli_num_rows($consulta)>0 AND $id_pedido>0) {
 
 										$codigo_pedido=str_pad($id_pedido,5,"0",STR_PAD_LEFT);
+										?>
+											<input id="codigo_pedido"  type="hidden" name="codigo_pedido" class="col-md-10 form-control" value="<?php echo $codigo_pedido; ?>">
+										<?php
+									}else{
+
+										$codigo_pedido=str_pad(1,5,"0",STR_PAD_LEFT);
+										?>
+											<input id="codigo_pedido"  type="hidden" name="codigo_pedido" class="col-md-10 form-control" value="<?php echo $codigo_pedido; ?>">
+										<?php
+									}
 								?>
-								<input id="codigo_pedido"  type="hidden" name="codigo_pedido" class="col-md-10 form-control" value="<?php echo $codigo_pedido; ?>">
 
 								<!--NAVIERA -->
 								<div class="col-md-6 offset-md-3">

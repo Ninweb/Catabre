@@ -54,10 +54,20 @@
 
 							<?php
 								include ("../modelo/conexion.php");
-								$consulta_pedido=mysqli_query($db, "SELECT * FROM contenedor,pedido,producto WHERE producto.id_pedido=pedido.id_pedido AND contenedor.id_contenedor=pedido.id_contenedor");	
-								if (mysqli_num_rows($consulta_pedido)>0) {
+								$consulta_pedido1=mysqli_query($db, "SELECT * FROM contenedor,pedido,producto WHERE producto.id_pedido=pedido.id_pedido AND contenedor.id_contenedor=pedido.id_contenedor");	
+								if (mysqli_num_rows($consulta_pedido1)>0) {
+									$consulta_contenedor=mysqli_query($db,"SELECT * FROM contenedor");
+								$num_contenedores=mysqli_num_rows($consulta_contenedor);
+								for ($i=1; $i<=$num_contenedores ; $i++) { 
+									$consulta_pedido=mysqli_query($db, "SELECT * FROM contenedor,pedido,producto WHERE producto.id_pedido=pedido.id_pedido AND contenedor.id_contenedor=pedido.id_contenedor AND contenedor.id_contenedor='".$i."'");	
 
-										?>
+									if (mysqli_num_rows($consulta_pedido)>0) {
+										# code...
+									?>	
+										<br>
+										<div class="card-header" style="background-color: #b8daff; color: #fff;">
+											<h4 align="center" style="color: #383838;">Contenedor #<?php echo $i; ?></h4>
+										</div>
 										<div class="table-responsive">
 
 										 	<table class="table table-bordered" style="text-align: center;">
@@ -111,9 +121,12 @@
 												</table>
 											</div>
 											<?php
-									}else{
+									}
+								}
+							
+							}else{
 
-										?>
+									?>
 					                        <center>
 					                            <div class="alert alert-info">
 					                              <strong><i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i> 
@@ -122,7 +135,9 @@
 					                            </div>
 					                          </center>
 					                  <?php
-									}
+							}
+								
+								
 							?>
 						</div>
 					</div><br>
