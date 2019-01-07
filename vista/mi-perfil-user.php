@@ -54,6 +54,7 @@
 												<th>Apellido</th>
 												<th>Empresa</th>
 												<th>Email</th>
+												<th>Contraseña</th>
 												<th>Modificar</th>
 											</tr>
 										</thead>
@@ -69,8 +70,10 @@
 												        <td><?php echo $fila['apellido']; ?></td>
 												        <td><?php echo $fila['empresa']; ?></td>
 												        <td><?php echo $fila['email']; ?></td>
+												        <td><input type="password" value="<?php echo $fila['clave']; ?>" disabled class="form-control"></td>
+
 												        <td>
-																	<a href="#" id="<?php echo $fila['id_usuario'];?>" data-target="#editar-usuario" data-toggle="modal" data-id="<?php echo $fila['id_usuario'];?>">
+																	<a href="#" id="<?php echo $fila['id_usuario'];?>" data-target="#editar-user" data-toggle="modal" data-id="<?php echo $fila['id_usuario'];?>">
 												            <i class="far fa-edit" style="color: #28a745;"></i>
 																	</a>
 																</td>
@@ -89,7 +92,7 @@
 					                        <center>
 					                            <div class="alert alert-info">
 					                              <strong><i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i> 
-					                                No existen administradores registrado
+					                                No existen datos registrados
 					                              </strong> 
 					                            </div>
 					                          </center>
@@ -125,6 +128,8 @@
 		    <!--script-->
 			 <?php
      			 include("script.php");
+     			include("modal-editar-user.php");
+
    			 ?>
 	</body>
 </html>

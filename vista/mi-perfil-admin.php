@@ -67,7 +67,7 @@
 														<td><?php echo $fila['apellido']; ?></td>
 														<td><?php echo $fila['empresa']; ?></td>
 														<td><?php echo $fila['email']; ?></td>
-														<td><input type="password" value="<?php echo $fila['clave']; ?>" disabled></td>
+														<td><input type="password" value="<?php echo $fila['clave']; ?>" disabled class="form-control"></td>
 														<td>
 															<a href="#" id="<?php echo $fila['id_usuario'];?>" data-target="#editar-admin" data-toggle="modal" data-id="<?php echo $fila['id_usuario'];?>">
 															<i class="far fa-edit" aria-hidden="true" style="color: #28a745;"></i>
