@@ -50,6 +50,7 @@
         "codigo_pedido"=>$codigo_pedido,
     ));
     
+    modeloEmail($jsonEmail,$db);
 
 
     $idPedido = modeloPedido($jsonPedido,$db);
