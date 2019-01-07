@@ -28,21 +28,24 @@
     }
 
     function modeloComprobar($json,$db){
-        $comprobacion = comprobarCorreo($json,$db);
+        $comprobacionCorreo = comprobarCorreo($json,$db);
   
-        return $comprobacion;
+        return $comprobacionCorreo;
      }
 
     $funcionCRUD = $_POST['funcion'];
     $contraseñaErronea = false;
+    $comp_email = false;
 
-    if($funcionCRUD == 'crear'){
+    if($funcionCRUD == 'crear'){    
         $email=$_POST['email'];
         $password=$_POST['password'];
         $jsonUsuario =json_encode(array(
             "email"=>$email,
             "password"=>$password
-        ));     
+        ));        
+
+        $comp_email = modeloComprobar($email,$db);               
     }else if ($funcionCRUD == 'editar'){
         $email=$_POST['email'];
         $id_usuario = $_POST['id_usuario'];
@@ -66,8 +69,14 @@
         ));
     }
 
-    if($contraseñaErronea == true){
-        echo "<script>swal('Error!', 'contraseñas no coinciden', 'error');</script>";
+    if($comp_email){
+        echo "<script>
+            swal({
+                title: \"¡Error!\", 
+                text: \"Este correo ya se encuentra registrado. Por favor, verifique e ingrese un correo electrónico valido.\",
+                icon: \"error\"
+                })
+            </script>";
     }else{
         $idUsuario = modeloUsuario($jsonUsuario,$db,$funcionCRUD);
 
@@ -80,7 +89,8 @@
                 "nombre"=>$nombre,
                 "apellido"=>$apellido,
                 "empresa"=>$empresa
-            ));  
+            ));
+                
         }else if ($funcionCRUD == 'editar'){
             $nombre=$_POST['nombre'];
             $apellido=$_POST['apellido'];
@@ -92,6 +102,7 @@
                 "id_usuario"=>$idUsuario
             ));
         }else if($funcionCRUD == 'eliminar'){
+    
             $jsonPersona =json_encode(array(
                 "id_usuario"=>$idUsuario
             ));
@@ -102,8 +113,13 @@
 
         
         if($funcionCRUD=='crear'){
+<<<<<<< HEAD
             /*if ($comp_email){
                 echo "entro al if 1, ";
+=======
+            if ($comp_email){
+                // echo "entro al if 1, ";
+>>>>>>> 45585475c0d3ad9327df1af87b3bedd10fd2d708
                 echo "<script>
                 swal({
                     title: \"¡Error!\", 
@@ -135,6 +151,8 @@
     }
     
     
+    
+
     
 
 ?>

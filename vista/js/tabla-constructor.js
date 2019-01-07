@@ -1,37 +1,34 @@
 var cantidad_pedido = 0;
 var aux = 0;
-// var aux2 = 0;
 var pedidos_disponibles = 3;
 
 const top_pedido = 3;
-// var number_pedido = 0;
 
 $('#tabla-pedido').hide()
-// $('.num-ped').show()
-
-// document.getElementById('numero_pedido').innerHTML = cantidad_pedido;
 document.getElementById('num-contador').innerHTML = pedidos_disponibles;
 document.getElementById('numero_pedido').innerHTML = cantidad_pedido;
 
 //NUEVO PEDIDO
 function nuevo_pedido(){ 
-  $('#tabla-pedido').show() 
-  document.getElementById('numero_pedido').innerHTML = cantidad_pedido;
+  $('#tabla-pedido').show()  
+
+  if(cantidad_pedido+1 == top_pedido-1){
+    document.getElementById('num-contador').innerHTML = pedidos_disponibles-1;
+    document.getElementById('numero_pedido').innerHTML = cantidad_pedido;
+  }
   
 
-	if(cantidad_pedido <= top_pedido){
+	if(cantidad_pedido < top_pedido){
+    
     pedidos_disponibles--
     cantidad_pedido++
 
+    document.getElementById('num-contador').innerHTML = pedidos_disponibles;
     document.getElementById('numero_pedido').innerHTML = cantidad_pedido;
-    // document.getElementById('num-contador').innerHTML = pedidos_disponibles;
 
-    // $('.num-ped').show()
-    // aux = cantidad_pedido;    
-
-
-    //CONSTRUCTOR DE LA TABLA    
     $('#vacio-mensaje').hide();
+    
+    //CONSTRUCTOR DE LA TABLA    
     var table = document.getElementById('tabla-pedido')
     var clon = table.cloneNode(true)
     document.getElementById('nuevos-pedidos').append(clon)   
@@ -60,25 +57,17 @@ function nuevo_pedido(){
       $('#total'+aux).attr({"id":"total"+cantidad_pedido,"name":"total"+cantidad_pedido})
       $('#eliminar'+aux).attr({"id":"eliminar"+cantidad_pedido})
     }    
+    
     aux = cantidad_pedido;
 
     //NUMERO DE PEDIDO Y PEDIDOS DISPONIBLES
     document.getElementById('numero_pedido').innerHTML = cantidad_pedido;
     document.getElementById('num-contador').innerHTML = pedidos_disponibles;
     
-    if(cantidad_pedido == top_pedido){
-      alert('Este es su ultimo pedido')
-    }
     
     document.getElementById('hidden-number-pedido').value = cantidad_pedido;
   }
   
-  if(pedidos_disponibles==0){
-    alert('Ha llegado al límite de pedidos en este contenedor')    
-  }
-  
-  // $('.num-ped').show()
-  // document.getElementById('hidden-number-pedido').value = cantidad_pedido;
   
 }
 

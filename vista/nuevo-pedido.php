@@ -117,10 +117,20 @@
 									if ($row1 = mysqli_fetch_row($consulta)) {
 										$id_pedido = trim($row1[0]);
 									}
+									if (mysqli_num_rows($consulta)>0 AND $id_pedido>0) {
 
 										$codigo_pedido=str_pad($id_pedido,5,"0",STR_PAD_LEFT);
+										?>
+											<input id="codigo_pedido"  type="hidden" name="codigo_pedido" class="col-md-10 form-control" value="<?php echo $codigo_pedido; ?>">
+										<?php
+									}else{
+
+										$codigo_pedido=str_pad(1,5,"0",STR_PAD_LEFT);
+										?>
+											<input id="codigo_pedido"  type="hidden" name="codigo_pedido" class="col-md-10 form-control" value="<?php echo $codigo_pedido; ?>">
+										<?php
+									}
 								?>
-								<input id="codigo_pedido"  type="hidden" name="codigo_pedido" class="col-md-10 form-control" value="<?php echo $codigo_pedido; ?>">
 
 								<!--NAVIERA -->
 								<div class="col-md-6 offset-md-3">
@@ -160,7 +170,7 @@
 									<div class="input-group-prepend">
 					          <i class="fas fa-calendar-alt input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 					          <input required autocomplete="off" placeholder="<?php echo ''; ?>"  type="date" name="fecha_salida" id="salida" class="col-md-5 form-control" placeholder="" min="<?php echo date("Y-m-d"); ?>" style="margin-right:10px;">
-					          <input required autocomplete="off" placeholder="<?php echo ''; ?>"  type="date" name="fecha_llegada" id="llegada" class="col-md-5 form-control" placeholder="">
+					          <input required autocomplete="off" placeholder="<?php echo ''; ?>"  type="date" name="fecha_llegada" id="llegada" class="col-md-5 form-control" placeholder="" min="<?php $fecha_actual=date("Y-m-d"); echo date("Y-m-d", strtotime($fecha_actual."+ 1 month")) ?>">
 					        </div>	
 								</div>
 								<!--- FECHA DE SALIDA Y LLEGADA -->
@@ -187,7 +197,8 @@
 												</div>
 											</div>
 											<div align="right" id="boton">
-												<button type="button" class="btn btn-success" onclick="nuevo_pedido()" id="pedido"><i class="fas fa-cart-plus"></i><span class="desaparecer_muy_grande">&nbsp;Nuevo pedido</span></button>
+												<!-- <button type="button" class="btn btn-success" onclick="nuevo_pedido()" id="pedido"><i class="fas fa-cart-plus"></i><span class="desaparecer_muy_grande">&nbsp;Nuevo pedido</span></button> -->
+												<input type="button" class="btn btn-success" onclick="nuevo_pedido()" id="pedido" value="Nuevo pedido">
 											</div>
 										</div>
 										<!--BOTONES Y CONTADOR-->
@@ -294,7 +305,7 @@
 								<!-- PEDIDO -->
 								<div class="form-group" align="center">        
 									<div class="col-sm-offset-4 col-sm-10">
-										<button type="submit" name="generar" class="btn btn-primary" id="generar_pedido">Generar Pedido</button>
+										<input type="button" name="generar" class="btn btn-primary" id="generar_pedido" value="Generar Pedido">
 									</div>
 								</div>				
 

@@ -32,7 +32,7 @@
     	});
 
 
-          /*editar admin*/
+          /*editar perfil admin*/
 
             $(document).ready(function(){
 	            $('#editar-admin').on('show.bs.modal', function (e) {
@@ -48,6 +48,7 @@
 	         });
 		});
 		
+
 
 
     		 /*eliminar contenedor*/
@@ -88,3 +89,6 @@
 
 			$('#new_pass').css("display","block");
 		});
+
+
+		
