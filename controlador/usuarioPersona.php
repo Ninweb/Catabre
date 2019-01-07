@@ -102,7 +102,7 @@
 
         
         if($funcionCRUD=='crear'){
-            if ($comp_email){
+            /*if ($comp_email){
                 echo "entro al if 1, ";
                 echo "<script>
                 swal({
@@ -111,13 +111,14 @@
                     icon: \"error\"
                     })
                 </script>";
-            }else{
+            }else{*/
                 echo "<script>swal('Guardado!', 'Nuevo Usuario', 'success').then(
                     function(){ 
                         location.reload();
                     }
                 );</script>";
-            }   
+            //}   
+            //}   
         }else if ($funcionCRUD == 'editar'){
             echo "<script>swal('Guardado!', 'Fue editado el usuario', 'success').then(
                 function(){ 
