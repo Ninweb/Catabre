@@ -1,13 +1,14 @@
 <?php
+include ("../modelo/conexion.php");
 require("../mail/class.phpmailer.php"); 
 require("../mail/class.smtp.php");
 
-function enviarEmail($jsonEmail,$db){
+function enviarEmail($json,$db){
 
-    $email = json_decode($jsonEmail);
+    $envio = json_decode($json);
 
-
-    $query=mysqli_query($db,"SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND  usuario.id_usuario='".$email->idCliente."'");
+    $prueba=$envio->codigo_pedido;
+    $query=mysqli_query($db,"SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND  usuario.id_usuario='".$envio->idCliente."'");
 
     $result=mysqli_fetch_array($query);
     $email="lisethdaniela2@gmail.com";
@@ -355,7 +356,7 @@ function enviarEmail($jsonEmail,$db){
                                                 <tr>
                                                   <td>
                                                      <center><h2>Estimado usuario le informamos:</h2></center>
-                                                      <center><h3><b>#PEDIDO ES: </b> '.$email->$codigo_pedido.'</h3></center>
+                                                      <center><h3><b>#PEDIDO ES: </b> '.$prueba.'</h3></center>
                                                     </td>
                                                 </tr>
                                                </table>
