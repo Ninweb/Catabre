@@ -50,21 +50,6 @@
 		
 
 
-          /*editar perfil usuario*/
-
-            $(document).ready(function(){
-	            $('#editar-user').on('show.bs.modal', function (e) {
-	            var id_usuario= $(e.relatedTarget).data('id');
-	            $.ajax({
-	                type : 'post',
-	                url : 'formularioEditarPerfilUser.php', //Here you will fetch records 
-	                data :  'id_usuario='+ id_usuario, //Pass $id
-	                success : function(data){
-	                    $('.fetched-data').html(data);//Show fetched data from database
-	                }
-	            });
-	         });
-		});
 
     		 /*eliminar contenedor*/
 		$(document).ready(function(){
@@ -104,3 +89,6 @@
 
 			$('#new_pass').css("display","block");
 		});
+
+
+		

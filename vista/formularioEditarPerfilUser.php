@@ -5,8 +5,6 @@
     $consulta=mysqli_query($db, "SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND usuario.id_usuario='".$id_usuario."'");
   	$resultados=mysqli_fetch_array($consulta);
 
-
-  	 echo $id_usuario;
   	?>
 
 	<form id="formularioEditarUsuario">
