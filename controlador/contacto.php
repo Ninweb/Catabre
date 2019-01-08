@@ -15,7 +15,7 @@
         $empresa=$_POST['empresa'];
         $email=$_POST['email'];
         $msj=$_POST['mensaje'];
-        $catabre="lisethdaniela2@gmail.com";
+        $catabre="salesconfirmation@grupocatabre.com";
 
           $tema="Contacto Sistema Catabre";
           $mensaje=utf8_decode('<html>

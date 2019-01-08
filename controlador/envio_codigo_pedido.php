@@ -11,7 +11,7 @@ function enviarEmail($json,$db){
     $query=mysqli_query($db,"SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND  usuario.id_usuario='".$envio->idCliente."'");
 
     $result=mysqli_fetch_array($query);
-    $email="lisethdaniela2@gmail.com";
+    $email=$result['email'];
     $tema="N° DE PEDIDO SISTEMA CATABRE";
     $mensaje=utf8_decode('<html>
                              <head>
