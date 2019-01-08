@@ -26,15 +26,16 @@
       }
    }
 
-   function comprobarCorreoEdit($jsonUsuario,$db){
-      echo "<script>alert('entro a comprobar correo edit');</script>";
+   function comprobarCorreoEdit($email,$db){
+      /*echo "<script>alert('entro a comprobar correo edit');</script>";
       $json = json_decode($jsonUsuario);
-      $sql_id = "SELECT * from usuario where email='$json->email' and id_usuario!='$json->id_usuario'";
+      $sql_id = "SELECT id_usuario from usuario where email='$json->email'";
       // $get_id = mysqli_fetch_array($sql_id, $db);
-      $get_id = mysqli_fetch_array($db, $sql_id);
+      $result_id = mysqli_query($db, $sql_id);
+      $get_id = mysqli_fetch_array($result_id);
       echo($get_id);
 
-      if ($get_id){
+      if ($get_id == $json->id_usuario){
          echo "<script>alert('entro al if de comprobar correo edit');</script>";
          $sql_email = "SELECT email from usuario where email='$json->email'";
          $get_email = mysqli_fetch_array($db, $sql_email);
@@ -42,6 +43,20 @@
          return comprobarCorreo($get_email,$db);
       }else{
          echo "<script>alert('entro al else comprobar correo edit');</script>";
+         return false;
+      }*/
+
+      echo "<script>alert('entro a comprobar correo edit');</script>";
+      $sql = "SELECT * from usuario where email='$email'";
+      $get_email = mysqli_query($db, $sql);
+      // $result = $db->query($get_email);
+      $cont = mysqli_num_rows($get_email);
+
+      if($cont==1){
+         echo "<script>alert('entro al if de comprobar correo edit');</script>";
+         return true;
+      }else{
+         echo "<script>alert('entro al else de comprobar correo edit');</script>";
          return false;
       }
    }

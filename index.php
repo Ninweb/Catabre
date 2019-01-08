@@ -17,23 +17,23 @@
     <link href="css/general.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body id="body_home">
 
       
     <div id="cuerpo" >
       <br><br><br><br><br><br>
       <div class="col-lg-4 offset-lg-4">
         
-        <div id="fondo" class="card ">
+        <div id="fondo" class="card" style="border:1px solid #adadad;">
           
-          <div class="card-header">
+          <div class="card-header" style="background:white;">
 
-            <h1 align="center" style="width: 100%">
-              <strong style="color:#ffffff;">CATABRE</strong>
+            <h1 align="center" style="width: 100%;">
+              <strong>CATABRE</strong>
             </h1>
 
           </div>
-          <div class="card-body form-group">
+          <div class="card-body form-group" style="background:white;">
             <br>
             <form id="formularioSesion">
               <input type="hidden" name="validacion" value="">
@@ -42,10 +42,10 @@
               <br>
               <button class="col-md-8 offset-md-2 btn btn-info" type="submit" name="iniciar_sesion">Iniciar Sesión</button>
               <div align="center" style="padding-top:10px;">
-                <a href="vista/recuperar-password.php" style="color: #ffffff;">¿Ha olvidado su contraseña?</a>
+                <a href="vista/recuperar-password.php" style="text-decoration:none;">¿Ha olvidado su contraseña?</a>
               </div>
             </form>
-            <div id="mostrarDatos">
+            <div id="mostrarDatos" style="background:white;">
             </div>
           </div>
         </div>

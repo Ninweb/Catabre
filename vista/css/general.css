@@ -1,5 +1,9 @@
-#fondo,.fondo,#naranja{
-	background-color: #f96332;
+.fondo,#naranja{
+	background-color: #fff;
+}
+#fondo {
+	background: white;
+	color: #adadad;
 }
 
 h3{
@@ -189,4 +193,12 @@ input[type='email']{
 }
 .fas, .far, .fa {
 	margin-right: 10px;
+}
+
+#body_home{
+	background-color: #333333;
+}
+.card-header {
+	background-color: white;
+	color: #adadad;
 }

@@ -33,8 +33,8 @@
         return $comprobacionCorreo;
      }
 
-     function modeloComprobarEdit($jsonUsuario,$db){
-        $comprobacionCorreoEdit = comprobarCorreoEdit($jsonUsuario,$db);
+     function modeloComprobarEdit($email,$db){
+        $comprobacionCorreoEdit = comprobarCorreoEdit($email,$db);
   
         return $comprobacionCorreoEdit;
      }
@@ -69,13 +69,14 @@
         }else{
             $contraseñaErronea = true;
         }
-        $comp_email_edit = modeloComprobarEdit($jsonUsuario,$db);
+        $comp_email_edit = modeloComprobarEdit($email,$db);
     }else if($funcionCRUD == 'eliminar'){
         $id_usuario = $_POST['id_usuario'];
         $jsonUsuario =json_encode(array(
             "id_usuario"=>$id_usuario
         ));
     }
+    
 
     if($comp_email){
         echo "<script>
@@ -98,7 +99,7 @@
                 "apellido"=>$apellido,
                 "empresa"=>$empresa
             ));
-                
+            modeloPersona($jsonPersona,$db,$funcionCRUD); 
         }else if($comp_email_edit){ 
             echo "<script>alert('entro al if ppal de editar');</script>";
             echo "<script>
@@ -119,25 +120,22 @@
                 "empresa"=>$empresa,
                 "id_usuario"=>$idUsuario
             ));
+            modeloPersona($jsonPersona,$db,$funcionCRUD);
         }else if($funcionCRUD == 'eliminar'){
     
             $jsonPersona =json_encode(array(
                 "id_usuario"=>$idUsuario
             ));
+            modeloPersona($jsonPersona,$db,$funcionCRUD);
         }
 
 
-        modeloPersona($jsonPersona,$db,$funcionCRUD);
+        // modeloPersona($jsonPersona,$db,$funcionCRUD);
 
         
         if($funcionCRUD=='crear'){
-<<<<<<< HEAD
-            /*if ($comp_email){
-                echo "entro al if 1, ";
-=======
             if ($comp_email){
                 // echo "entro al if 1, ";
->>>>>>> 45585475c0d3ad9327df1af87b3bedd10fd2d708
                 echo "<script>
                 swal({
                     title: \"¡Error!\", 
@@ -145,20 +143,29 @@
                     icon: \"error\"
                     })
                 </script>";
-            }else{*/
+            }else{
                 echo "<script>swal('Guardado!', 'Nuevo Usuario', 'success').then(
                     function(){ 
                         location.reload();
                     }
                 );</script>";
-            //}   
-            //}   
+            }  
         }else if ($funcionCRUD == 'editar'){
-            echo "<script>swal('Guardado!', 'Fue editado el usuario', 'success').then(
-                function(){ 
-                    location.reload();
-                }
-            );</script>";
+            if($comp_email_edit){
+                echo "<script>
+                swal({
+                    title: \"¡Error!\", 
+                    text: \"Este correo ya se encuentra registrado.\",
+                    icon: \"error\"
+                    })
+                </script>";
+            }else{
+                echo "<script>swal('Guardado!', 'Fue editado el usuario', 'success').then(
+                    function(){ 
+                        location.reload();
+                    }
+                );</script>";
+            }
         }else if ($funcionCRUD == 'eliminar'){
             echo "<script>swal('Eliminado!', 'Fue eliminado el usuario', 'success').then(
                 function(){ 
