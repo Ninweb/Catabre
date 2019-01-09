@@ -45,7 +45,7 @@
 				          </li>
 				        </ol>
 							<div class="card col-md-5offset-md-3">
-								<div class="card-header" style="background-color: #f96332; color: #fff;">
+								<div class="card-header" style="background-color: #1abc9c; color: #fff;">
 									<h4 align="center" style="color: #fff;">Registrar Contenedor</h4>
 								</div>
 								<div class="card-body">
@@ -58,9 +58,9 @@
 										<div class="input-group col-md-12 offset-md-3">
 											
 											<div class="input-group-prepend">
-														<i class="fas fa-hashtag input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+														<i class="fas fa-hashtag input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 													</div>
-											<input required  autocomplete="off" type="text" name="num_referencia" class="col-md-5 form-control">
+											<input autocomplete="off" type="text" name="num_referencia" id="num_referencia" class="col-md-5 form-control">
 
 										</div><br>
 
@@ -71,14 +71,14 @@
 										<div class="input-group col-md-12 offset-md-3">
 
 											<div class="input-group-prepend">
-													<i class="fas fa-file-signature input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+													<i class="fas fa-file-signature input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 													</div>
-											<input required  autocomplete="off" type="text" name="nombre" class="col-md-5 form-control">
+											<input autocomplete="off" type="text" name="nombre" id="nombre" class="col-md-5 form-control">
 
 										</div>&nbsp;
 											<div class="form-group" align="center">        
 												<div class="col-sm-offset-4 col-sm-10">
-													<button type="submit" name="registrar" class="btn btn-primary registrar-contenedor">Registrar</button>
+													<input type="button" name="registrar" id="registrar_btn" class="btn btn-primary registrar-contenedor" value="Registrar">
 												</div>
 										</div>
 								</form>

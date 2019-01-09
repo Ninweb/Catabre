@@ -45,7 +45,7 @@
 				          </li>
 				        </ol>
 						<div class="card col-md-5offset-md-3">
-							<div class="card-header" style="background-color: #17a2b8; color: #fff;">
+							<div class="card-header" style="background-color: #1abc9c; color: #fff;">
 						   <h3 align="center">Generar Pedido</h3>
 						 </div>
 
@@ -59,7 +59,7 @@
 								<div class="col-md-6 offset-md-3">
 									<label for="users">Usuarios</label>
 									<div class="input-group-prepend">
-										<i class="far fa-user input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px; margin-right:10px;"></i>
+										<i class="far fa-user input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px; margin-right:10px;"></i>
 
 										<?php 
 											include ("../modelo/conexion.php");
@@ -84,7 +84,7 @@
 								<div class="col-md-6 offset-md-3">
 									<label for="contenedor">Contenedor</label>
 									<div class="input-group-prepend">
-										<i class="fas fa-box-open input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+										<i class="fas fa-box-open input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px; border:none;"></i>
 										<?php 
 											include ("../modelo/conexion.php");
 											$consulta_contenedor=mysqli_query($db, "SELECT * FROM contenedor WHERE contenedor.status='disponible'");
@@ -136,7 +136,7 @@
 								<div class="col-md-6 offset-md-3">
 									<label for="naviera">NAVIERA</label>
 									<div class="input-group-prepend">
-					          <i class="fas fa-ship input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+					          <i class="fas fa-ship ship input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 					          <input id="naviera" required="" autocomplete="off"  type="text" name="naviera" class="col-md-10 form-control" >
 					        </div>
 								</div>
@@ -148,7 +148,7 @@
 								<div class="col-md-6 offset-md-3">
 									<label for="destino">Destino</label>
 									<div class="input-group-prepend">
-					          <i class="fas fa-globe-asia input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+					          <i class="fas fa-globe-asia input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 					          <input id="destino" required="" autocomplete="off"  type="text" name="destino" class="col-md-10 form-control" required>
 					        </div>
 								</div>
@@ -168,7 +168,7 @@
 					        </div>	
 									
 									<div class="input-group-prepend">
-					          <i class="fas fa-calendar-alt input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+					          <i class="fas fa-calendar-alt input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 					          <input required autocomplete="off" placeholder="<?php echo ''; ?>"  type="date" name="fecha_salida" id="salida" class="col-md-5 form-control" placeholder="" min="<?php echo date("Y-m-d"); ?>" style="margin-right:10px;">
 					          <input required autocomplete="off" placeholder="<?php echo ''; ?>"  type="date" name="fecha_llegada" id="llegada" class="col-md-5 form-control" placeholder="" min="<?php $fecha_actual=date("Y-m-d"); echo date("Y-m-d", strtotime($fecha_actual."+ 1 month")) ?>">
 					        </div>	
@@ -180,8 +180,8 @@
 								<!-- PEDIDO -->
 								<div class="col-md-10 offset-md-1">
 									<div class="card" id="card">
-										<div class="card-header fondo">
-											<h4 align="center" style="color: #fff;">Tipo de Pedido</h4>
+										<div class="card-header fondo" style="background:#1abc9c;">
+											<h4 align="center" style="color:#fff;">Tipo de Pedido</h4>
 										</div>
 
 										<!--BOTONES Y CONTADOR-->
@@ -203,7 +203,7 @@
 										</div>
 										<!--BOTONES Y CONTADOR-->
 
-										<div align="center" id="vacio-mensaje">No hay ningun pedido generado. Haga click en <b>Nuevo Pedido</b> para generar uno nuevo.</div>
+										<div align="center" id="vacio-mensaje">No hay ningún pedido generado. Haga click en <b>Nuevo Pedido</b> para generar uno nuevo.</div>
 
 										<div class="card-body tabla-pedido" id="tabla-pedido">
 											<div class="info">
@@ -215,7 +215,7 @@
 												<div class="col-md-6 alinear_izquierda espacio_margen">
 													<label for="pedido">Presentación</label>
 													<div class="input-group-prepend">
-				          					<i class="fas fa-gift input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+				          					<i class="fas fa-gift input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 				          					<input id="presentacion"   autocomplete="off" type="text" name="presentacion" class="col-md-10 form-control">
 					        				</div>
 												</div>
@@ -223,7 +223,7 @@
 												<div class="col-md-6 alinear_izquierda espacio_margen">
 													<label for="producto">Tipo de producto</label>
 													<div class="input-group-prepend">
-				          					<i class="fas fa-shopping-cart input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+				          					<i class="fas fa-shopping-cart input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 				          					<input id="producto"  autocomplete="off" type="text" name="producto" class="col-md-10 form-control">
 					        				</div>	
 												</div>
@@ -231,7 +231,7 @@
 												<div class="col-md-6 alinear_izquierda espacio_margen">
 													<label for="especie">Especie</label>
 													<div class="input-group-prepend">
-				          					<i class="fas fa-water input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+				          					<i class="fas fa-water input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 				          					<input id="especie"   autocomplete="off" type="text" name="especie" class="col-md-10 form-control">
 					        				</div>
 												</div>
@@ -239,7 +239,7 @@
 												<div class="col-md-6 alinear_izquierda espacio_margen">
 													<label for="color">Color</label>
 													<div class="input-group-prepend">
-				          					<i class="fas fa-palette input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+				          					<i class="fas fa-palette input-group-text" style="background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 				          					<input id="color"   autocomplete="off" type="text" name="color" class="col-md-10 form-control">
 					        				</div>
 												</div>
@@ -247,7 +247,7 @@
 												<div class="col-md-6 alinear_izquierda espacio_margen">
 													<label for="peso">Peso</label>
 													<div class="input-group-prepend">
-				          					<i class="fas fa-weight input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+				          					<i class="fas fa-weight input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 				          					<input id="peso"   autocomplete="off" type="text" name="peso" class="col-md-10 form-control">
 					        				</div>
 												</div>
@@ -255,7 +255,7 @@
 												<div class="col-md-6 alinear_izquierda espacio_margen">
 													<label for="size">Tamaño: ancho x alto</label>
 													<div class="input-group-prepend">
-				          					<i class="fas fa-arrows-alt-h input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+				          					<i class="fas fa-arrows-alt-h input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 				          					<input id="size"  autocomplete="off" type="text" name="size" class="col-md-10 form-control">
 					        				</div>
 												</div>
@@ -263,7 +263,7 @@
 												<div class="col-md-6 alinear_izquierda espacio_margen">
 													<label for="master">Master</label>
 													<div class="input-group-prepend">
-				          					<i class="fas fa-calendar-alt input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+				          					<i class="fas fa-calendar-alt input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 				          					<input id="master"  autocomplete="off" type="text" name="master" class="col-md-10 form-control">
 					        				</div>
 												</div>
@@ -271,7 +271,7 @@
 												<div class="col-md-6 alinear_izquierda espacio_margen">
 													<label for="total">Total</label>
 													<div class="input-group-prepend">
-				          					<i class="fas fa-calendar-alt input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+				          					<i class="fas fa-calendar-alt input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 				          					<input id="total"  autocomplete="off" type="text" name="total" class="col-md-10 form-control">
 					        				</div>
 												</div>

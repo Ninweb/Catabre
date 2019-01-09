@@ -5,16 +5,9 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-   <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="vista/logo/logo-dark.ico">
-    <title>CATABRE</title>
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/all.css" rel="stylesheet" type="text/css">
-    <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="css/general.css" rel="stylesheet">
+  <?php
+      include("./vista/head.php");
+    ?>
   </head>
 
   <body id="body_home">
@@ -40,7 +33,7 @@
               <input type="email" name="email" id="correo" placeholder="Correo Electrónico" class="col-md-8 offset-md-2 form-control espacio_margen" autocomplete="off" autofocus="">
               <input type="password" name="clave" placeholder="Contraseña" class="col-md-8 offset-md-2 form-control espacio_margen" autocomplete="off">
               <br>
-              <button class="col-md-8 offset-md-2 btn btn-info" type="submit" name="iniciar_sesion">Iniciar Sesión</button>
+              <button style="background:#333333; color:#adadad" class="col-md-8 offset-md-2 btn" type="submit" name="iniciar_sesion">Iniciar Sesión</button>
               <div align="center" style="padding-top:10px;">
                 <a href="vista/recuperar-password.php" style="text-decoration:none;">¿Ha olvidado su contraseña?</a>
               </div>
@@ -52,7 +45,7 @@
         
       </div>
         
-      </div>
+    </div>
 
 
     <!-- Bootstrap core JavaScript-->

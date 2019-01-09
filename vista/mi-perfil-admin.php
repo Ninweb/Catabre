@@ -37,7 +37,7 @@
 				<div id="content-wrapper">
 					<div class="container-fluid">
 						<div class="card">
-								<div class="card-header" style="background-color: #f96332; color: #fff;">
+								<div class="card-header" style="background-color: #1abc9c; color: #fff;">
 									<h4 align="center" style="color: #fff;">Mi Perfil</h4>
 								</div>
 							<?php

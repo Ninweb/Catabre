@@ -138,7 +138,7 @@ $(document).ready(function (){
          if(naviera<=0){
             // console.log('El campo NAVIERA debe ser completado')
             mensaje = true
-            $('.fa-ship').css({"background-color":"#FFC107", "color":"black", "border":"none"})
+            $('.ship').css({"background-color":"#FFC107", "color":"black", "border":"none"})
          }
          if(destino<=0){
             // console.log('El campo Destino debe ser completado')
@@ -208,47 +208,61 @@ $(document).ready(function (){
       }*/
 
       $('#users').keydown(function(){
-         $('.fa-user').css({"background-color":"#f96332", "color":"white", "border":"none"})
+         $('.fa-user').css({"background-color":"#1abc9c", "color":"white", "border":"none"})
+         mensaje=false
       })
       $('#contenedor').keydown(function(){
-         $('.fa-box-open').css({"background-color":"#f96332", "color":"white", "border":"none"})
+         $('.fa-box-open').css({"background-color":"#1abc9c", "color":"white", "border":"none"})
+         mensaje=false
       })
       $('#naviera').keydown(function(){
-         $('.fa-ship').css({"background-color":"#f96332", "color":"white", "border":"none"})
+         $('.fa-ship').css({"background-color":"#1abc9c", "color":"white", "border":"none"})
+         mensaje=false
       })
       $('#destino').keydown(function(){
-         $('.fa-globe-asia').css({"background-color":"#f96332", "color":"white", "border":"none"})
+         $('.fa-globe-asia').css({"background-color":"#1abc9c", "color":"white", "border":"none"})
+         mensaje=false
       })
       $('#salida').keydown(function(){
-         $('.fa-calendar-alt').css({"background-color":"#f96332", "color":"white", "border":"none"})
+         $('.fa-calendar-alt').css({"background-color":"#1abc9c", "color":"white", "border":"none"})
+         mensaje=false
       })
       $('#llegada').keydown(function(){
-         $('.fa-calendar-alt').css({"background-color":"#f96332", "color":"white", "border":"none"})
+         $('.fa-calendar-alt').css({"background-color":"#1abc9c", "color":"white", "border":"none"})
+         mensaje=false
       })
 
       $('#presentacion').keydown(function(){
-         $('.fa-gift').css({"background-color":"#f96332", "color":"white", "border":"none"})
+         $('.fa-gift').css({"background-color":"#1abc9c", "color":"white", "border":"none"})
+         mensaje=false
       })
       $('#producto').keydown(function(){
-         $('.fa-shopping-cart').css({"background-color":"#f96332", "color":"white", "border":"none"})
+         $('.fa-shopping-cart').css({"background-color":"#1abc9c", "color":"white", "border":"none"})
+         mensaje=false
       })
       $('#especie').keydown(function(){
-         $('.fa-water').css({"background-color":"#f96332", "color":"white", "border":"none"})
+         $('.fa-water').css({"background-color":"#1abc9c", "color":"white", "border":"none"})
+         mensaje=false
       })
       $('#color').keydown(function(){
-         $('.fa-palette').css({"background-color":"#f96332", "color":"white", "border":"none"})
+         $('.fa-palette').css({"background-color":"#1abc9c", "color":"white", "border":"none"})
+         mensaje=false
       })
       $('#peso').keydown(function(){
-         $('.fa-weight').css({"background-color":"#f96332", "color":"white", "border":"none"})
+         $('.fa-weight').css({"background-color":"#1abc9c", "color":"white", "border":"none"})
+         mensaje=false
       })
       $('#size').keydown(function(){
-         $('.fa-arrows-alt-h').css({"background-color":"#f96332", "color":"white", "border":"none"})
+         $('.fa-arrows-alt-h').css({"background-color":"#1abc9c", "color":"white", "border":"none"})
+         mensaje=false
       })
       $('#master').keydown(function(){
-         $('.fa-calendar-alt').css({"background-color":"#f96332", "color":"white", "border":"none"})
+         $('.fa-calendar-alt').css({"background-color":"#1abc9c", "color":"white", "border":"none"})
+         mensaje=false
       })
       $('#total').keydown(function(){
-         $('.fa-calendar-alt').css({"background-color":"#f96332", "color":"white", "border":"none"})
+         $('.fa-calendar-alt').css({"background-color":"#1abc9c", "color":"white", "border":"none"})
+         mensaje=false
       })
 
       mensaje==true ? swal({ 

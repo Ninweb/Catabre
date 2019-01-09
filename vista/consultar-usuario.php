@@ -45,7 +45,7 @@
 				          </li>
 				        </ol>
 							<div class="card">
-								<div class="card-header" style="background-color: #f96332; color: #fff;">
+								<div class="card-header" style="background-color: #1abc9c; color: #fff;">
 									<h4 align="center" style="color: #fff;">Consultar Usuario</h4>
 								</div>
 							<?php

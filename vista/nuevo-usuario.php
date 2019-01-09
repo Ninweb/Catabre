@@ -45,7 +45,7 @@
 				          </li>
 				        </ol>
 							<div class="card col-md-5offset-md-3">
-								<div class="card-header" style="background-color: #f96332; color: #fff;">
+								<div class="card-header" style="background-color: #1abc9c; color: #fff;">
 									<h4 align="center" style="color: #fff;">Registrar Usuario</h4>
 								</div>
 								<div class="card-body">
@@ -64,7 +64,7 @@
 										</div>	
 										
 										<div class="input-group-prepend">
-											<i class="fas fa-user input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+											<i class="fas fa-user input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 											<input style="margin-right:10px;" autocomplete="off" type="text" name="nombre" id="nombre" class="col-md-5 form-control">
 											<input autocomplete="off" type="text" name="apellido" id="apellido" class="col-md-5 form-control">
 										</div>	
@@ -76,7 +76,7 @@
 									</div>
 									<div class="input-group col-md-12 offset-md-3">
 										<div class="input-group-prepend">
-											<i class="fas fa-building input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+											<i class="fas fa-building input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 										</div>
 										<input autocomplete="off" type="text" name="empresa" id="empresa" class="col-md-5 form-control">
 									</div><br>
@@ -86,7 +86,7 @@
 									</div>
 									<div class="input-group col-md-12 offset-md-3">
 										<div class="input-group-prepend">
-											<i class="far fa-envelope input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+											<i class="far fa-envelope input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 										</div>
 										<input autocomplete="off" id="email" type="email" name="email" id="email" class="col-md-5 form-control">
 									</div><br>
@@ -96,7 +96,7 @@
 									</div>										
 									<div class="input-group col-md-12 offset-md-3">
 										<div class="input-group-prepend">
-											<i class="fas fa-key input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+											<i class="fas fa-key input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 										</div>
 										<input  autocomplete="off" type="password" name="password"  id="contrasena" class="col-md-5 form-control">
 										<div style="margin-top:15px;">
@@ -108,7 +108,7 @@
 									&nbsp;
 									<div class="form-group" align="center">        
 										<div class="col-sm-offset-4 col-sm-10">
-											<button type="submit" name="registrar" class="btn btn-primary registrar-usuario">Registrar</button>
+											<input type="button" name="registrar" id="registrar_usuario" class="btn btn-primary registrar-usuario" value="Registrar">
 										</div>
 									</div>
 								</form>

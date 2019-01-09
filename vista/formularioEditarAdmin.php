@@ -48,6 +48,7 @@
 				<div class="input-group-prepend">
 				<i class="far fa-envelope input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 			</div>
+			<input type="hidden" name="email_original" value="<?php echo $resultados['email'] ?>">
 			<input required  autocomplete="off" type="email" name="email" value="<?php echo $resultados['email'] ?>" class="col-md-7 form-control">
 
 		</div><br>
@@ -59,7 +60,7 @@
 				<div class="input-group-prepend">
 					<i class="fas fa-key input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
 				</div>
-				<input required  autocomplete="off" type="password" name="password" value="<?php echo $resultados['clave'] ?>" class="col-md-7 form-control" disabled>
+				<input required  autocomplete="off" type="password" name="passw" value="<?php echo $resultados['clave'] ?>" class="col-md-7 form-control" disabled>
 				<button type="button" name="modificar" id="cambiarContraseña" class="btn btn-primary">Cambiar Contraseña</button>
 			</div>
 		</div>

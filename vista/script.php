@@ -7,4 +7,5 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/validacionesPedido.js"></script>
     <script src="js/validacionesUsuario.js"></script>
+    <script src="js/validacionesContenedor.js"></script>
     

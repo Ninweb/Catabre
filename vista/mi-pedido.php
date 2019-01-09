@@ -39,7 +39,7 @@
 				<div id="content-wrapper">
 					<div class="container-fluid">
 						 <div class="card-body">
-						 	<div class="card-header" style="background-color: #f96332; color: #fff;">
+						 	<div class="card-header" style="background-color: #1abc9c; color: #fff;">
 									<h4 align="center" style="color: #fff;">Mi Último Pedido</h4>
 							</div>
 
@@ -101,7 +101,7 @@
 												?>
 											</table>
 
-											  <table class="table table-borderless alert-info" style="width: 50%;">
+											  <table class="table table-borderless alert-info" style="width: 50%; margin:0 auto;">
 												    <thead>
 
 												    	<tr>
@@ -136,12 +136,12 @@
 							?>
 							
 							  <hr>
-							  <div class="col-md-6">
+							  <div class="col-md-6" style="margin:0 auto;">
                     			<span class="anchor" id="formContact"></span>
                     				<!-- form user info -->
 			                    <div class="card card-outline-secondary">
-			                        <div class="card-header">
-			                            <h4 class="mb-0">Contacto</h4>
+			                        <div class="card-header" style="background:#1abc9c;">
+			                            <h4 class="mb-0" style="color:#fff; text-align:center;">Contacto</h4>
 			                        </div>
 			                        <div class="card-body">
 			                      
@@ -162,10 +162,12 @@
 			                                    <label for="message2" class="mb-0">Mensaje</label>
 			                                    <div class="row mb-1">
 			                                        <div class="col-lg-12">
-			                                            <textarea rows="6" name="mensaje" id="message2" class="form-control" required=""></textarea>
+			                                            <textarea rows="6" name="mensaje" id="message2" class="form-control" required></textarea>
 			                                        </div>
 			                                    </div>
-			                                    <button type="submit" name="enviar" class="btn btn-secondary btn-lg float-right">Enviar</button>
+																					<div style="text-align:center;">
+																						<button type="submit" name="enviar" class="btn btn-primary btn-lg">Enviar</button>
+																					</div>
 			                                </fieldset>
 			                            </form>
 
