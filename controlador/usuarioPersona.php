@@ -78,7 +78,16 @@
                 })
             </script>";
     }else{
-        $idUsuario = modeloUsuario($jsonUsuario,$db,$funcionCRUD);
+        if($contraseñaErronea){
+            echo "<script>
+                swal({
+                    title: \"¡Error!\", 
+                    text: \"Las contraseñas no coinciden.\",
+                    icon: \"error\"
+                    })
+                </script>";
+        }else{
+            $idUsuario = modeloUsuario($jsonUsuario,$db,$funcionCRUD);
 
         if($funcionCRUD == 'crear'){
             $nombre=$_POST['nombre'];
@@ -113,13 +122,8 @@
 
         
         if($funcionCRUD=='crear'){
-<<<<<<< HEAD
-            /*if ($comp_email){
-                echo "entro al if 1, ";
-=======
             if ($comp_email){
                 // echo "entro al if 1, ";
->>>>>>> 45585475c0d3ad9327df1af87b3bedd10fd2d708
                 echo "<script>
                 swal({
                     title: \"¡Error!\", 
@@ -127,14 +131,14 @@
                     icon: \"error\"
                     })
                 </script>";
-            }else{*/
+            }else{
                 echo "<script>swal('Guardado!', 'Nuevo Usuario', 'success').then(
                     function(){ 
                         location.reload();
                     }
                 );</script>";
-            //}   
-            //}   
+            }   
+             
         }else if ($funcionCRUD == 'editar'){
             echo "<script>swal('Guardado!', 'Fue editado el usuario', 'success').then(
                 function(){ 
@@ -148,6 +152,8 @@
                 }
             );</script>";
         }
+        }
+        
     }
     
     
