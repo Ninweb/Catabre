@@ -57,7 +57,7 @@
 
 								<!-- USUARIOS -->
 								<div class="col-md-6 offset-md-3">
-									<label for="users">Usuarios</label>
+									<label for="users">Usuario</label>
 									<div class="input-group-prepend">
 										<i class="far fa-user input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px; margin-right:10px;"></i>
 
@@ -232,7 +232,7 @@
 													<label for="especie">Especie</label>
 													<div class="input-group-prepend">
 				          					<i class="fas fa-water input-group-text" style="border:none; background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
-				          					<input id="especie"   autocomplete="off" type="text" name="especie" class="col-md-10 form-control">
+				          					<input id="especie" autocomplete="off" type="text" name="especie" class="col-md-10 form-control">
 					        				</div>
 												</div>
 

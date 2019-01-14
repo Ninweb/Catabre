@@ -59,18 +59,6 @@ $(document).ready(function (){
          $('#generar_pedido').attr("disabled","true")
       }
    });
-   /*$('.borrar').click(function (event) {
-      // alert('hola2')
-      $('#pedido').removeAttr("disabled")
-		event.preventDefault();	
-      $(this).closest('#tabla-pedido').remove();
-      cant_pedido--      
-      console.log(`eliminar pedido ${cant_pedido}`)
-
-      if(cant_pedido==0){
-         $('#generar_pedido').attr("disabled","true")
-      }
-   });*/
 
 
    var mensaje = false
@@ -116,7 +104,7 @@ $(document).ready(function (){
 			}else{
 				var presentacion = $('#presentacion'[i]).val().length; 
 				var producto = $('#producto'[i]).val().length; 
-				var especie = $('#especie'[i]).val().length; 
+            var especie = $('#especie'[i]).val().length; 
 				var color = $('#color'[i]).val().length; 
 				var peso = $('#peso'[i]).val().length; 
 				var size = $('#size'[i]).val().length; 
