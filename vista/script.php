@@ -8,4 +8,4 @@
     <script src="js/validacionesPedido.js"></script>
     <script src="js/validacionesUsuario.js"></script>
     <script src="js/validacionesContenedor.js"></script>
-    
+    <script src="js/validacionesEditarUsuario.js"></script>

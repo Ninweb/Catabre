@@ -20,10 +20,10 @@ $(document).ready(function (){
          if(cant_pedido < top_pedido-2){
             pedido = true
             cant_pedido++
-            console.log(`pedido if ${cant_pedido}`)
+            // console.log(`pedido if ${cant_pedido}`)
          }else{  
             cant_pedido++
-            console.log(`pedido else1 ${cant_pedido}`)
+            // console.log(`pedido else1 ${cant_pedido}`)
             swal({ 
                title: "¡Atención!", 
                text: "Queda solamente un pedido disponible en este contenedor.", 
@@ -33,7 +33,7 @@ $(document).ready(function (){
          }
       }else{
          cant_pedido++
-         console.log(`pedido else2 ${cant_pedido}`)
+         // console.log(`pedido else2 ${cant_pedido}`)
          swal({ 
             title: "¡Atención!", 
             text: "Ha llegado al límite de pedidos en este contenedor.", 
@@ -47,12 +47,12 @@ $(document).ready(function (){
 
    //eliminar tabla
    $(document).on('click', '.borrar', function (event) {
-      console.log(`cantidad pedido al entrar: ${cant_pedido}`)
+      // console.log(`cantidad pedido al entrar: ${cant_pedido}`)
       $('#pedido').removeAttr("disabled")
 		event.preventDefault();	
       $(this).closest('#tabla-pedido').remove();
       cant_pedido--      
-      console.log(`eliminar pedido ${cant_pedido}`)
+      // console.log(`eliminar pedido ${cant_pedido}`)
       entrar = true
 
       if(cant_pedido==0){

@@ -59,7 +59,6 @@
         if ($email == $email_original){
             $id_usuario = $_POST['id_usuario'];
             $hayNuevaContraseña=$_POST['nuevaContraseña'];
-            echo "<script>alert('hola1');</script>";
             $nuevaContraseña = $_POST['newPassword'];
             $repiteContraseña = $_POST['rePassword'];
             if($nuevaContraseña == $repiteContraseña){
@@ -73,7 +72,7 @@
             }
             $jsonUsuario =json_encode(array(
                 "email"=>$email,
-                'password'=>md5($nuevaContraseña),
+                'password'=>$_POST['pass'],
                 "id_usuario"=>$id_usuario
             ));
         }else{
@@ -82,7 +81,6 @@
                 $id_usuario = $_POST['id_usuario'];
                 $hayNuevaContraseña=$_POST['nuevaContraseña'];
                 if($hayNuevaContraseña==true){
-                    echo "<script>alert('hola1');</script>";
                     $nuevaContraseña = $_POST['newPassword'];
                     $repiteContraseña = $_POST['rePassword'];
                     if($nuevaContraseña == $repiteContraseña){
@@ -127,65 +125,14 @@
                 })
             </script>";
     }else{
-<<<<<<< HEAD
         if($comp_email){
             echo "<script>
-=======
-        if($contraseñaErronea){
-            echo "<script>
-                swal({
-                    title: \"¡Error!\", 
-                    text: \"Las contraseñas no coinciden.\",
-                    icon: \"error\"
-                    })
-                </script>";
-        }else{
-            $idUsuario = modeloUsuario($jsonUsuario,$db,$funcionCRUD);
-
-        if($funcionCRUD == 'crear'){
-            $nombre=$_POST['nombre'];
-            $apellido=$_POST['apellido'];
-            $empresa=$_POST['empresa'];
-            $jsonPersona =json_encode(array(
-                "idUsuario"=>$idUsuario,
-                "nombre"=>$nombre,
-                "apellido"=>$apellido,
-                "empresa"=>$empresa
-            ));
-                
-        }else if ($funcionCRUD == 'editar'){
-            $nombre=$_POST['nombre'];
-            $apellido=$_POST['apellido'];
-            $empresa=$_POST['empresa'];
-            $jsonPersona =json_encode(array(
-                "nombre"=>$nombre,
-                "apellido"=>$apellido,
-                "empresa"=>$empresa,
-                "id_usuario"=>$idUsuario
-            ));
-        }else if($funcionCRUD == 'eliminar'){
-    
-            $jsonPersona =json_encode(array(
-                "id_usuario"=>$idUsuario
-            ));
-        }
-
-
-        modeloPersona($jsonPersona,$db,$funcionCRUD);
-
-        
-        if($funcionCRUD=='crear'){
-            if ($comp_email){
-                // echo "entro al if 1, ";
-                echo "<script>
->>>>>>> 26170b411c23b22586f65e53daafaed8d60d955c
                 swal({
                     title: \"¡Error!\", 
                     text: \"Este correo ya se encuentra registrado. Por favor, verifique e ingrese un correo electrónico valido.\",
                     icon: \"error\"
                     })
                 </script>";
-<<<<<<< HEAD
         }else{
             $idUsuario = modeloUsuario($jsonUsuario,$db,$funcionCRUD);
     
@@ -201,7 +148,6 @@
                 ));
                 modeloPersona($jsonPersona,$db,$funcionCRUD); 
             }else if($comp_email_edit){ 
-                echo "<script>alert('entro al if ppal de editar');</script>";
                 echo "<script>
                     swal({
                         title: \"¡Error!\", 
@@ -210,7 +156,6 @@
                         })
                     </script>";
             }else if ($funcionCRUD == 'editar'){
-                echo "<script>alert('entro al else ppal de editar');</script>";
                 $nombre=$_POST['nombre'];
                 $apellido=$_POST['apellido'];
                 $empresa=$_POST['empresa'];
@@ -268,35 +213,12 @@
                 }
             }else if ($funcionCRUD == 'eliminar'){
                 echo "<script>swal('Eliminado!', 'Fue eliminado el usuario', 'success').then(
-=======
-            }else{
-                echo "<script>swal('Guardado!', 'Nuevo Usuario', 'success').then(
->>>>>>> 26170b411c23b22586f65e53daafaed8d60d955c
                     function(){ 
                         location.reload();
                     }
                 );</script>";
-<<<<<<< HEAD
             }
-=======
-            }   
-             
-        }else if ($funcionCRUD == 'editar'){
-            echo "<script>swal('Guardado!', 'Fue editado el usuario', 'success').then(
-                function(){ 
-                    location.reload();
-                }
-            );</script>";
-        }else if ($funcionCRUD == 'eliminar'){
-            echo "<script>swal('Eliminado!', 'Fue eliminado el usuario', 'success').then(
-                function(){ 
-                    location.reload();
-                }
-            );</script>";
->>>>>>> 26170b411c23b22586f65e53daafaed8d60d955c
         }
-        }
-        
     }
 
     

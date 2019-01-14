@@ -1,5 +1,5 @@
 #fondo,.fondo,#naranja{
-	background-color: #f96332;
+	background-color: #fff;
 }
 
 h3{
@@ -30,7 +30,7 @@ a,a:focus{
 
 .menu_lateral{
 	position: fixed;
-	background-color: #f96332;
+	background-color: #333;
 	height: 200%;
 	width: 200px;
 	padding-top: 10px;
@@ -38,7 +38,7 @@ a,a:focus{
 }
 
 #menu_superior{
-	background-color: #f96332;
+	background-color: #333;
 	color: #ffffff;
 	position: fixed;
 	height: 60px;
@@ -81,7 +81,7 @@ a,a:focus{
 #barra_superior{
 	padding-top: 10px;
 	position: fixed;
-	background-color: #f96332 !important;
+	background-color: #333 !important;
 	text-align: right;
 	height: 50px;
 	color: #ffffff;
@@ -150,9 +150,6 @@ a,a:focus{
 	position: relative;
 }
 
-input[type='email']{
-	text-transform: lowercase;
-}
 
 
 #id_pedido {

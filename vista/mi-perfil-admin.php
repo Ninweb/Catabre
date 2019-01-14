@@ -52,7 +52,7 @@
 												<th>Apellido</th>
 												<th>Empresa</th>
 												<th>Email</th>
-												<th>contraseña</th>
+												<th>Contraseña</th>
 												<th>Modificar</th>
 											</tr>
 										</thead>
@@ -127,4 +127,6 @@
      			 include("modal-editar-admin.php");
    			 ?>
 	</body>
+
+	
 </html>

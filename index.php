@@ -13,24 +13,24 @@
   <body id="body_home">
 
       
-    <div id="cuerpo" >
-      <br><br><br><br><br><br>
+    <div id="cuerpo" style="margin-top:5%;">
+      <!-- <br><br><br><br> -->
       <div class="col-lg-4 offset-lg-4">
         
         <div id="fondo" class="card" style="border:1px solid #adadad;">
           
-          <div class="card-header" style="background:white;">
+          <div class="card-header" style="background:#1abc9c; color:white">
 
-            <h1 align="center" style="width: 100%;">
-              <strong>CATABRE</strong>
-            </h1>
+            <h2 align="center" style="width: 100%; text-align:center;">
+              <p>Grupo Catabre - Sistema de Administración</p>
+            </h2>
 
           </div>
           <div class="card-body form-group" style="background:white;">
             <br>
             <form id="formularioSesion">
               <input type="hidden" name="validacion" value="">
-              <input type="email" name="email" id="correo" placeholder="Correo Electrónico" class="col-md-8 offset-md-2 form-control espacio_margen" autocomplete="off" autofocus="">
+              <input type="email" name="email" id="correo" placeholder="Correo electrónico" class="col-md-8 offset-md-2 form-control espacio_margen" autocomplete="off" autofocus="">
               <input type="password" name="clave" placeholder="Contraseña" class="col-md-8 offset-md-2 form-control espacio_margen" autocomplete="off">
               <br>
               <button style="background:#333333; color:#adadad" class="col-md-8 offset-md-2 btn" type="submit" name="iniciar_sesion">Iniciar Sesión</button>
