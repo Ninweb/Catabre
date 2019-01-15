@@ -98,7 +98,7 @@
     .then(
             function(){ 
                 console.log('entro');
-                localtion.reload();
+                location.reload();
             }
         );
     </script>";
