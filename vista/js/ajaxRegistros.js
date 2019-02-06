@@ -120,6 +120,8 @@
         e.preventDefault();
         var formulario = $(this).serialize();
         console.log(formulario);
+        var variable = document.getElementById('pass').value;
+        alert(`hola ${variable}`)
         $.ajax({
             'method':'POST',
             'url': '../controlador/usuarioPersona.php',

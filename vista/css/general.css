@@ -1,6 +1,7 @@
 .fondo,#naranja{
 	background-color: #fff;
 }
+
 #fondo {
 	background: white;
 	color: #adadad;
@@ -34,7 +35,7 @@ a,a:focus{
 
 .menu_lateral{
 	position: fixed;
-	background-color: #f96332;
+	background-color: #333;
 	height: 200%;
 	width: 200px;
 	padding-top: 10px;
@@ -42,7 +43,7 @@ a,a:focus{
 }
 
 #menu_superior{
-	background-color: #f96332;
+	background-color: #333;
 	color: #ffffff;
 	position: fixed;
 	height: 60px;
@@ -85,7 +86,7 @@ a,a:focus{
 #barra_superior{
 	padding-top: 10px;
 	position: fixed;
-	background-color: #f96332 !important;
+	background-color: #333 !important;
 	text-align: right;
 	height: 50px;
 	color: #ffffff;
@@ -201,4 +202,8 @@ input[type='email']{
 .card-header {
 	background-color: white;
 	color: #adadad;
+}
+input {
+	background-color:white;
+	border: 1px solid #adadad;
 }

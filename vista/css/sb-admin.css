@@ -11,6 +11,7 @@ html {
 
 body {
   height: 100%;
+  font-family: 'Raleway', sans-serif;
 }
 
 #wrapper {
@@ -132,7 +133,8 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 
 .sidebar {
   width: 90px !important;
-  background-color: #f96332;
+  /* background-color: #f96332; */
+  background-color: #333333;
   min-height: calc(100vh - 56px);
 }
 
@@ -172,8 +174,9 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
   color: #fff;
 }
 
-.sidebar .nav-item .nav-link:active, .sidebar .nav-item .nav-link:focus, .sidebar .nav-item .nav-link:hover {
+.sidebar .nav-item .nav-link:active, .sidebar .nav-item .nav-link:focus, .sidebar .nav-item .nav-link:hover, .sidebar .nav-item:active {
   color: #383838;
+  background: white;
 }
 
 .sidebar.toggled {

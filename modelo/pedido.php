@@ -20,7 +20,7 @@
   
     
         if (mysqli_query($db, $sql)) {
-            echo "Se guardo exitoxamente el pedido\n";
+            // echo "Se guardo exitoxamente el pedido\n";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($db);
            

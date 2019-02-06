@@ -8,9 +8,9 @@
                            <span aria-hidden="true">&times;</span>
                            <span class="sr-only">Cerrar</span>
                     </button>
-                    <h5 class="modal-title" id="myModalLabel">
+                    <!-- <h5 class="modal-title" id="myModalLabel">
                        Mi Perfil
-                    </h5>
+                    </h5> -->
                 </div>
                 
             <!-- Modal Body -->

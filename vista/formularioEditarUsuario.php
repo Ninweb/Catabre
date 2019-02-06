@@ -18,7 +18,7 @@
         </div>
         <div class="input-group col-md-12">
                 <div class="input-group-prepend">
-                <i class="fas fa-user input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+                <i class="fas fa-user input-group-text" style="background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
             </div>
             <input required  autocomplete="off" type="text" name="nombre" value="<?php echo $resultados['nombre']; ?>" class="col-md-7 form-control">
 
@@ -28,7 +28,7 @@
         </div>
         <div class="input-group col-md-12">
                 <div class="input-group-prepend">
-                <i class="fas fa-file-signature input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+                <i class="fas fa-file-signature input-group-text" style="background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
             </div>
             <input required  autocomplete="off" type="text" name="apellido" value="<?php echo $resultados['apellido'] ?>" class="col-md-7 form-control">
 
@@ -38,7 +38,7 @@
         </div>
         <div class="input-group col-md-12">
                 <div class="input-group-prepend">
-                <i class="fas fa-building input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+                <i class="fas fa-building input-group-text" style="background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
             </div>
             <input required  autocomplete="off" type="text" name="empresa" value="<?php echo $resultados['empresa'] ?>" class="col-md-7 form-control">
 
@@ -48,7 +48,7 @@
         </div>
         <div class="input-group col-md-12">
                 <div class="input-group-prepend">
-                <i class="far fa-envelope input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+                <i class="far fa-envelope input-group-text" style="background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
             </div>
             <input required  autocomplete="off" type="email" name="email" value="<?php echo $resultados['email'] ?>" class="col-md-7 form-control">
 

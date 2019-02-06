@@ -1,6 +1,6 @@
 <?php
 	include ("../modelo/conexion.php");
-	include ('script.php');
+	// include ('script.php');
   	$id_usuario=$_POST['id_usuario'];
     $consulta=mysqli_query($db, "SELECT * FROM persona,usuario WHERE persona.id_usuario=usuario.id_usuario AND usuario.id_usuario='".$id_usuario."'");
   	$resultados=mysqli_fetch_array($consulta);
@@ -8,6 +8,7 @@
   	?>
 
 	<form id="formularioEditarUsuario">
+	<input type="hidden" autocomplete="off" id="pass" name="pass" value="<?php echo $resultados['clave'] ?>" class="col-md-7 form-control">
 		<br>
 		<input type="hidden" name="id_usuario" value="<?php echo $resultados['id_usuario'] ?>">
 		<input type="hidden" name="funcion" value="editar">
@@ -16,7 +17,7 @@
 		</div>
 		<div class="input-group col-md-12">
 				<div class="input-group-prepend">
-				<i class="fas fa-user input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+				<i class="fas fa-user input-group-text" style="background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 			</div>
 			<input required  autocomplete="off" type="text" name="nombre" value="<?php echo $resultados['nombre']; ?>" class="col-md-7 form-control">
 
@@ -26,7 +27,7 @@
 		</div>
 		<div class="input-group col-md-12">
 				<div class="input-group-prepend">
-				<i class="fas fa-file-signature input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+				<i class="fas fa-user lastname input-group-text" style="background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 			</div>
 			<input required  autocomplete="off" type="text" name="apellido" value="<?php echo $resultados['apellido'] ?>" class="col-md-7 form-control">
 
@@ -36,7 +37,7 @@
 		</div>
 		<div class="input-group col-md-12">
 				<div class="input-group-prepend">
-				<i class="fas fa-building input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+				<i class="fas fa-building input-group-text" style="background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 			</div>
 			<input required  autocomplete="off" type="text" name="empresa" value="<?php echo $resultados['empresa'] ?>" class="col-md-7 form-control">
 
@@ -46,8 +47,9 @@
 		</div>
 		<div class="input-group col-md-12">
 				<div class="input-group-prepend">
-				<i class="far fa-envelope input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+				<i class="far fa-envelope input-group-text" style="background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 			</div>
+			<input type="hidden" name="email_original" value="<?php echo $resultados['email'] ?>">
 			<input required  autocomplete="off" type="email" name="email" value="<?php echo $resultados['email'] ?>" class="col-md-7 form-control">
 
 		</div><br>
@@ -57,9 +59,10 @@
 			</div>
 			<div class="input-group col-md-12 prueba">
 				<div class="input-group-prepend">
-					<i class="fas fa-key input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+					<i class="fas fa-key input-group-text" style="background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 				</div>
-				<input required  autocomplete="off" type="password" name="password" value="<?php echo $resultados['clave'] ?>" class="col-md-7 form-control" disabled>
+				<input required  autocomplete="off" type="password" id="contrasena" name="passw" value="<?php echo $resultados['clave'] ?>" class="col-md-7 form-control" disabled>
+				
 				<button type="button" name="modificar" id="cambiarContraseña" class="btn btn-primary">Cambiar Contraseña</button>
 			</div>
 		</div>
@@ -76,9 +79,9 @@
 			</div>
 			<div class="input-group col-md-12 prueba">
 				<div class="input-group-prepend">
-					<i class="fas fa-key input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+					<i class="fas fa-key newPassword input-group-text" style="background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 				</div>
-				<input   autocomplete="off" type="password" name="newPassword" class="col-md-7 form-control">
+				<input   autocomplete="off" type="password" name="newPassword" id="newPassword" class="col-md-7 form-control">
 			</div>
 
 			<div class="col-md-12">
@@ -86,9 +89,9 @@
 			</div>
 			<div class="input-group col-md-12 prueba">
 				<div class="input-group-prepend">
-					<i class="fas fa-key input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+					<i class="fas fa-key rePassword input-group-text" style="background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 				</div>
-				<input   autocomplete="off" type="password" name="rePassword"  class="col-md-7 form-control">
+				<input   autocomplete="off" type="password" name="rePassword" id="rePassword" class="col-md-7 form-control">
 			</div>
 		</div>
 
@@ -98,9 +101,12 @@
 		&nbsp;
 			<div class="form-group" align="center">        
 				<div class="col-sm-10">
-					<button type="submit" name="modificar" class="btn btn-primary">Modificar</button>
+					<input type="submit" name="modificar" class="btn btn-primary" id="modificarUsuario" value="Modificar">
 				</div>
 		</div>
 		</form>
     <div id="mostrarDatos">
     </div>
+
+		<?php include("script.php"); ?>
+

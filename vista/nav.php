@@ -1,4 +1,4 @@
-          <nav class="navbar navbar-expand static-top" style="background-color: #f96332">
+          <nav class="navbar navbar-expand static-top" style="background-color: #333">
 
             <a class="navbar-brand mr-1" href="#" style="color: #fff; font-weight: bold;">CATABRE</a>
 

@@ -6,6 +6,8 @@
     include("../modelo/conexion.php");
     include("envio_codigo_pedido.php");
 
+    // require "../vendor/autoload.php";
+
     function modeloPedido($json,$db){        
         $idPedido = crearPedido($json,$db);
 
@@ -88,10 +90,6 @@
 
     $actualizacion= "UPDATE contenedor SET status='ocupado' Where id_contenedor='$idContenedor'";
     mysqli_query($db,$actualizacion);
-
-
-
-
                                                                     
                                                     
           

@@ -20,7 +20,7 @@
 				<div class="input-group col-md-12 offset-md-3">
 					
 						<div class="input-group-prepend">
-						<i class="fas fa-hashtag input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+						<i class="fas fa-hashtag input-group-text" style="background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 					</div>
 					<input required  autocomplete="off" type="text" name="num_referencia" value="<?php echo $resultados['ref']?>" class="col-md-5 form-control">
 
@@ -33,7 +33,7 @@
 				<div class="input-group col-md-12 offset-md-3">
 
 						<div class="input-group-prepend">
-						<i class="fas fa-file-signature input-group-text" style="background-color: #f96332; color: #fff; padding-top: 10px;"></i>
+						<i class="fas fa-file-signature input-group-text" style="background-color: #1abc9c; color: #fff; padding-top: 10px;"></i>
 					</div>
 					<input required  autocomplete="off" type="text" name="nombre" value="<?php echo $resultados['nombre_conte']?>" class="col-md-5 form-control">
 

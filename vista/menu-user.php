@@ -8,7 +8,7 @@
         <li class="nav-item">
             <a class="nav-link" <?php if ($page=="Mi Pedido"){
                     ?>
-                    style="color: #383838;"
+                    style="color: #383838; background: white;"
                     <?php
                   }
                 ?>  
@@ -22,7 +22,7 @@
        <li class="nav-item">
             <a class="nav-link" <?php if ($page=="Historial de Pedidos"){
                     ?>
-                    style="color: #383838;"
+                    style="color: #383838; background: white;"
                     <?php
                   }
                 ?>  
@@ -36,7 +36,7 @@
         <li class="nav-item">
              <a class="nav-link" <?php if ($page=="Contenedores"){
                     ?>
-                    style="color: #383838;"
+                    style="color: #383838; background: white;"
                     <?php
                   }
                 ?>   href="contenedores.php">            
@@ -48,7 +48,7 @@
         <li class="nav-item">
          <a class="nav-link" <?php if ($page=="Mi Perfil"){
                     ?>
-                    style="color: #383838;"
+                    style="color: #383838; background: white;"
                     <?php
                   }
                 ?> href="mi-perfil-user.php">
