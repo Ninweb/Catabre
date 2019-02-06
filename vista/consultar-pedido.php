@@ -36,16 +36,6 @@
 			<!--contenido-->
 				<div id="content-wrapper">
 					<div class="container-fluid">
-						<ol class="breadcrumb">
-				          <li class="breadcrumb-item">
-				            <a href="nuevo-pedido.php" style="color:#383838;"> Generar Pedido</a>
-				          </li>
-				           <li class="breadcrumb-item">
-				           	 <a href="consultar-pedido.php" style="color: #17a2b8;" > Consultar Pedido</a>
-				          	</li>
-				          	
-				        </ol>
-						
 						 <!-- INFORMACION -->
 						 <div class="card-body">
 						 	<div class="card-header" style="background-color: #1abc9c; color: #fff;">
@@ -64,7 +54,6 @@
 									if (mysqli_num_rows($consulta_pedido)>0) {
 										# code...
 									?>	
-										<br>
 										<div class="card-header" style="background-color: #b8daff; color: #fff;">
 											<h4 align="center" style="color: #383838;">Contenedor #<?php echo $i; ?></h4>
 										</div>

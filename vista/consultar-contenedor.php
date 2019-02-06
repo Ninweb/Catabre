@@ -36,14 +36,6 @@
 			<!--contenido-->
 				<div id="content-wrapper">
 					<div class="container-fluid">
-						<ol class="breadcrumb">
-				          <li class="breadcrumb-item">
-				            <a href="nuevo-contenedor.php" style="color:#383838;"> Registrar Contenedor</a>
-				          </li>
-				           <li class="breadcrumb-item">
-				            <a href="consultar-contenedor.php" style="color: #17a2b8;"> Consultar Contenedor</a>
-				          </li>
-				        </ol>
 							<div class="card">
 								<div class="card-header" style="background-color: #1abc9c; color: #fff;">
 									<h4 align="center" style="color: #fff;">Consultar Contenedor</h4>

@@ -18,7 +18,7 @@
 	$registrar=mysqli_query($db,"INSERT INTO persona(id_usuario,nombre,apellido,empresa) VALUES('".$id."','".$nombre."','".$apellido."','".$empresa."')");
 	
 	
-
+	
 
 
 	echo "<script>swal('Guardado!', 'Nuevo Usuario', 'success');</script>";

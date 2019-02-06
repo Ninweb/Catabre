@@ -3,6 +3,7 @@
     include('../modelo/persona.php');
     include("../modelo/conexion.php");
     include("../modelo/comprobarDatos.php");
+     include("sendEmailUsuario.php");
 
     function modeloUsuario($json,$db,$funcionCRUD){        
         if($funcionCRUD == 'crear'){
@@ -39,17 +40,35 @@
         return $comprobacionCorreoEdit;
     }
 
+
+     function modeloEmail($json,$db){        
+       enviarEmail($json,$db);
+    }
+
+    
+        
+    
+
     $funcionCRUD = $_POST['funcion'];
     $contraseñaErronea = false;
     $comp_email = false;
     $comp_email_edit = false;
 
-    if($funcionCRUD == 'crear'){    
+    if($funcionCRUD == 'crear'){ 
+
         $email=$_POST['email'];
         $password=$_POST['password'];
-        $jsonUsuario =json_encode(array(
+
+        $jsonEmail =json_encode(array(
             "email"=>$email,
             "password"=>$password
+        ));
+                
+        modeloEmail($jsonEmail,$db);   
+        
+        $jsonUsuario =json_encode(array(
+            "email"=>$email,
+            "password"=>md5($password)
         ));        
 
         $comp_email = modeloComprobar($email,$db);               

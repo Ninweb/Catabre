@@ -36,17 +36,11 @@
 			<!--contenido-->
 				<div id="content-wrapper">
 					<div class="container-fluid">
-						<ol class="breadcrumb">
-				          <li class="breadcrumb-item">
-				            <a href="nuevo-pedido.php" style="color: #17a2b8;"> Generar Pedido</a>
-				          </li>
-				           <li class="breadcrumb-item">
-				            <a href="consultar-pedido.php" style="color:#383838;"> Consultar Pedido</a>
-				          </li>
-				        </ol>
+						
+
 						<div class="card col-md-5offset-md-3">
 							<div class="card-header" style="background-color: #1abc9c; color: #fff;">
-						   <h3 align="center">Generar Pedido</h3>
+						   <h3 align="center">Registrar Pedido</h3>
 						 </div>
 
 						 <!-- INFORMACION DE REGISTRO -->
